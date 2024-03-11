@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scene_base/image_scripts.rpy", line 22: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    xpos (x/10)
+    ^
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Fri Mar  8 07:11:38 2024

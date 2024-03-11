@@ -1,0 +1,97 @@
+{
+    "day_0101_getting_got_1bade8b5": {
+        "area": [
+            307,
+            518,
+            307,
+            194
+        ],
+        "properties": "thought"
+    },
+    "day_0101_getting_got_1f88758c": {
+        "area": [
+            460,
+            237,
+            268,
+            129
+        ],
+        "properties": "bottom_right"
+    },
+    "day_0101_getting_got_7b2976fb": {
+        "area": [
+            537,
+            259,
+            192,
+            86
+        ],
+        "properties": "bottom_right"
+    },
+    "day_0101_getting_got_b55f157b": {
+        "area": [
+            268,
+            259,
+            230,
+            129
+        ]
+    },
+    "day_0101_help_from_addy_2_27d59a56": {
+        "area": [
+            806,
+            172,
+            268,
+            172
+        ],
+        "properties": "bottom_right"
+    },
+    "day_0101_help_from_addy_2_7b87f1a3": {
+        "area": [
+            153,
+            194,
+            384,
+            237
+        ],
+        "properties": "thought"
+    },
+    "day_0101_waking_from_a_dream_0670e119": {
+        "area": [
+            1344,
+            496,
+            345,
+            237
+        ]
+    },
+    "day_0101_waking_from_a_dream_10b4798a": {
+        "area": [
+            115,
+            302,
+            268,
+            237
+        ],
+        "properties": "thought"
+    },
+    "day_0101_waking_from_a_dream_6c475941": {
+        "area": [
+            460,
+            129,
+            307,
+            216
+        ]
+    },
+    "day_0101_waking_from_a_dream_813ed9c2": {
+        "area": [
+            422,
+            259,
+            307,
+            151
+        ]
+    },
+    "day_0101_waking_from_a_dream_fc048468": {
+        "area": [
+            400,
+            270,
+            240,
+            135
+        ],
+        "properties": "bottom_left"
+    }
+}

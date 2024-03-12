@@ -1,119 +1,30 @@
-# TODO: Translation updated at 2024-03-11 16:20
-
-translate spanish strings:
-
-    # game/scene_base/library.rpy:97
-"    old ""Gallery"""
-"    new """""
-
-    # game/scene_base/library.rpy:190
-"    old ""Days"""
-"    new """""
-
-    # game/scene_base/library.rpy:227
-"    old ""Scenes"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[lilsis.name] Intro"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[lilsis.name] pranks [main.name] first thing in the morning."""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[bigsis.name] Intro"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[bigsis.name] teaches [main.name] to knock the hard way."""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[fembro.name] Intro"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[main.name] forgets to knock and barges in on [fembro.name] changing."""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[mom.name] and [aunt.name] Intro"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""[mom.name] lays down the law, and [aunt.name] greets [main.name]."""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""The News Drops"""
-"    new """""
-
-    # game/scene_base/library.rpy:241
-"    old ""During an argument, the family learns about the law."""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""No Respect at All"""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""Rubbing and Prying 1"""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""[main.name] decides to give his mother a massage."""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""Paint the Room Red (Orange)"""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""[main.name] helps [aunt.name] paint his old room."""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""Silent Night, Horny Night?"""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""[main.name] Lists in to [bigsis.name] through the wall."""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""Sleep Grinding"""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""[main.name] helps [fembro.name] paint his old room."""
-"    new """""
-
-    # game/scene_base/library.rpy:271
-"    old ""Sleep Grinding Alt Start (Jessie Disabled)"""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""Bonk"""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""[main.name] tries to make [aunt.name] feel welcome in the morning... Never sneak up on an Amazon."""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""All Ass, No Height"""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""[fembro.name] can't reach something on the high shelf. When they try and climb, they fall ontop of [main.name]."""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""Strike A Pose"""
-"    new """""
-
-    # game/scene_base/library.rpy:306
-"    old ""[main.name] and [fembro.name] watch [aunt.name] flex her 'guns'."""
-"    new """""
+Gallery,Gallery
+Days,Days
+Scenes,Scenes
+[lilsis.name] Intro,[lilsis.name] Intro
+[lilsis.name] pranks [main.name] first thing in the morning.,[lilsis.name] pranks [main.name] first thing in the morning.
+[bigsis.name] Intro,[bigsis.name] Intro
+[bigsis.name] teaches [main.name] to knock the hard way.,[bigsis.name] teaches [main.name] to knock the hard way.
+[fembro.name] Intro,[fembro.name] Intro
+[main.name] forgets to knock and barges in on [fembro.name] changing.,[main.name] forgets to knock and barges in on [fembro.name] changing.
+[mom.name] and [aunt.name] Intro,[mom.name] and [aunt.name] Intro
+"[mom.name] lays down the law, and [aunt.name] greets [main.name].","[mom.name] lays down the law, and [aunt.name] greets [main.name]."
+The News Drops,The News Drops
+"During an argument, the family learns about the law.","During an argument, the family learns about the law."
+No Respect at All,No Respect at All
+[lilsis.name] walks in on [main.name] when he's about shower... this awakens something in her.,[lilsis.name] walks in on [main.name] when he's about shower... this awakens something in her.
+Rubbing and Prying 1,Rubbing and Prying 1
+[main.name] decides to give his mother a massage.,[main.name] decides to give his mother a massage.
+Paint the Room Red (Orange),Paint the Room Red (Orange)
+[main.name] helps [aunt.name] paint his old room.,[main.name] helps [aunt.name] paint his old room.
+"Silent Night, Horny Night?","Silent Night, Horny Night?"
+[main.name] Lists in to [bigsis.name] through the wall.,[main.name] Lists in to [bigsis.name] through the wall.
+Sleep Grinding,Sleep Grinding
+[main.name] helps [fembro.name] paint his old room.,[main.name] helps [fembro.name] paint his old room.
+Sleep Grinding Alt Start (Jessie Disabled),Sleep Grinding Alt Start (Jessie Disabled)
+Bonk,Bonk
+[main.name] tries to make [aunt.name] feel welcome in the morning... Never sneak up on an Amazon.,[main.name] tries to make [aunt.name] feel welcome in the morning... Never sneak up on an Amazon.
+"All Ass, No Height","All Ass, No Height"
+"[fembro.name] can't reach something on the high shelf. When they try and climb, they fall ontop of [main.name].","[fembro.name] can't reach something on the high shelf. When they try and climb, they fall ontop of [main.name]."
+Strike A Pose,Strike A Pose
+[main.name] and [fembro.name] watch [aunt.name] flex her 'guns'.,[main.name] and [fembro.name] watch [aunt.name] flex her 'guns'.

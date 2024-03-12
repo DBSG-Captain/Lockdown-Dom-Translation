@@ -1,0 +1,91 @@
+Back,Back
+History,History
+Hide,Hide
+Skip,Skip
+Auto,Auto
+Save,Save
+Q.Save,Q.Save
+Q.Load,Q.Load
+Prefs,Prefs
+End Replay,End Replay
+Start,Start
+Load,Load
+Preferences,Preferences
+Image Gallery,Image Gallery
+Scene Gallery,Scene Gallery
+Main Menu,Main Menu
+About,About
+Help,Help
+Quit,Quit
+Return,Return
+Version [config.version!t]\n,Version [config.version!t]\n
+Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t],Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]
+Page {},Page {}
+Automatic saves,Automatic saves
+Quick saves,Quick saves
+"{#file_time}%A, %B %d %Y, %H:%M","{#file_time}%A, %B %d %Y, %H:%M"
+empty slot,empty slot
+<,<
+{#auto_page}A,{#auto_page}A
+{#quick_page}Q,{#quick_page}Q
+>,>
+Upload Sync,Upload Sync
+Download Sync,Download Sync
+Display,Display
+Window,Window
+Fullscreen,Fullscreen
+Unseen Text,Unseen Text
+After Choices,After Choices
+Transitions,Transitions
+Narration,Narration
+Kinks,Kinks
+Ballbusting,Ballbusting
+Scent,Scent
+NTR,NTR
+Extra,Extra
+Extra Hints,Extra Hints
+Language,Language
+Text Speed,Text Speed
+Auto-Forward Time,Auto-Forward Time
+Music Volume,Music Volume
+Sound Volume,Sound Volume
+Test,Test
+Voice Volume,Voice Volume
+Mute All,Mute All
+The dialogue history is empty.,The dialogue history is empty.
+Keyboard,Keyboard
+Mouse,Mouse
+Gamepad,Gamepad
+Enter,Enter
+Advances dialogue and activates the interface.,Advances dialogue and activates the interface.
+Space,Space
+Advances dialogue without selecting choices.,Advances dialogue without selecting choices.
+Arrow Keys,Arrow Keys
+Navigate the interface.,Navigate the interface.
+Escape,Escape
+Accesses the game menu.,Accesses the game menu.
+Ctrl,Ctrl
+Skips dialogue while held down.,Skips dialogue while held down.
+Tab,Tab
+Toggles dialogue skipping.,Toggles dialogue skipping.
+Page Up,Page Up
+Rolls back to earlier dialogue.,Rolls back to earlier dialogue.
+Page Down,Page Down
+Rolls forward to later dialogue.,Rolls forward to later dialogue.
+Hides the user interface.,Hides the user interface.
+Takes a screenshot.,Takes a screenshot.
+Opens the accessibility menu.,Opens the accessibility menu.
+Left Click,Left Click
+Middle Click,Middle Click
+Right Click,Right Click
+Mouse Wheel Up\nClick Rollback Side,Mouse Wheel Up\nClick Rollback Side
+Mouse Wheel Down,Mouse Wheel Down
+Right Trigger\nA/Bottom Button,Right Trigger\nA/Bottom Button
+Left Trigger\nLeft Shoulder,Left Trigger\nLeft Shoulder
+Right Shoulder,Right Shoulder
+"D-Pad, Sticks","D-Pad, Sticks"
+"Start, Guide","Start, Guide"
+Y/Top Button,Y/Top Button
+Calibrate,Calibrate
+Skipping,Skipping
+Menu,Menu

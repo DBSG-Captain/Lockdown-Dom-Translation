@@ -127,5 +127,5 @@ translate spanish strings:,
 "    new """"",
 ,
     # game/script.rpy:196,
-"'    old ""Skip Intro (New Intro"," so don''t)""'"
+"    old ""Skip Intro (New Intro, so don't)"""," so don''t)""'"
 "    new """"",

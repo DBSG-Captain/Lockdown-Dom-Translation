@@ -1,60 +1,63 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+init python:
+    def hint_var(def_name, char):
+        #if the character exists
+        if char:
+            #If you didn't miss any stages
+            if char.stage != -10:
+                #if they're selected
+                if char.chosen:
+                    if char.stage in hints_list[(def_name)]:
+                        #if hints is on
+                        if extra_hint:
+                            return (times[hints_list[(def_name)][char.stage][0]] + "; " + hints_list[(def_name)][char.stage][1])
+                        else:
+                            return hints_list[(def_name)][char.stage][1]
+                    else:
+                        return end_of
+                else:
+                    return hints_list["disabled"]
+            else:
+                return hints_list["ignored"]
 
-translate spanish strings:
-
-    # game/scene_base/hints.rpy:23
-    old "None; Nothing today..."
-    new ""
-
-    # game/scene_base/hints.rpy:24
-    old "None; End of Content"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Not focused on them."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "I feel like I missed something yesterday."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "None; You missed a scene, go back a day."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Morn; You should go to the restroom"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Day ; What's she doing anyway, probably in her room"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Nigh; Sleep. Use earplugs downstairs to avoid hearing anything"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Nigh; Sleep."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Day ; She's in the living room, I should try and learn more about her"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Morn; [fembro_nouns[0]!c] may be in the kitchen, you should apologize for last night"
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Even; I should help her get moved in."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Even; I gotta get the orange paint."
-    new ""
-
-    # game/scene_base/hints.rpy:25
-    old "Morn; I should greet her to make her feel welcome"
-    new ""
-
+#every 10 is a new day with a stage
+define nothing_more = [4, _("Nothing today...")]
+define end_of = [4, _("End of Content")]
+define hints_list = {
+    "disabled": _("Not focused on them."),
+    "ignored": _("I feel like I missed something yesterday."),
+    "Clarissa": {
+        0: [4, _("You missed a scene, go back a day.")],
+        10: [0, _("You should go to the restroom")],
+        11: [1, _("What's she doing anyway, probably in her room")],
+        12: nothing_more,
+        20: end_of
+        },
+    "Jessie": {
+        0: [4, _("You missed a scene, go back a day.")],
+        10: [3, _("Sleep. Use earplugs downstairs to avoid hearing anything")],
+        11: [3, _("Sleep.")],
+        12: nothing_more,
+        20: end_of
+        },
+    "Linda": {
+        0: [4, _("You missed a scene, go back a day.")],
+        10: [1, _("She's in the living room, I should try and learn more about her")],
+        11: nothing_more,
+        20: end_of
+        },
+    "Addison": {
+        0: [4, _("You missed a scene, go back a day.")],
+        10: [3, _("Sleep.")],
+        11: nothing_more,
+        20: [0, _("They may be in the kitchen, you should apologize for last night")],
+        21: end_of
+        },
+    "Ruby": {
+        0: [4, _("You missed a scene, go back a day.")],
+        10: [2, _("I should help her get moved in.")],
+        11: [2, _("I gotta get the orange paint.")],
+        12: nothing_more,
+        20: [0, _("I should greet her to make her feel welcome")],
+        21: end_of
+        }
+    }

@@ -1,132 +1,221 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+init python:
+    #class for a scene queued for jumping
+    class QueuedScene:
+        def __init__(self, name, times, skip, char):
+            self.name = name
+            self.times = times
+            self.skip = skip
+            self.char = char
 
-# game/script.rpy:178
-translate spanish age_check_6398f56c:
+    #sets date
+    def set_date(x):
+        globals()['date'] = x
 
-    # "WARNING: This is a smutty erotic porn game for 18+ audiences only!"
-    ""
+    #sets day
+    def set_day(x):
+        globals()['weekday'] = x
 
-# game/script.rpy:180
-translate spanish age_check_a7e4f71e:
+    #sets time
+    def set_time(x):
+        globals()['daytime'] = x
 
-    # "Unless the age is older in your country. Then go by that age!"
-    ""
+    def reset_timeline():
+        #Moves week forward until Sunday, then restarts.
+        set_date(1)
+        set_day(4)
+        set_time(0)
+        globals()['finished_scenes'] = []
 
-translate spanish strings:
+    def increase_date(x):
+        #Moves week forward until Sunday, then restarts.
+        days = (x % 7)
+        if globals()['weekday'] < 6:
+            set_day(globals()['weekday'] + days)
+        else:
+            globals()['weekday'] = 0
+        set_date(globals()['date'] + x)
+        set_time(0)
+    
+    #runs scenes at night, if not, goes to the next day
+    def sleep_night(scene=""):
+        if globals()['scene_queue']['night'] != []:
+            run_scene('night', globals()['scene_queue']['night'][0])
+        else:
+            increase_date(1)
+        clear_scenes()
+        for char in love_interests:
+            char.advance()
+        if scene != "":
+            renpy.jump(scene)
+        else:
+            renpy.jump("sleep_time")
 
-    # game/script.rpy:63
-    old "Monday"
-    new ""
+    def clear_scenes():
+        for scene_list in scene_queue:
+            scene_queue[scene_list] = []
 
-    # game/script.rpy:63
-    old "Tuesday"
-    new ""
+default extra_hint = False
 
-    # game/script.rpy:63
-    old "Wednesday"
-    new ""
+#World
+#0 - 6 is Monday to Sunday
+default date = 1
+default weekday = 4
+define days = {
+    0: _("Monday"),
+    1: _("Tuesday"),
+    2: _("Wednesday"),
+    3: _("Thursday"),
+    4: _("Friday"),
+    5: _("Saturday"),
+    6: _("Sunday")
+}
+#0 - 3 time
+default daytime = 0
+define times = {
+    0: _("Morning"),
+    1: _("Day"),
+    2: _("Evening"),
+    3: _("Night"),
+    4: _("None")
+}
 
-    # game/script.rpy:63
-    old "Thursday"
-    new ""
+default ending = "generic"
+default room_in = "living"
+#MC Stats
+default dominant = True
+default player_name = _("Ian")
+#Billy Stats
+default fembro_penis = True
+default fembro_nouns_masc = ([_("he"), _("him"), _("his"), _("his"), _("brother"), _("bro")])
+default fembro_nouns_fem = ([_("she"), _("her"), _("her"), _("hers"), _("sister"), _("sis")])
+default fembro_nouns = fembro_nouns_masc
+#kinks
+default kink_ballbusting = False
+default kink_scent = False
+default kink_cuck = False
 
-    # game/script.rpy:63
-    old "Friday"
-    new ""
+#Scenes that have yet to be played and are ready
+default scene_queue = {
+###Locations
+    "bath": [],
+    "bed_bigsis": [],
+    "bed_fembro": [],
+    "bed_lilsis": [],
+    "bed_mom": [],
+    "bed_aunt": [],
+    "kitchen": [],
+    "living": [],
+    "stairs": [],
+    "garage": [],
+    "basement": [],
+###Time
+    "night": [],
+###Items
+#bed_bigsis
+#bed_fembro
+    "fembro_fembro": [],
+    "fembro_sisbf": [],
+#bed_lilsis
+#bed_mom
+#bed_aunt
+    "aunt_aunt": [],
+    "punchbag": [],
+    "workbench": [],
+#bathroom
+    "bath_cabinat": [],
+    "bath_sink": [],
+    "toilet": [],
+    "shower": [],
+    "bath_fembro": [],
+    "bath_lilsis": [],
+    "bath_bigsis": [],
+    "bath_aunt": [],
+    "bath_mom": [],
+#kitchen
+    "kitchen_stove": [],
+    "kitchen_fembro": [],
+    "kitchen_lilsis": [],
+    "kitchen_bigsis": [],
+    "kitchen_aunt": [],
+    "kitchen_mom": [],
+    "kitchen_sisbf": [],
+#living
+    "tv": [],
+    "living_fembro": [],
+    "living_lilsis": [],
+    "living_bigsis": [],
+    "living_aunt": [],
+    "living_mom": [],
+#basement
+    "breaker": [],
+    "heater": [],
+    "laundry": [],
+    "basement_clutter": []
+    }
 
-    # game/script.rpy:63
-    old "Saturday"
-    new ""
+#List of all finished scenes
+default finished_scenes = []
+default persistent.replay_scenes = []
+#list of names, for replays
 
-    # game/script.rpy:63
-    old "Sunday"
-    new ""
+# file names:
+# ro[route]-p[part]-[name]
 
-    # game/script.rpy:74
-    old "Morning"
-    new ""
+# The game starts here.
+label start:
 
-    # game/script.rpy:74
-    old "Day"
-    new ""
+    default inventory = Inventory([], 0)
 
-    # game/script.rpy:74
-    old "Evening"
-    new ""
+    camera:
+        perspective True
 
-    # game/script.rpy:74
-    old "Night"
-    new ""
+    $ choice_done_player = False
 
-    # game/script.rpy:85
-    old "Ian"
-    new ""
 
-    # game/script.rpy:88
-    old "he"
-    new ""
+    jump age_check
 
-    # game/script.rpy:88
-    old "him"
-    new ""
+label age_check:
 
-    # game/script.rpy:88
-    old "his"
-    new ""
+    "WARNING: This is a smutty erotic porn game for 18+ audiences only!"
+    
+    "Unless the age is older in your country. Then go by that age!"
 
-    # game/script.rpy:88
-    old "brother"
-    new ""
+menu:
 
-    # game/script.rpy:88
-    old "bro"
-    new ""
+    "Now be honest. Are you 18 years old or older?"
 
-    # game/script.rpy:89
-    old "she"
-    new ""
+    "Yes":
+        jump make_mc
+    
+    "No":
+        $ renpy.quit()
 
-    # game/script.rpy:89
-    old "her"
-    new ""
+label start_2:
 
-    # game/script.rpy:89
-    old "hers"
-    new ""
+    $ intro = True
 
-    # game/script.rpy:89
-    old "sister"
-    new ""
+menu:
+    
+    "What would you like to do?"
 
-    # game/script.rpy:89
-    old "sis"
-    new ""
+    "Remake Character":
+        jump make_mc
+    
+    "Start Game":
+        jump day_0101_waking_from_a_dream
 
-    # game/script.rpy:182
-    old "Now be honest. Are you 18 years old or older?"
-    new ""
+    "Skip Intro (New Intro, so don't)":
+        jump day_0101_the_news_2
 
-    # game/script.rpy:182
-    old "Yes"
-    new ""
+label sleep_time:
 
-    # game/script.rpy:182
-    old "No"
-    new ""
+    scene black
+    with shift_eyes(True, 0.8)
 
-    # game/script.rpy:196
-    old "What would you like to do?"
-    new ""
+    pause 0.5
 
-    # game/script.rpy:196
-    old "Remake Character"
-    new ""
+    scene bg bed fembro:
+        background_art
+    with shift_eyes(False, 0.8)
 
-    # game/script.rpy:196
-    old "Start Game"
-    new ""
-
-    # game/script.rpy:196
-    old "Skip Intro (New Intro, so don't)"
-    new ""
-
+    jump loc_bed_fembro

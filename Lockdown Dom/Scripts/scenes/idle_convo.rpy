@@ -1,510 +1,565 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+define busy = {
+    "lilsis": [],
+    "bigsis": [],
+    "fembro": [],
+    "mom": [],
+    "aunt": []
+}
 
-# game/scenes/idle_convo.rpy:76
-translate spanish bath_fembro_idle_0ae9bcd0:
+define scheduled = {
+    "lilsis": {
+    },
+    "bigsis": {
+    },
+    "fembro": {
+        "living_fembro": [[[1], [4, 5, 6]]],
+        "kitchen_fembro": [[[2], [0, 1, 2, 3]], [[0], [4, 5, 6]]]
+    },
+    "mom": {
+        "living_mom": [[[2], [4, 5, 6]]],
+        "kitchen_mom": [[[3], [4, 5, 6]]]
+    },
+    "aunt": {
+        "living_aunt": [[[2], [0, 1, 2, 3, 4]]],
+        "kitchen_aunt": [[[0], [5, 6]], [[3], [5, 6]]]
+    }
+}
 
-    # ""
+label bath_cabinat_idle:
+    scene bg bath:
+        background_art
+
+    $ thought_bubble(
+        None, _("Each person has a towel for every part of the body."),
+        _("I only need one.")
+        )
+
+    jump loc_bath
+
+label bath_sink_idle:
+    scene bg bath:
+        background_art
+
+    $ thought_bubble(
+        None, _("Migraine pills."),
+        _("The family's greatest weapon.")
+        )
+
+    jump loc_bath
+
+label toilet_idle:
+    scene bg bath:
+        background_art
+
+    $ thought_bubble(
+        None, _("Rather clean for a toilet."),
+        _("I don't need to go.")
+        )
+
+    jump loc_bath
+
+label shower_idle:
+    scene bg bath:
+        background_art
+
+    $ thought_bubble(
+        None, "There's no need.",
+        "I have a dirty mind, but my body's clean."
+        )
+
+    jump loc_bath
+
+label bath_fembro_idle:
+    scene bg bath:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:84
-translate spanish bath_lilsis_idle_0ae9bcd0:
+    jump loc_bath
 
-    # ""
+label bath_lilsis_idle:
+    scene bg bath:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:92
-translate spanish bath_bigsis_idle_0ae9bcd0:
+    jump loc_bath
 
-    # ""
+label bath_bigsis_idle:
+    scene bg bath:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:100
-translate spanish bath_aunt_idle_0ae9bcd0:
+    jump loc_bath
 
-    # ""
+label bath_aunt_idle:
+    scene bg bath:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:108
-translate spanish bath_mom_idle_0ae9bcd0:
+    jump loc_bath
 
-    # ""
+label bath_mom_idle:
+    scene bg bath:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:126
-translate spanish fembro_fembro_idle_3ba5b28b:
+    jump loc_bath
 
-    # "Wow..."
+label fembro_fembro_idle:
+    scene bg bed fembro:
+        background_art
+
+    if (daytime == 0):
+        
+        show fembro disgust at fit, set_place(8)
+        #Focused
+
+        pause 0.5
+        
+        show main casual aware at fit, flip, set_place(3)
+        with easeinleft
+
+        "Wow..."
+
+        $ thought_bubble(
+            main.c, "How do you play like that?", 
+            "That is not good gaming posture."
+            )
+
+        show fembro non at fit, flip
+
+        fembro.c "Huh?"
+
+        $ thought_bubble(
+            main.c, "You're bent over. Your butt is almost higher than your head.", 
+            "I'm not complaining, but..."
+            )
+
+        main.c "And you're still demolishing everyone else?"
+
+        "[fembro_nouns[0]!c] has trouble looking you in the eyes."
+
+        fembro.c "I just like standing like that."
+        
+        show fembro sad at fit
+        
+        fembro.c "I got used to it, I guess."
+
+    elif (daytime == 1):
+        
+        show fembro happy at fit, flip(1)(), set_place(7)
+        #Joyful
+
+        pause 0.5
+        
+        show main casual calm at fit, flip, set_place(3)
+        with easeinleft
+
+        "It's nice to see [fembro.name] relaxing every once in a while."
+
+        "Mom works [fembro_nouns[1]] pretty hard around the house."
+
+    elif (daytime == 3):
+
+        "You squeeze into bed beside [fembro.name]."
+
+        if check_if_any_scenes("night"):
+            call screen confirm_menu('sleep')
+        else:
+            $ sleep_night()
+
+    jump loc_bed_fembro
+
+label fembro_sisbf_idle:
+    scene bg bed fembro:
+        background_art
+
     ""
 
-# game/scenes/idle_convo.rpy:135
-translate spanish fembro_fembro_idle_76882302:
+    jump loc_bed_fembro
 
-    # fembro.c "Huh?"
-    fembro.c ""
+label aunt_aunt_idle:
+    scene bg bed aunt:
+        background_art
 
-# game/scenes/idle_convo.rpy:142
-translate spanish fembro_fembro_idle_bc5972e3:
+    if (daytime == 0):
+        
+        show aunt non at fit, set_place(8)
+        #Focused
+        
+        show main casual aware at fit, flip, set_place(3)
+        with easeinleft
 
-    # main.c "And you're still demolishing everyone else?"
-    main.c ""
+        "Wow..."
 
-# game/scenes/idle_convo.rpy:144
-translate spanish fembro_fembro_idle_c8ac3b63:
+        $ thought_bubble(
+            main.c, "How do you play like that?", 
+            "That is not good gaming posture."
+            )
 
-    # "[fembro_nouns[0]!c] has trouble looking you in the eyes."
+        show fembro non at fit, flip
+
+        fembro.c "Huh?"
+
+        $ thought_bubble(
+            main.c, "You're bent over. Your butt is almost higher than your head.", 
+            "I'm not complaining, but..."
+            )
+
+        main.c "And you're still demolishing everyone else?"
+
+        "[fembro_nouns[0]!c] has trouble looking you in the eyes."
+
+        fembro.c "I just like standing like that."
+        
+        show fembro sad at fit
+        
+        fembro.c "I got used to it, I guess."
+
+    elif (daytime == 1):
+        
+        show fembro happy at fit, flip(1)(), set_place(7)
+        #Joyful
+
+        pause 0.5
+        
+        show main casual calm at fit, flip, set_place(3)
+        with easeinleft
+
+        "It's nice to see [fembro.name] relaxing every once in a while."
+
+        "Mom works [fembro_nouns[1]] pretty hard around the house."
+
+    elif (daytime == 3):
+
+        "You squeeze into bed beside [fembro.name]."
+
+        call screen confirm_menu('sleep')
+
+    jump loc_bed_fembro
+
+label punchbag_idle:
+    scene bg bed aunt:
+        background_art
+
+    "Now you know why [aunt.name] can knock people out."
+
+    jump loc_bed_aunt
+
+label workbench_idle:
+    scene bg bed aunt:
+        background_art
+
+    "You bet [aunt.name] could bench press you easily."
+
+    jump loc_bed_aunt
+
+label kitchen_stove_idle:
+    scene bg kitchen:
+        background_art
+
+    "You feel like cooking food."
+
+    call screen confirm_menu("day00_good_cook")
+
+label kitchen_fembro_idle:
+    scene bg kitchen:
+        background_art
+        
+    show fembro happy at fit, set_place(8)
+    #Focused
+
+    pause 0.5
+    
+    show main calm at fit, set_place(3)
+    with easeinleft
+
+    $ thought_bubble(
+        fembro.c, _("Oh, hey [main.name], do you want me to cook something for you?"), 
+        _("Huh... I didn't know [fembro.name] could cook.")
+        )
+
+    show fembro sad at fit
+    #pout
+
+    main.c "Nah, I'm good. Thanks anyway though."
+
+    jump loc_kitchen
+
+label kitchen_lilsis_idle:
+    scene bg kitchen:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:146
-translate spanish fembro_fembro_idle_4a7b66d2:
+    jump loc_kitchen
 
-    # fembro.c "I just like standing like that."
-    fembro.c ""
-
-# game/scenes/idle_convo.rpy:150
-translate spanish fembro_fembro_idle_46139808:
-
-    # fembro.c "I got used to it, I guess."
-    fembro.c ""
-
-# game/scenes/idle_convo.rpy:162
-translate spanish fembro_fembro_idle_17d1f21f:
-
-    # "It's nice to see [fembro.name] relaxing every once in a while."
+label kitchen_bigsis_idle:
+    scene bg kitchen:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:164
-translate spanish fembro_fembro_idle_095d7344:
+    jump loc_kitchen
 
-    # "Mom works [fembro_nouns[1]] pretty hard around the house."
+label kitchen_aunt_idle:
+    scene bg kitchen:
+        background_art
+    
+    if (daytime < 2):
+
+        show aunt happy at fit, set_place(7)
+
+        show main calm at fit, set_place(3)
+
+        main.c "What's that white stuff you're putting in the eggs?"
+
+        #show aunt big smile
+
+        aunt.c "The shells."
+
+        "You pause for a good while."
+
+        #show aunt eyebrow raised
+
+        aunt.c "Would you rather I eat it all raw."
+
+        show main fear at fit
+
+        "Your look of horror says it all."
+
+        "You're pretty sure she's joking, but you don't want to test it."
+        
+    elif (daytime > 2):
+
+        show aunt happy at fit, set_place(7), flip
+
+        show main calm at fit, set_place(3)
+
+        aunt.c "You're up pretty late."
+
+        show main surprise at fit
+
+        main.c "Oh, well..."
+
+        #show aunt big smile
+
+        aunt.c "Relax, you're a 'grown-up' now."
+
+        show main calm at fit
+
+        aunt.c "I'm not going to spank you or anything."
+
+        aunt.c "Unless you want me to."
+
+        if dominant:
+
+            show aunt surprise at fit, set_place(7), flip
+
+            main.c "I prefer to be the one doing the spanking."
+
+            "She clears her throat and gets back to organizing the spices."
+
+        else:
+
+            "..."
+
+            main.c "Good to know."
+
+            "Your voice cracked."
+ 
+    jump loc_kitchen
+
+label kitchen_mom_idle:
+    scene bg kitchen:
+        background_art
+
+    show mom phone annoy at fit(True, 7)
+
+    show main calm at fit(False, 3)
+
+    main.c "..."
+
+    mom.c "..."
+
+    "..."
+
+    main.c "Hey mo-"
+
+    $ thought_bubble(
+        mom.c, "Do me a favor and go to bed, [main.name].", 
+        "Oof"
+        )
+    
+    jump loc_kitchen
+
+label kitchen_sisbf_idle:
+    scene bg kitchen:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:168
-translate spanish fembro_fembro_idle_0d5bd219:
+    jump loc_kitchen
 
-    # "You squeeze into bed beside [fembro.name]."
+label tv_idle:
+    scene bg living:
+        background_art
+    
+    "There's never anything good on TV, even now."
+
+    jump loc_living
+
+label living_fembro_idle:
+    scene bg living:
+        background_art
+
+    show main calm at fit, right
+
+    show fembro disgust at fit(True, 5)
+
+    show mom disgust at fit, flip, set_place(3)
+
+    "There's [fembro.name], still failing miserably to massage your mother."
+
+    "You think [fembro_nouns[0]]'s making the stress worse..."
+
+    show fembro surprise at fit, flip
+
+    "When you step over, [fembro.name] pleads silently for you not to let Mom see you."
+
+    show fembro sad at fit, flip(1)()
+
+    "[fembro_nouns[0]!c] really wants to do a good job on [fembro_nouns[2]] own."
+
+    "You're rooting for [fembro_nouns[1]]."
+
+    show mom sad at fit, flip(1)()
+
+    "And hoping Mom can survive."
+
+    jump loc_living
+
+label living_lilsis_idle:
+    scene bg living:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:181
-translate spanish fembro_sisbf_idle_0ae9bcd0:
+    jump loc_living
 
-    # ""
+label living_bigsis_idle:
+    scene bg living:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:197
-translate spanish aunt_aunt_idle_3ba5b28b:
+    jump loc_living
 
-    # "Wow..."
+label living_aunt_idle:
+    scene bg living:
+        background_art
+    
     ""
 
-# game/scenes/idle_convo.rpy:206
-translate spanish aunt_aunt_idle_76882302:
+    jump loc_living
 
-    # fembro.c "Huh?"
-    fembro.c ""
+label living_mom_idle:
 
-# game/scenes/idle_convo.rpy:213
-translate spanish aunt_aunt_idle_bc5972e3:
+    scene bg living:
+        background_art
+    
+    show mom phone disgust at fit(False, 7)
 
-    # main.c "And you're still demolishing everyone else?"
-    main.c ""
+    show main calm at fit(False, 3)
 
-# game/scenes/idle_convo.rpy:215
-translate spanish aunt_aunt_idle_c8ac3b63:
+    mom.c "What is this ad."
 
-    # "[fembro_nouns[0]!c] has trouble looking you in the eyes."
-    ""
+    "Your mom's savvy enough to know that the internet is full of scams, but not aware enough to know they're fake."
 
-# game/scenes/idle_convo.rpy:217
-translate spanish aunt_aunt_idle_4a7b66d2:
+    "She really believes that Nigerian princes are begging for money."
 
-    # fembro.c "I just like standing like that."
-    fembro.c ""
+    "But she doesn't trust them to pay her back."
 
-# game/scenes/idle_convo.rpy:221
-translate spanish aunt_aunt_idle_46139808:
+    show mom point annoy at fit(True)
 
-    # fembro.c "I got used to it, I guess."
-    fembro.c ""
+    mom.c "[main.name], how do these people know where we live?"
 
-# game/scenes/idle_convo.rpy:233
-translate spanish aunt_aunt_idle_17d1f21f:
+    "!!!"
 
-    # "It's nice to see [fembro.name] relaxing every once in a while."
-    ""
+    main.c "What?!"
 
-# game/scenes/idle_convo.rpy:235
-translate spanish aunt_aunt_idle_095d7344:
+    show mom back calm
 
-    # "Mom works [fembro_nouns[1]] pretty hard around the house."
-    ""
+    mom.c "This ad a while back said there are desperate milfs in our area."
 
-# game/scenes/idle_convo.rpy:239
-translate spanish aunt_aunt_idle_0d5bd219:
+    mom.c "I asked [bigsis.name] what a milf was, and she said I was one."
 
-    # "You squeeze into bed beside [fembro.name]."
-    ""
+    mom.c "Now the same ad is showing our town."
 
-# game/scenes/idle_convo.rpy:249
-translate spanish punchbag_idle_617109e5:
+    show main annoy
 
-    # "Now you know why [aunt.name] can knock people out."
-    ""
+    main.c "..."
 
-# game/scenes/idle_convo.rpy:257
-translate spanish workbench_idle_f424a825:
+    main.c "[bigsis.name], you suck!"
 
-    # "You bet [aunt.name] could bench press you easily."
-    ""
+    bigsis.c "And swallow!"
 
-# game/scenes/idle_convo.rpy:265
-translate spanish kitchen_stove_idle_2c92603f:
+    show mom phone fear at fit
 
-    # "You feel like cooking food."
-    ""
+    $ thought_bubble(
+        mom.c, "How did they get our information?", 
+        "I don't even know how to unpack this one."
+        )
 
-# game/scenes/idle_convo.rpy:289
-translate spanish kitchen_fembro_idle_472c74dc:
+    show main at fit(True)
+    with None
 
-    # main.c "Nah, I'm good. Thanks anyway though."
-    main.c ""
+    hide main
+    with easeoutleft
 
-# game/scenes/idle_convo.rpy:297
-translate spanish kitchen_lilsis_idle_0ae9bcd0:
+    jump loc_living
 
-    # ""
-    ""
+label breaker_idle:
+    scene bg basement:
+        background_art
 
-# game/scenes/idle_convo.rpy:305
-translate spanish kitchen_bigsis_idle_0ae9bcd0:
+    $ thought_bubble(
+        None, _("This controls the power."),
+        _("Now we're playing with power.")
+        )
 
-    # ""
-    ""
+    jump loc_basement
 
-# game/scenes/idle_convo.rpy:319
-translate spanish kitchen_aunt_idle_fdc67257:
+label heater_idle:
+    scene bg basement:
+        background_art
+    
+    "What would you even need with this?"
 
-    # main.c "What's that white stuff you're putting in the eggs?"
-    main.c ""
+    jump loc_basement
 
-# game/scenes/idle_convo.rpy:323
-translate spanish kitchen_aunt_idle_85fb2639:
+label laundry_idle:
+    scene bg basement:
+        background_art
 
-    # aunt.c "The shells."
-    aunt.c ""
+    $ thought_bubble(
+        None, _("Man, I'm a pervert."),
+        _("We all know what you're thinking")
+        )
 
-# game/scenes/idle_convo.rpy:325
-translate spanish kitchen_aunt_idle_355b696e:
+    jump loc_basement
 
-    # "You pause for a good while."
-    ""
+label basement_clutter_idle:
+    scene bg basement:
+        background_art
+    
+    $ thought_bubble(
+        None, _("Too much stuff to sort through."),
+        _("Is that a frog?")
+        )
 
-# game/scenes/idle_convo.rpy:329
-translate spanish kitchen_aunt_idle_581c4a3e:
-
-    # aunt.c "Would you rather I eat it all raw."
-    aunt.c ""
-
-# game/scenes/idle_convo.rpy:333
-translate spanish kitchen_aunt_idle_bb32f334:
-
-    # "Your look of horror says it all."
-    ""
-
-# game/scenes/idle_convo.rpy:335
-translate spanish kitchen_aunt_idle_91fac16a:
-
-    # "You're pretty sure she's joking, but you don't want to test it."
-    ""
-
-# game/scenes/idle_convo.rpy:343
-translate spanish kitchen_aunt_idle_f16e4645:
-
-    # aunt.c "You're up pretty late."
-    aunt.c ""
-
-# game/scenes/idle_convo.rpy:347
-translate spanish kitchen_aunt_idle_911b3d08:
-
-    # main.c "Oh, well..."
-    main.c ""
-
-# game/scenes/idle_convo.rpy:351
-translate spanish kitchen_aunt_idle_925f7ff7:
-
-    # aunt.c "Relax, you're a 'grown-up' now."
-    aunt.c ""
-
-# game/scenes/idle_convo.rpy:355
-translate spanish kitchen_aunt_idle_fd21a508:
-
-    # aunt.c "I'm not going to spank you or anything."
-    aunt.c ""
-
-# game/scenes/idle_convo.rpy:357
-translate spanish kitchen_aunt_idle_49ab5fc5:
-
-    # aunt.c "Unless you want me to."
-    aunt.c ""
-
-# game/scenes/idle_convo.rpy:363
-translate spanish kitchen_aunt_idle_fa9ec291:
-
-    # main.c "I prefer to be the one doing the spanking."
-    main.c ""
-
-# game/scenes/idle_convo.rpy:365
-translate spanish kitchen_aunt_idle_5a2ef944:
-
-    # "She clears her throat and gets back to organizing the spices."
-    ""
-
-# game/scenes/idle_convo.rpy:369
-translate spanish kitchen_aunt_idle_a20cefa7:
-
-    # "..."
-    ""
-
-# game/scenes/idle_convo.rpy:371
-translate spanish kitchen_aunt_idle_099d1145:
-
-    # main.c "Good to know."
-    main.c ""
-
-# game/scenes/idle_convo.rpy:373
-translate spanish kitchen_aunt_idle_7d4102d8:
-
-    # "Your voice cracked."
-    ""
-
-# game/scenes/idle_convo.rpy:385
-translate spanish kitchen_mom_idle_c008609f:
-
-    # main.c "..."
-    main.c ""
-
-# game/scenes/idle_convo.rpy:387
-translate spanish kitchen_mom_idle_45d0a5a9:
-
-    # mom.c "..."
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:389
-translate spanish kitchen_mom_idle_a20cefa7:
-
-    # "..."
-    ""
-
-# game/scenes/idle_convo.rpy:391
-translate spanish kitchen_mom_idle_c772bc0c:
-
-    # main.c "Hey mo-"
-    main.c ""
-
-# game/scenes/idle_convo.rpy:404
-translate spanish kitchen_sisbf_idle_0ae9bcd0:
-
-    # ""
-    ""
-
-# game/scenes/idle_convo.rpy:412
-translate spanish tv_idle_7cc8fc12:
-
-    # "There's never anything good on TV, even now."
-    ""
-
-# game/scenes/idle_convo.rpy:426
-translate spanish living_fembro_idle_f8e2a6a1:
-
-    # "There's [fembro.name], still failing miserably to massage your mother."
-    ""
-
-# game/scenes/idle_convo.rpy:428
-translate spanish living_fembro_idle_2c73bae4:
-
-    # "You think [fembro_nouns[0]]'s making the stress worse..."
-    ""
-
-# game/scenes/idle_convo.rpy:432
-translate spanish living_fembro_idle_bb8f2873:
-
-    # "When you step over, [fembro.name] pleads silently for you not to let Mom see you."
-    ""
-
-# game/scenes/idle_convo.rpy:436
-translate spanish living_fembro_idle_f935c9da:
-
-    # "[fembro_nouns[0]!c] really wants to do a good job on [fembro_nouns[2]] own."
-    ""
-
-# game/scenes/idle_convo.rpy:438
-translate spanish living_fembro_idle_fb193c09:
-
-    # "You're rooting for [fembro_nouns[1]]."
-    ""
-
-# game/scenes/idle_convo.rpy:442
-translate spanish living_fembro_idle_a74add94:
-
-    # "And hoping Mom can survive."
-    ""
-
-# game/scenes/idle_convo.rpy:450
-translate spanish living_lilsis_idle_0ae9bcd0:
-
-    # ""
-    ""
-
-# game/scenes/idle_convo.rpy:458
-translate spanish living_bigsis_idle_0ae9bcd0:
-
-    # ""
-    ""
-
-# game/scenes/idle_convo.rpy:466
-translate spanish living_aunt_idle_0ae9bcd0:
-
-    # ""
-    ""
-
-# game/scenes/idle_convo.rpy:479
-translate spanish living_mom_idle_d4dd70c5:
-
-    # mom.c "What is this ad."
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:481
-translate spanish living_mom_idle_fae204da:
-
-    # "Your mom's savvy enough to know that the internet is full of scams, but not aware enough to know they're fake."
-    ""
-
-# game/scenes/idle_convo.rpy:483
-translate spanish living_mom_idle_a7073f1e:
-
-    # "She really believes that Nigerian princes are begging for money."
-    ""
-
-# game/scenes/idle_convo.rpy:485
-translate spanish living_mom_idle_c31b1241:
-
-    # "But she doesn't trust them to pay her back."
-    ""
-
-# game/scenes/idle_convo.rpy:489
-translate spanish living_mom_idle_02e9d3ec:
-
-    # mom.c "[main.name], how do these people know where we live?"
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:491
-translate spanish living_mom_idle_cc9a5909:
-
-    # "!!!"
-    ""
-
-# game/scenes/idle_convo.rpy:493
-translate spanish living_mom_idle_856bc133:
-
-    # main.c "What?!"
-    main.c ""
-
-# game/scenes/idle_convo.rpy:497
-translate spanish living_mom_idle_3d66143b:
-
-    # mom.c "This ad a while back said there are desperate milfs in our area."
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:499
-translate spanish living_mom_idle_1f0570de:
-
-    # mom.c "I asked [bigsis.name] what a milf was, and she said I was one."
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:501
-translate spanish living_mom_idle_72a40dc2:
-
-    # mom.c "Now the same ad is showing our town."
-    mom.c ""
-
-# game/scenes/idle_convo.rpy:505
-translate spanish living_mom_idle_c008609f:
-
-    # main.c "..."
-    main.c ""
-
-# game/scenes/idle_convo.rpy:507
-translate spanish living_mom_idle_be320a62:
-
-    # main.c "[bigsis.name], you suck!"
-    main.c ""
-
-# game/scenes/idle_convo.rpy:509
-translate spanish living_mom_idle_6d616694:
-
-    # bigsis.c "And swallow!"
-    bigsis.c ""
-
-# game/scenes/idle_convo.rpy:541
-translate spanish heater_idle_36f60f16:
-
-    # "What would you even need with this?"
-    ""
-
-translate spanish strings:
-
-    # game/scenes/idle_convo.rpy:32
-    old "Each person has a towel for every part of the body."
-    new ""
-
-    # game/scenes/idle_convo.rpy:32
-    old "I only need one."
-    new ""
-
-    # game/scenes/idle_convo.rpy:43
-    old "Migraine pills."
-    new ""
-
-    # game/scenes/idle_convo.rpy:43
-    old "The family's greatest weapon."
-    new ""
-
-    # game/scenes/idle_convo.rpy:54
-    old "Rather clean for a toilet."
-    new ""
-
-    # game/scenes/idle_convo.rpy:54
-    old "I don't need to go."
-    new ""
-
-    # game/scenes/idle_convo.rpy:281
-    old "Oh, hey [main.name], do you want me to cook something for you?"
-    new ""
-
-    # game/scenes/idle_convo.rpy:281
-    old "Huh... I didn't know [fembro.name] could cook."
-    new ""
-
-    # game/scenes/idle_convo.rpy:530
-    old "This controls the power."
-    new ""
-
-    # game/scenes/idle_convo.rpy:530
-    old "Now we're playing with power."
-    new ""
-
-    # game/scenes/idle_convo.rpy:549
-    old "Man, I'm a pervert."
-    new ""
-
-    # game/scenes/idle_convo.rpy:549
-    old "We all know what you're thinking"
-    new ""
-
-    # game/scenes/idle_convo.rpy:560
-    old "Too much stuff to sort through."
-    new ""
-
-    # game/scenes/idle_convo.rpy:560
-    old "Is that a frog?"
-    new ""
-
+    jump loc_basement

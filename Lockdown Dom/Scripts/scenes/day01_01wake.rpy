@@ -1,1304 +1,1277 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+label day_0101_waking_from_a_dream:
+        
+    if not _in_replay:
+        $ thought_bubble(
+            None, _("(Narration and Dialogue)"), 
+            _("([main.name]'s Thoughts)")
+            )
+    
+    camera:
+        perspective True
+
+    if _in_replay:
+        ""
+
+
+    scene black
+
+    camera:
+        subpixel True
+        pos (21, -180) zpos -800.0 blur 30
+        easein2 1.5 pos (0, 0) zpos 0.0 blur 0
+
+    scene lilsis marker smirk
+    with shift_eyes(False, 1.5)
+
+    camera:
+        pos (0, 0) zpos 0.0 blur 0
+    
+    pause 0.5
+        
+    if not _in_replay:
+        $ lilsis = name_character(char_default_names["lilsis"], "lilsis")
+
+    lilsis.c "Hehehe."
+
+    main.c "Whah... [lilsis.name]?"
+
+    scene lilsis marker oops
+
+    lilsis.c "Oh, uh... morning [main.name]."
+
+    main.c "What are you-?"
+
+    $ thought_bubble(
+        None, _("Your sister quickly rolls off the bed."), 
+        _("A marker?")
+        )
+
+    scene bg bed ian:
+        background_art
+        
+    camera:
+        subpixel True pos (-5, -86) zpos -700.0
+
+    show main underwear surprise at fit(False, 4)
+    #Shocked, just waking up, maybe groggy
+
+    show lilsis pajama surprise lift at fit(True, 6)
+    #Surprised that he woke up, but not shocked
+
+    pause 0.5
+    camera:
+        subpixel True
+        pos (-5, -86) zpos -700.0
+        easein2 0.10 pos (0, 0) zpos 0.0
+    show main fear at flip:
+        subpixel True 
+        set_place(4)
+        easein2 0.10 set_place(1)
+    with Pause(0.20)
+    camera:
+        subpixel True pos (0, 0) zpos 0 zoom 1.0
+    show main fear:
+    #Upset and trying to figure out what happened to his face
+        set_place(1)
 
-# game/scenes/day01_01wake.rpy:13
-translate spanish day_0101_waking_from_a_dream_0ae9bcd0:
+    $ thought_bubble(
+        main.c, _("Argh, great! Really mature [lilsis.name]!"), 
+        _("Again with the pranks?!")
+        )
 
-    # ""
-    ""
-
-# game/scenes/day01_01wake.rpy:34
-translate spanish day_0101_waking_from_a_dream_48104f90:
-
-    # lilsis.c "Hehehe."
-    lilsis.c ""
-
-# game/scenes/day01_01wake.rpy:36
-translate spanish day_0101_waking_from_a_dream_d13ed381:
-
-    # main.c "Whah... [lilsis.name]?"
-    main.c ""
-
-# game/scenes/day01_01wake.rpy:40
-translate spanish day_0101_waking_from_a_dream_e248bf2c:
-
-    # lilsis.c "Oh, uh... morning [main.name]."
-    lilsis.c ""
-
-# game/scenes/day01_01wake.rpy:42
-translate spanish day_0101_waking_from_a_dream_b6d12835:
-
-    # main.c "What are you-?"
-    main.c ""
-
-# game/scenes/day01_01wake.rpy:96
-translate spanish day_0101_waking_from_a_dream_1bdea298:
-
-    # lilsis.c "Oh no, it's super childish. Still funny though. "
-    lilsis.c ""
-
-# game/scenes/day01_01wake.rpy:101
-translate spanish day_0101_waking_from_a_dream_894fdd10:
-
-    # main.c "What did you draw? How bad is it?"
-    main.c ""
-
-# game/scenes/day01_01wake.rpy:103
-translate spanish day_0101_waking_from_a_dream_d0493d88:
-
-    # lilsis.c "What's the fun if I tell you?"
-    lilsis.c ""
-
-# game/scenes/day01_01wake.rpy:129
-translate spanish day_0101_waking_from_a_dream_db7df1b8:
-
-    # "You lunge at her, but She's already heading out the door."
-    ""
-
-# game/scenes/day01_01wake.rpy:131
-translate spanish day_0101_waking_from_a_dream_ceb5cfc4:
-
-    # lilsis.c "Catch me if you can!"
-    lilsis.c ""
-
-# game/scenes/day01_01wake.rpy:147
-translate spanish day_0101_waking_from_a_dream_124cb4a0:
-
-    # main.c "Get back here!"
-    main.c ""
-
-# game/scenes/day01_01wake.rpy:167
-translate spanish day_0101_getting_got_74c62ac6:
-
-    # "You stumble into the hall, pulling on your clothes."
-    ""
-
-# game/scenes/day01_01wake.rpy:176
-translate spanish day_0101_getting_got_970e743b:
-
-    # "You don't notice that the restroom is steamy."
-    ""
+    $ thought_bubble(
+        None, _("You move carefully to not expose your underwear."), 
+        _("I hope she didn't see the wet spot.")
+        )
 
-# game/scenes/day01_01wake.rpy:178
-translate spanish day_0101_getting_got_6d0f34e1:
+    show lilsis smug hip:
+    #Smug and arrogant grin
+        subpixel True 
+        set_place(6)
+        easein2 0.10 set_place(7)
+    with Pause(0.10)
+    show lilsis smug:
+        set_place(7)
 
-    # "You look in, and..."
-    ""
-
-# game/scenes/day01_01wake.rpy:191
-translate spanish day_0101_getting_got_a475e0af:
-
-    # bigsis.c "Stupid, tiny towels."
-    bigsis.c ""
-
-# game/scenes/day01_01wake.rpy:239
-translate spanish day_0101_getting_got_6634cb37:
-
-    # bigsis.c "Don't sneak up on me, bitch!"
-    bigsis.c ""
-
-# game/scenes/day01_01wake.rpy:253
-translate spanish day_0101_getting_got_1c66c41c:
-
-    # main.c "Hey, I'm sorry! I didn't know you were in there."
-    main.c ""
+    lilsis.c "Oh no, it's super childish. Still funny though. " 
 
-# game/scenes/day01_01wake.rpy:255
-translate spanish day_0101_getting_got_2f6c06c4:
+    show main at fit
+    #Frustrated and upset, but not raging.
 
-    # bigsis.c "Tsh"
-    bigsis.c ""
+    main.c "What did you draw? How bad is it?"
 
-# game/scenes/day01_01wake.rpy:262
-translate spanish day_0101_getting_got_1d113275:
+    lilsis.c "What's the fun if I tell you?"
 
-    # main.c "Agh!"
-    main.c ""
+    $ thought_bubble(
+        None, _("You give up on covering."), 
+        _("That's it!")
+        )
 
-# game/scenes/day01_01wake.rpy:266
-translate spanish day_0101_getting_got_e685d34a:
+    
+    show lilsis:
+        subpixel True 
+        set_place(7)
+        easein2 0.10 set_place(9)
+    show main anger:
+    #Rage
+        subpixel True 
+        set_place(1)
+        easein2 0.30 set_place(5)
+    with Pause(0.30)
+    show lilsis:
+        set_place(9)
+    show main anger:
+        set_place(5)
 
-    # "Before you can react, there's a foot firmly planted in your crotch."
-    ""
-
-# game/scenes/day01_01wake.rpy:268
-translate spanish day_0101_getting_got_0d8916ed:
-
-    # "Your legs give out underneath you, unable to stand after such a devastating strike."
-    ""
-
-# game/scenes/day01_01wake.rpy:270
-translate spanish day_0101_getting_got_3592985c:
+    show lilsis happy at fit(False)
+    #Big, self-satisfied, smug smile.
 
-    # "Seems like [bigsis.name]'s getting rusty..."
-    ""
+    "You lunge at her, but She's already heading out the door."
 
-# game/scenes/day01_01wake.rpy:272
-translate spanish day_0101_getting_got_ddc84951:
+    lilsis.c "Catch me if you can!"
 
-    # "Thankfully."
-    ""
+    show main fear erect
+    #blushing in surprise at his own horniness.
 
-# game/scenes/day01_01wake.rpy:283
-translate spanish day_0101_getting_got_12c049f8:
+    $ thought_bubble(
+        None, _("She says, slapping her ass to mock you."), 
+        _("That shouldn't be turning me on.")
+        ) 
 
-    # bigsis.c "That's what you get for barging in."
-    bigsis.c ""
+    show main anger soft
+    #Angry again
 
-# game/scenes/day01_01wake.rpy:312
-translate spanish day_0101_getting_got_3b4448d1:
+    hide lilsis
+    with easeoutright
 
-    # "Even now, you're not safe. She hooks her foot passed your hand, hitting the underside of your balls."
-    ""
+    main.c "Get back here!"
 
-# game/scenes/day01_01wake.rpy:314
-translate spanish day_0101_getting_got_f7a73338:
+    hide main
+    with easeoutright
 
-    # main.c "Fu-huck"
-    main.c ""
+    hide lilsis
 
-# game/scenes/day01_01wake.rpy:321
-translate spanish day_0101_getting_got_e6255d0d:
+    $ persistent.replay_scenes.append('day_0101_waking_from_a_dream')
+    $ renpy.end_replay()
 
-    # "Alright. Not rusty. She's Stainless steel."
-    ""
+    call screen bed_main_nav
 
-# game/scenes/day01_01wake.rpy:323
-translate spanish day_0101_getting_got_1e1e26eb:
+label day_0101_getting_got:
 
-    # bigsis.c "That's for sneaking up on me."
-    bigsis.c ""
+    camera:
+        perspective True
 
-# game/scenes/day01_01wake.rpy:332
-translate spanish day_0101_getting_got_011ef3ea:
+    scene bg stairs:
+        background_art
 
-    # "She finishes drying herself as you writhe in pain."
-    ""
+    "You stumble into the hall, pulling on your clothes."
 
-# game/scenes/day01_01wake.rpy:338
-translate spanish day_0101_getting_got_a9642a5a:
+    $ thought_bubble(
+        None, _("You rush to the restroom."), 
+        _("Let's see the damage...")
+        )
 
-    # "By the time you get up, [bigsis.name]'s already dressed."
-    ""
+    scene door bath steam
 
-# game/scenes/day01_01wake.rpy:343
-translate spanish day_0101_getting_got_849983a5:
+    "You don't notice that the restroom is steamy."
 
-    # main.c "Where did [lilsis.name] go?"
-    main.c ""
+    "You look in, and..."
 
-# game/scenes/day01_01wake.rpy:348
-translate spanish day_0101_getting_got_f9c3d5be:
+    scene bigsis shower p1
 
-    # bigsis.c "Hoe ran off to the shrimp's room."
-    bigsis.c ""
+    pause(0.7)
 
-# game/scenes/day01_01wake.rpy:350
-translate spanish day_0101_getting_got_87f559c2:
+    scene bigsis shower p2
+        
+    if not _in_replay:
+        $ bigsis = name_character(char_default_names["bigsis"], "bigsis")
 
-    # main.c "Thank. Also, what did she draw on my face!?"
-    main.c ""
+    scene bigsis shower p3
 
-# game/scenes/day01_01wake.rpy:355
-translate spanish day_0101_getting_got_cd2a631f:
+    bigsis.c "Stupid, tiny towels."
 
-    # bigsis.c "Are you a fucking idiot?"
-    bigsis.c ""
+    scene bigsis shower p4
 
-# game/scenes/day01_01wake.rpy:360
-translate spanish day_0101_getting_got_875b81b0:
+    $ thought_bubble(
+        None, _("You can't rip your eyes away from those massi-"), 
+        _("...")
+        )
 
-    # "Before you have time to respond, she goes back into the restroom, leaving the door cracked."
-    ""
+    if dominant:
 
-# game/scenes/day01_01wake.rpy:392
-translate spanish day_0101_help_from_addy_1_4d5b784d:
+        scene bg stairs:
+            background_art
 
-    # "You don't even bother knocking, nobody does for-"
-    ""
+        show main underwear surprise at fit(False, 4)
+        #snapping out of the horny trance
 
-# game/scenes/day01_01wake.rpy:396
-translate spanish day_0101_help_from_addy_1_cc9a5909:
+        show bigsis towel anger at fit(True, 7)
+        #Indignant and annoyed, angry
 
-    # "!!!"
-    ""
+        $ thought_bubble(
+            bigsis.c, _("The Fuck!?"), 
+            _("Oh Shit!")
+            )
 
-# game/scenes/day01_01wake.rpy:414
-translate spanish day_0101_help_from_addy_2_1e71a487:
+        window auto hide
+        show main fear:
+            subpixel True 
+            set_place(4)
+            easeout2 0.4 set_place(2)
+            easeout2 0.6 set_place(4)
+        show bigsis up:
+            subpixel True 
+            set_place(7)
+            easeout2 0.4 set_place(5)
+            easein2 0.6 set_place(7)
+        with Pause(1.0)
+        show main red:
+            set_place(4)
+        show bigsis point:
+            set_place(7)
+        window auto show
 
-    # fembro.c "[main.name]?!"
-    fembro.c ""
+        $ thought_bubble(
+            None, _("You just manage to dodge."), 
+            _("She's getting faster.")
+            )
 
-# game/scenes/day01_01wake.rpy:421
-translate spanish day_0101_help_from_addy_2_a64c26fc:
+        bigsis.c "Don't sneak up on me, bitch!"
 
-    # fembro.c "I am so sorry."
-    fembro.c ""
+        hide bigsis
+        with easeoutright
 
-# game/scenes/day01_01wake.rpy:423
-translate spanish day_0101_help_from_addy_2_a20cefa7:
+        $ thought_bubble(
+            None, _("[bigsis.name] finishes getting dressed right in front of you."), 
+            _("Why does she never care that I'm right here?")
+            )
 
-    # "..."
-    ""
+        show bigsis calm cross at fit(True, 8)
+        #Completely unconcerned with him.
+        with easeinright
 
-# game/scenes/day01_01wake.rpy:425
-translate spanish day_0101_help_from_addy_2_6cd5910b:
+        main.c "Hey, I'm sorry! I didn't know you were in there."
 
-    # main.c "Why are you apologizing?"
-    main.c ""
+        bigsis.c "Tsh"
 
-# game/scenes/day01_01wake.rpy:432
-translate spanish day_0101_help_from_addy_2_4b489f22:
+    else:
+        
+        scene bigsis shower kick
+        with vpunch
 
-    # fembro.c "I was getting dressed, b-but these shorts won't fit anymore."
-    fembro.c ""
+        main.c "Agh!"
 
-# game/scenes/day01_01wake.rpy:434
-translate spanish day_0101_help_from_addy_2_227df2a6:
+        if kink_ballbusting:
 
-    # "As [fembro_nouns[0]] pull on the shorts, [fembro_nouns[2]] booty jiggles."
-    ""
+            "Before you can react, there's a foot firmly planted in your crotch."
 
-# game/scenes/day01_01wake.rpy:436
-translate spanish day_0101_help_from_addy_2_91a86511:
+            "Your legs give out underneath you, unable to stand after such a devastating strike."
+        
+            "Seems like [bigsis.name]'s getting rusty..."
 
-    # "You barely manage to turn your head to be polite, but you don't manage to look away."
-    ""
+            "Thankfully."
 
-# game/scenes/day01_01wake.rpy:455
-translate spanish day_0101_help_from_addy_2_3f9b6194:
+        scene bg stairs:
+            background_art
 
-    # main.c "Hey [fembro.name], tell me."
-    main.c ""
+        show main underwear disgust at fit(False, 4)
+        #pain
 
-# game/scenes/day01_01wake.rpy:457
-translate spanish day_0101_help_from_addy_2_54f8939b:
+        show bigsis towel calm at fit(True, 7)
+        #annoyed at worst
 
-    # main.c "What did [lilsis.name] draw on my face?"
-    main.c ""
+        bigsis.c "That's what you get for barging in."
 
-# game/scenes/day01_01wake.rpy:467
-translate spanish day_0101_help_from_addy_2_3f1084b3:
+        $ thought_bubble(
+            bigsis.c, _("And this!"), 
+            _("Wha-")
+            )
 
-    # main.c "Where is she now."
-    main.c ""
+        window auto hide
+        show main surprise:
+        #pain
+            subpixel True 
+            set_height(1.5)
+            easeout2 0.4 set_height(1.5)
+            easeout2 0.6 set_height(1.65)
+        show bigsis anger:
+            subpixel True 
+            set_place(7)
+            easeout2 0.4 set_place(5)
+            easein2 0.6 set_place(7)
+        with Pause(1.2)
+        show main fear:
+        #pain
+            set_height(1.65)
+        show bigsis annoy:
+            set_place(7)
+        window auto show
 
-# game/scenes/day01_01wake.rpy:472
-translate spanish day_0101_help_from_addy_2_d2d7db02:
+        if kink_ballbusting:
 
-    # fembro.c "I... don't know"
-    fembro.c ""
+            "Even now, you're not safe. She hooks her foot passed your hand, hitting the underside of your balls."
 
-# game/scenes/day01_01wake.rpy:474
-translate spanish day_0101_help_from_addy_2_9ab2c0fb:
+        main.c "Fu-huck"
 
-    # main.c "[fembro.name], I know she's here. And you suck at lying."
-    main.c ""
+        hide main
+        with easeoutbottom
 
-# game/scenes/day01_01wake.rpy:477
-translate spanish day_0101_help_from_addy_2_93b4a29b:
+        if kink_ballbusting:
 
-    # fembro.c "I told her that when she came in here."
-    fembro.c ""
+            "Alright. Not rusty. She's Stainless steel."
 
-# game/scenes/day01_01wake.rpy:489
-translate spanish day_0101_help_from_addy_2_f641fb1f:
+        bigsis.c "That's for sneaking up on me."
 
-    # lilsis.c "Don't talk to [fembro_nouns[1]] like that, hoe."
-    lilsis.c ""
+        hide bigsis
+        with easeoutbottom
 
-# game/scenes/day01_01wake.rpy:491
-translate spanish day_0101_help_from_addy_2_79a8e5e0:
+        show bigsis annoy cross at fit(True, 7)
+        #Completely disinterested
+        with easeinbottom
 
-    # bigsis.c "I will rend your soul from your body, bitch!"
-    bigsis.c ""
+        "She finishes drying herself as you writhe in pain."
 
-# game/scenes/day01_01wake.rpy:512
-translate spanish day_0101_mom_the_dom_d59d7865:
+        show main underwear sad at fit(False, 4)
+        #woozy
+        with easeinbottom
 
-    # "You rush down the stairs, but your mom isn't anywhere in sight."
-    ""
+        "By the time you get up, [bigsis.name]'s already dressed."
+    
+    show main sad no at fit
+    #Upset at the situation
 
-# game/scenes/day01_01wake.rpy:521
-translate spanish day_0101_mom_the_dom_8107a6a0:
+    main.c "Where did [lilsis.name] go?"
+    
+    show bigsis calm
+    #Doesn't care
 
-    # main.c "Ugh, where is she?"
-    main.c ""
+    bigsis.c "Hoe ran off to the shrimp's room."
 
-# game/scenes/day01_01wake.rpy:526
-translate spanish day_0101_mom_the_dom_e8386bf2:
+    main.c "Thank. Also, what did she draw on my face!?"
+    
+    show bigsis annoy at fit(False)
+    #Rolling eyes
 
-    # fembro.c "Don't let her hear-"
-    fembro.c ""
+    bigsis.c "Are you a fucking idiot?"
+    
+    hide bigsis
+    with easeoutright
 
-# game/scenes/day01_01wake.rpy:535
-translate spanish day_0101_mom_the_dom_d479acd3:
+    "Before you have time to respond, she goes back into the restroom, leaving the door cracked."
+    
+    show main anger at fit(True)
 
-    # main.c "[fembro.name], I'm so pissed right now, I don't care if she hears me."
-    main.c ""
+    $ thought_bubble(
+        main.c, _("{i}Sigh{/i}"), 
+        _("Classic [bigsis.name].")
+        )
 
-# game/scenes/day01_01wake.rpy:547
-translate spanish day_0101_mom_the_dom_1372a3a6:
+    hide main
+    with easeoutleft
 
-    # "Her cold voice shocks your ego back to reality."
-    ""
+    $ go_down = False
 
-# game/scenes/day01_01wake.rpy:551
-translate spanish day_0101_mom_the_dom_7a3f30fa:
+    $ persistent.replay_scenes.append('day_0101_getting_got')
+    $ renpy.end_replay()
 
-    # main.c "... I was talking about... [bigsis.name]?"
-    main.c ""
+    jump loc_stairs
 
-# game/scenes/day01_01wake.rpy:555
-translate spanish day_0101_mom_the_dom_5f2170e0:
+label day_0101_help_from_addy_1:
 
-    # main.c "... I'm sorry?"
-    main.c ""
+    camera:
+        perspective True
 
-# game/scenes/day01_01wake.rpy:557
-translate spanish day_0101_mom_the_dom_a20cefa7:
+    scene bg bed fembro:
+        background_art
 
-    # "..."
-    ""
+    with None
 
-# game/scenes/day01_01wake.rpy:559
-translate spanish day_0101_mom_the_dom_4693c997:
+    show main underwear anger at fit, flip, set_place(7)
+    with easeinright
 
-    # mom.c "Go help your aunt with her bags."
-    mom.c ""
+    "You don't even bother knocking, nobody does for-"
 
-# game/scenes/day01_01wake.rpy:563
-translate spanish day_0101_mom_the_dom_a9343731:
+    scene fembro stuck pull
 
-    # main.c "... Sure..."
-    main.c ""
+    "!!!"
 
-# game/scenes/day01_01wake.rpy:567
-translate spanish day_0101_mom_the_dom_dde41efd:
+    if not _in_replay:
+        $ fembro = name_character(char_default_names["fembro"], "fembro")
 
-    # main.c "Yes ma'am"
-    main.c ""
+    $ choice_done_fembro = False
 
-# game/scenes/day01_01wake.rpy:574
-translate spanish day_0101_mom_the_dom_d3880f54:
+    if _in_replay:
+        jump day_0101_help_from_addy_2
+    else:
+        jump change_fembro
 
-    # mom.c "We already cleared out your room this morning. You're welcome."
-    mom.c ""
+label day_0101_help_from_addy_2:
 
-# game/scenes/day01_01wake.rpy:576
-translate spanish day_0101_mom_the_dom_63cee2da:
+    scene fembro stuck pull
 
-    # main.c "But-"
-    main.c ""
+    $ choice_done_fembro = True
+    
+    fembro.c "[main.name]?!"
 
-# game/scenes/day01_01wake.rpy:583
-translate spanish day_0101_mom_the_dom_909c370d:
+    $ thought_bubble(
+        None, _("..."), 
+        _("{i}ASS{/i}")
+        )
 
-    # "She already has her hand cupped around your balls."
-    ""
+    fembro.c "I am so sorry."
 
-# game/scenes/day01_01wake.rpy:585
-translate spanish day_0101_mom_the_dom_563ee5f5:
+    "..."
 
-    # "She squeezes down, and you almost faint."
-    ""
+    main.c "Why are you apologizing?"
 
-# game/scenes/day01_01wake.rpy:587
-translate spanish day_0101_mom_the_dom_1665f79e:
+    $ thought_bubble(
+        fembro.c, _("I'm... mooning you..."), 
+        _("... I'll take the pass.")
+        )
+    
+    fembro.c "I was getting dressed, b-but these shorts won't fit anymore."
 
-    # main.c "Ugh! Okay, I get it."
-    main.c ""
+    "As [fembro_nouns[0]] pull on the shorts, [fembro_nouns[2]] booty jiggles."
+    
+    "You barely manage to turn your head to be polite, but you don't manage to look away."
 
-# game/scenes/day01_01wake.rpy:589
-translate spanish day_0101_mom_the_dom_65bd6c32:
+    scene bg bed fembro:
+        background_art
 
-    # "She crushes one between her thumb and index finger, and the other between her fingers and palms."
-    ""
+    show main underwear sad erect red at fit, flip, set_place(7)
+    #blushing
 
-# game/scenes/day01_01wake.rpy:591
-translate spanish day_0101_mom_the_dom_6e8d444b:
+    show fembro sad at fit, set_place(3)
+    #pout
 
-    # mom.c "Try again."
-    mom.c ""
+    $ thought_bubble(
+        None, _("[fembro.name] finally manages to put them on."), 
+        _("Like squeezing a cantaloupe into a sock.")
+        )
 
-# game/scenes/day01_01wake.rpy:593
-translate spanish day_0101_mom_the_dom_e0791d53:
+    show main soft no at fit, flip(1)
+    #blushing
 
-    # "Her stern, cold delivery tells you she won't have mercy again."
-    ""
+    main.c "Hey [fembro.name], tell me."
 
-# game/scenes/day01_01wake.rpy:595
-translate spanish day_0101_mom_the_dom_5cd2b648:
+    main.c "What did [lilsis.name] draw on my face?"
 
-    # "Your balls already hurt from [bigsis.name]'s kick. Now you're about to cry."
-    ""
+    show fembro happy at fit
+    #show fembro blush
 
-# game/scenes/day01_01wake.rpy:597
-translate spanish day_0101_mom_the_dom_dec2b728:
+    $ thought_bubble(
+        fembro.c, _("I don't see anything except how handsome you are.."), 
+        _("Classic [lilsis.name].")
+        )
 
-    # main.c "Thank you for cleaning out my room Mommy, I'll do whatever you say!"
-    main.c ""
+    main.c "Where is she now."
 
-# game/scenes/day01_01wake.rpy:599
-translate spanish day_0101_mom_the_dom_0cf52b6f:
+    show fembro fear at fit
+    #timid looking to the side.
 
-    # mom.c "Good boy. Though, the 'mommy' part was a bit much..."
-    mom.c ""
+    fembro.c "I... don't know"
 
-# game/scenes/day01_01wake.rpy:601
-translate spanish day_0101_mom_the_dom_097503ec:
+    main.c "[fembro.name], I know she's here. And you suck at lying."
+    #sigh
 
-    # "She cringes as she wipes her hand on your shirt."
-    ""
+    fembro.c "I told her that when she came in here."
 
-# game/scenes/day01_01wake.rpy:605
-translate spanish day_0101_mom_the_dom_84a387de:
+    show fembro surprise at fit
+    #panic
+    
+    $ thought_bubble(
+        bigsis.c, (_("Hey [main.name] and pin dick, mom wants you both.") if fembro_penis else _("Hey [main.name] and zit tits, mom wants you both.")), 
+        _("Well shit, [lilsis.name] will have to wait.")
+        )
 
-    # mom.c "Listen, [main.name]. If I say your aunt gets your room, your aunt gets your room."
-    mom.c ""
+    show main disgust at fit, flip
 
-# game/scenes/day01_01wake.rpy:607
-translate spanish day_0101_mom_the_dom_f9aa5d20:
+    lilsis.c "Don't talk to [fembro_nouns[1]] like that, hoe."
 
-    # mom.c "Now suck it up and get her bags."
-    mom.c ""
+    bigsis.c "I will rend your soul from your body, bitch!"
 
-# game/scenes/day01_01wake.rpy:621
-translate spanish day_0101_mom_the_dom_8c847918:
+    hide main
+    hide fembro
+    with easeoutright
 
-    # "You stumble back as she lets go."
-    ""
+    $ go_down = True
 
-# game/scenes/day01_01wake.rpy:623
-translate spanish day_0101_mom_the_dom_897f541f:
+    $ persistent.replay_scenes.append('day_0101_help_from_addy_1')
+    $ renpy.end_replay()
 
-    # mom.c "Where are your sisters?"
-    mom.c ""
+    jump loc_stairs
 
-# game/scenes/day01_01wake.rpy:625
-translate spanish day_0101_mom_the_dom_c1955365:
+label day_0101_mom_the_dom:
 
-    # main.c "They're upstairs."
-    main.c ""
+    camera:
+        perspective True
 
-# game/scenes/day01_01wake.rpy:627
-translate spanish day_0101_mom_the_dom_5586e678:
+    scene bg living:
+        background_art
 
-    # mom.c "[fembro.name], go get them."
-    mom.c ""
+    "You rush down the stairs, but your mom isn't anywhere in sight."
 
-# game/scenes/day01_01wake.rpy:629
-translate spanish day_0101_mom_the_dom_51219838:
+    show fembro fear at fit, flip, set_place(7)
+    #worried
 
-    # fembro.c "I'd rather not. They're fighting, pretty heated too..."
-    fembro.c ""
+    show main sad at fit, flip, set_place(5)
+    #Tired
+    with easeinright
 
-# game/scenes/day01_01wake.rpy:649
-translate spanish day_0101_mom_the_dom_ee8c6452:
+    main.c "Ugh, where is she?"
 
-    # mom.c "... And you're so scared of them that won't do what {i}I{/i} say?"
-    mom.c ""
+    show main annoy at fit, flip
+    #annoyed
 
-# game/scenes/day01_01wake.rpy:651
-translate spanish day_0101_mom_the_dom_9a88cd8c:
+    fembro.c "Don't let her hear-"
 
-    # "It was at that moment, [fembro.name] knew,"
-    ""
+    show mom annoy at fit, set_place(3) behind main
+    #raised eyebrow
+    with easeinleft
 
-# game/scenes/day01_01wake.rpy:659
-translate spanish day_0101_mom_the_dom_19b387d1:
+    show fembro surprise at fit, flip(1)
+    #cringing at mom about to moshinderu Ian
 
-    # "[fembro_nouns[0]!c] fucked up."
-    ""
+    main.c "[fembro.name], I'm so pissed right now, I don't care if she hears me."
 
-# game/scenes/day01_01wake.rpy:661
-translate spanish day_0101_mom_the_dom_640591fc:
+    scene mom grab collar
 
-    # fembro.c "Oh gosh, of course, ma'am. I'll go take care of that!"
-    fembro.c ""
+    if not _in_replay:
+        $ mom = name_character(char_default_names["mom"], "mom")
 
-# game/scenes/day01_01wake.rpy:677
-translate spanish day_0101_mom_the_dom_25495209:
+    $ thought_bubble(
+        mom.c, _("Excuse me?"), 
+        _("Well... shit.")
+        )
 
-    # mom.c "God, [fembro_nouns[0]]'s pathetic."
-    mom.c ""
+    "Her cold voice shocks your ego back to reality."
 
-# game/scenes/day01_01wake.rpy:682
-translate spanish day_0101_mom_the_dom_a455f34b:
+    if dominant:
 
-    # "Your mom looks at you and scoffs."
-    ""
+        main.c "... I was talking about... [bigsis.name]?"
 
-# game/scenes/day01_01wake.rpy:684
-translate spanish day_0101_mom_the_dom_44cc3d70:
+    else:
 
-    # mom.c "And you... Go make yourself useful and get your aunt's bags!"
-    mom.c ""
+        main.c "... I'm sorry?"
 
-# game/scenes/day01_01wake.rpy:696
-translate spanish day_0101_mom_the_dom_dcac7237:
+    "..."
 
-    # mystery "Don't pile drive me yet, I just got here."
-    mystery ""
+    mom.c "Go help your aunt with her bags."
 
-# game/scenes/day01_01wake.rpy:708
-translate spanish day_0101_mom_the_dom_141ef4bc:
+    if dominant:
 
-    # main.c "Hey auntie. What's up."
-    main.c ""
+        main.c "... Sure..."
 
-# game/scenes/day01_01wake.rpy:710
-translate spanish day_0101_mom_the_dom_98436b44:
+    else:
 
-    # aunt.c "Just getting myself moved in."
-    aunt.c ""
+        main.c "Yes ma'am"
+    
+    $ thought_bubble(
+        mom.c, _("And move them to your room, you'll be staying with [fembro.name]"), 
+        _("What?!")
+        )
 
-# game/scenes/day01_01wake.rpy:712
-translate spanish day_0101_mom_the_dom_82fa40bf:
+    mom.c "We already cleared out your room this morning. You're welcome."
 
-    # "She stretches her back."
-    ""
+    main.c "But-"
 
-# game/scenes/day01_01wake.rpy:721
-translate spanish day_0101_mom_the_dom_5ad7d9be:
+    if (not dominant and kink_ballbusting):
 
-    # main.c "I better hurry with the boxes, otherwise mom will-"
-    main.c ""
+        scene mom grab balls
+        with CropMove(0.2, "wipeup")
 
-# game/scenes/day01_01wake.rpy:726
-translate spanish day_0101_mom_the_dom_71d410b6:
+        "She already has her hand cupped around your balls."
 
-    # aunt.c "Yeah, [mom.name]'s a beast. Been like that since I was born."
-    aunt.c ""
+        "She squeezes down, and you almost faint."
 
-# game/scenes/day01_01wake.rpy:736
-translate spanish day_0101_mom_the_dom_e5224931:
+        main.c "Ugh! Okay, I get it."
 
-    # "You sigh"
-    ""
+        "She crushes one between her thumb and index finger, and the other between her fingers and palms."
 
-# game/scenes/day01_01wake.rpy:738
-translate spanish day_0101_mom_the_dom_6460ed0e:
+        mom.c "Try again."
 
-    # main.c "I'll go get your bags."
-    main.c ""
+        "Her stern, cold delivery tells you she won't have mercy again."
 
-# game/scenes/day01_01wake.rpy:743
-translate spanish day_0101_mom_the_dom_5d054bb4:
+        "Your balls already hurt from [bigsis.name]'s kick. Now you're about to cry."
 
-    # "She puts on an old southern lady voice and pulls on the ends of her eyes to give herself crows-feet."
-    ""
+        main.c "Thank you for cleaning out my room Mommy, I'll do whatever you say!"
 
-# game/scenes/day01_01wake.rpy:748
-translate spanish day_0101_mom_the_dom_b29f9644:
+        mom.c "Good boy. Though, the 'mommy' part was a bit much..."
 
-    # aunt.c "Well thank you kindly, youngster, for helping your old, helpless auntie with her bags."
-    aunt.c ""
+        "She cringes as she wipes her hand on your shirt."
 
-# game/scenes/day01_01wake.rpy:750
-translate spanish day_0101_mom_the_dom_410ec596:
+    else:
 
-    # main.c "'Tis a pleasure."
-    main.c ""
+        mom.c "Listen, [main.name]. If I say your aunt gets your room, your aunt gets your room."
 
-# game/scenes/day01_01wake.rpy:752
-translate spanish day_0101_mom_the_dom_6d68a1fd:
+        mom.c "Now suck it up and get her bags."
 
-    # "You head to the car with a laugh."
-    ""
+    scene bg living:
+        background_art
 
-# game/scenes/day01_01wake.rpy:768
-translate spanish day_0101_getting_the_bags_0ae9bcd0:
+    show mom calm at fit, set_place(1)
+    #annoyed
 
-    # ""
-    ""
+    show fembro sad at fit, flip, set_place(5)
+    #Cowering
 
-# game/scenes/day01_01wake.rpy:777
-translate spanish day_0101_getting_the_bags_20f54f7b:
+    show main fear at fit, flip, set_place(7)
+    #pain
 
-    # "You aren't going to let your mom or anyone else push you around!"
-    ""
+    "You stumble back as she lets go."
 
-# game/scenes/day01_01wake.rpy:779
-translate spanish day_0101_getting_the_bags_24d5d146:
+    mom.c "Where are your sisters?"
 
-    # "Things have got to change around here..."
-    ""
+    main.c "They're upstairs."
 
-# game/scenes/day01_01wake.rpy:781
-translate spanish day_0101_getting_the_bags_735959d3:
+    mom.c "[fembro.name], go get them."
 
-    # "And you're going to change them."
-    ""
+    fembro.c "I'd rather not. They're fighting, pretty heated too..."
 
-# game/scenes/day01_01wake.rpy:785
-translate spanish day_0101_getting_the_bags_0293fc51:
+    pause 1.0
 
-    # "Welp, Better make the best of it."
-    ""
+    show mom annoy at fit:
+    #raised eyebrow
+        subpixel True 
+        set_place(1)
+        easein2 1.00 set_place(2) 
+    camera:
+        subpixel True 
+        zpos 0.0 
+        easein2 1.0 zpos -300.0 
+    with Pause(2.0)
+    show mom annoy at fit:
+    #raised eyebrow
+        set_place(2)
+    camera:
+        zpos -300.0 
 
-# game/scenes/day01_01wake.rpy:787
-translate spanish day_0101_getting_the_bags_291403ca:
+    mom.c "... And you're so scared of them that won't do what {i}I{/i} say?"
 
-    # "It's not like you'll ever like it but..."
-    ""
+    "It was at that moment, [fembro.name] knew,"
 
-# game/scenes/day01_01wake.rpy:789
-translate spanish day_0101_getting_the_bags_44ead87f:
+    show fembro surprise at fit, flip(1)
+    #Panic
 
-    # "... You don't like it... Do you?"
-    ""
+    show mom calm
+    #resting bitch
 
-# game/scenes/day01_01wake.rpy:791
-translate spanish day_0101_getting_the_bags_a20cefa7:
+    "[fembro_nouns[0]!c] fucked up."
 
-    # "..."
-    ""
+    fembro.c "Oh gosh, of course, ma'am. I'll go take care of that!"
 
-# game/scenes/day01_01wake.rpy:812
-translate spanish day_0101_the_news_1_b3e3ba57:
+    hide fembro
+    with easeoutright
 
-    # "You carry the box to the living room, but you find yourself in the middle of a sibling spat."
-    ""
+    camera:
+        subpixel True pos (0, 0) zpos 0
 
-# game/scenes/day01_01wake.rpy:837
-translate spanish day_0101_the_news_1_45d255ea:
+    $ thought_bubble(
+        None, _("[fembro_nouns[0]!c] scurries away like a rabbit from a fox."), 
+        _("Classic [fembro.name].")
+        )
 
-    # lilsis.c "RIP Nii-chan."
-    lilsis.c ""
+    show mom disgust
+    #roll eyes
 
-# game/scenes/day01_01wake.rpy:887
-translate spanish day_0101_the_news_1_2f26c80f:
+    mom.c "God, [fembro_nouns[0]]'s pathetic."
 
-    # lilsis.c "Actually, I did. Is that a problem!?"
-    lilsis.c ""
+    show mom annoy
+    #resting bitch
 
-# game/scenes/day01_01wake.rpy:910
-translate spanish day_0101_the_news_1_0b5b190a:
+    "Your mom looks at you and scoffs."
 
-    # bigsis.c "[lilsis.name], You are a fucking-!"
-    bigsis.c ""
+    mom.c "And you... Go make yourself useful and get your aunt's bags!"
 
-# game/scenes/day01_01wake.rpy:912
-translate spanish day_0101_the_news_1_b7e69411:
+    hide main
+    with easeoutleft
 
-    # "'INCEST LEGALIZED NATIONWIDE'"
-    ""
+    scene black
 
-# game/scenes/day01_01wake.rpy:922
-translate spanish day_0101_the_news_1_f9a65578:
+    $ thought_bubble(
+        None, _("You stumble back."), 
+        _("OW")
+        )
 
-    # "What..."
-    ""
+    mystery "Don't pile drive me yet, I just got here."
 
-# game/scenes/day01_01wake.rpy:929
-translate spanish day_0101_the_news_1_3ab48c6c:
+    scene aunt intro stand
 
-    # "The..."
-    ""
+    if not _in_replay:
+        $ aunt = name_character(char_default_names["aunt"], "aunt")
 
-# game/scenes/day01_01wake.rpy:936
-translate spanish day_0101_the_news_1_e828426b:
+    $ thought_bubble(
+        aunt.c, _("Heya."), 
+        _("Thank the lord above.")
+        )
 
-    # "Fuck?!?!?!"
-    ""
+    main.c "Hey auntie. What's up."
 
-# game/scenes/day01_01wake.rpy:943
-translate spanish day_0101_the_news_1_95e6427e:
+    aunt.c "Just getting myself moved in."
 
-    # "[aunt.name]'s watching TV behind you. Even she can't hide her shock."
-    ""
+    "She stretches her back."
 
-# game/scenes/day01_01wake.rpy:945
-translate spanish day_0101_the_news_1_8c204c4a:
+    scene bg living:
+        background_art
+    
+    show main sad at fit, flip, set_place(7)
 
-    # "Everyone gathers in the living room. The news anchor goes on about the court case."
-    ""
+    show aunt happy at fit, set_place(2)
 
-# game/scenes/day01_01wake.rpy:947
-translate spanish day_0101_the_news_1_20f99272:
+    main.c "I better hurry with the boxes, otherwise mom will-"
 
-    # "'Any non-vaginal sex act between consenting adults is legal, regardless of familial relation.'"
-    ""
+    show aunt surprise at fit
+    #sympathy
 
-# game/scenes/day01_01wake.rpy:956
-translate spanish day_0101_the_news_1_39760468:
+    aunt.c "Yeah, [mom.name]'s a beast. Been like that since I was born."
 
-    # "Then, your eyes meet [lilsis.name]'s."
-    ""
+    $ thought_bubble(
+        aunt.c, _("She's the only person that can scare me, to be honest."), 
+        _("Classic Mom.")
+        )
 
-# game/scenes/day01_01wake.rpy:958
-translate spanish day_0101_the_news_1_8987be45:
+    show main calm
+    #annoyed
 
-    # "There's an awkward energy between you."
-    ""
+    "You sigh"
+    
+    main.c "I'll go get your bags."
 
-# game/scenes/day01_01wake.rpy:962
-translate spanish day_0101_the_news_1_dc2bf1df:
+    show aunt happy at fit
+    #Charming smile
 
-    # "She looks down and rushes out of the room, blushing."
-    ""
+    "She puts on an old southern lady voice and pulls on the ends of her eyes to give herself crows-feet."
 
-# game/scenes/day01_01wake.rpy:971
-translate spanish day_0101_the_news_1_407e9539:
+    show main happy
+    #laughing
 
-    # "For the first time, your mind wanders to thoughts you always pushed away."
-    ""
+    aunt.c "Well thank you kindly, youngster, for helping your old, helpless auntie with her bags."
+    
+    main.c "'Tis a pleasure."
+    
+    "You head to the car with a laugh."
 
-# game/scenes/day01_01wake.rpy:973
-translate spanish day_0101_the_news_1_a20ba60f:
+    hide main
+    with easeoutleft
 
-    # "You were aware that your sisters, and even your mom, were attractive..."
-    ""
+    jump day_0101_getting_the_bags
 
-# game/scenes/day01_01wake.rpy:975
-translate spanish day_0101_the_news_1_745f8dc2:
+label day_0101_getting_the_bags:
 
-    # "But it was always in an abstract sense."
-    ""
+    scene ian box
 
-# game/scenes/day01_01wake.rpy:977
-translate spanish day_0101_the_news_1_df23f315:
+    $ thought_bubble(
+        None, _("You come back from the car hefting boxes... Like your mom told you to..."), 
+        _("Damn, I feel like a wuss.")
+        )
 
-    # "But now-"
     ""
 
-# game/scenes/day01_01wake.rpy:985
-translate spanish day_0101_the_news_1_2c450d01:
+    if dominant:
 
-    # fembro.c "WHAT?! How can... what does... Huh?!"
-    fembro.c ""
-
-# game/scenes/day01_01wake.rpy:991
-translate spanish day_0101_the_news_1_970ea378:
-
-    # bigsis.c "And the whole of Alabama rejoiced."
-    bigsis.c ""
-
-# game/scenes/day01_01wake.rpy:993
-translate spanish day_0101_the_news_1_809e8ccc:
-
-    # mom.c "I don't have time for this."
-    mom.c ""
-
-# game/scenes/day01_01wake.rpy:995
-translate spanish day_0101_the_news_1_6add2a32:
-
-    # "Your mother, seemingly unfazed, goes to your room to prepare it for your aunt."
-    ""
+        $ thought_bubble(
+            None, _("No!"), 
+            _("I hate this.")
+            )
+        
+        "You aren't going to let your mom or anyone else push you around!"
 
-# game/scenes/day01_01wake.rpy:997
-translate spanish day_0101_the_news_1_99a229ea:
+        "Things have got to change around here..."
 
-    # bigsis.c "I already have a boyfriend. Not that any of you had a chance."
-    bigsis.c ""
+        "And you're going to change them."
 
-# game/scenes/day01_01wake.rpy:1002
-translate spanish day_0101_the_news_1_101d7bbd:
+    else:
 
-    # bigsis.c "But if you beg, I'll let you watch."
-    bigsis.c ""
+        "Welp, Better make the best of it."
 
-# game/scenes/day01_01wake.rpy:1006
-translate spanish day_0101_the_news_1_96cb3c66:
+        "It's not like you'll ever like it but..."
+        
+        "... You don't like it... Do you?"
+    
+    "..."
 
-    # fembro.c "What?"
-    fembro.c ""
+    pause 1
 
-# game/scenes/day01_01wake.rpy:1011
-translate spanish day_0101_the_news_1_f1507b69:
+    $ persistent.replay_scenes.append('day_0101_mom_the_dom')
+    $ renpy.end_replay()
 
-    # bigsis.c "I know your bed is up against my wall, [fembro.name]. I bet you lean in and listen. Might as well get a show too."
-    bigsis.c ""
+    jump day_0101_the_news_1
 
-# game/scenes/day01_01wake.rpy:1013
-translate spanish day_0101_the_news_1_f4515502:
+label day_0101_the_news_1:
 
-    # fembro.c "[bigsis.name]! I-I would never-"
-    fembro.c ""
+    camera:
+        perspective True
 
-# game/scenes/day01_01wake.rpy:1038
-translate spanish day_0101_the_news_1_9c849eae:
+    scene ian box
 
-    # "Just then, there's a knock on the door."
-    ""
+    $ thought_bubble(
+        None, _("What's in these boxes, weights?"), 
+        _("Actually, that would make sense.")
+        )
 
-# game/scenes/day01_01wake.rpy:1043
-translate spanish day_0101_the_news_1_3e7d1e64:
+    "You carry the box to the living room, but you find yourself in the middle of a sibling spat."
 
-    # bigsis.c "Speaking of my beau."
-    bigsis.c ""
+    scene bg living:
+        background_art
 
-# game/scenes/day01_01wake.rpy:1057
-translate spanish day_0101_the_news_1_3bf27369:
+    show main sad at fit, set_place(4)
+    #tired
+    
+    show fembro anger at fit, flip, set_place(6)
+    #trying to be assurtive
 
-    # bigsis.c "[main.name], go get the door."
-    bigsis.c ""
+    show lilsis annoy at fit, set_place(1)
+    #irritated with the arguing
 
-# game/scenes/day01_01wake.rpy:1059
-translate spanish day_0101_the_news_1_0c4eface:
+    show bigsis at fit, flip, set_place(9)
+    #gives 0 shits
 
-    # main.c "I'm no-"
-    main.c ""
+    $ thought_bubble(
+        fembro.c, _("Guys, let's quiet down a bit. [main.name]'s upset cause mom's making him bunk with me."), 
+        _("Like that would work.")
+        )
 
-# game/scenes/day01_01wake.rpy:1061
-translate spanish day_0101_the_news_1_79e088e0:
+    show lilsis smug
+    #rubbing it in
 
-    # mom.c "[main.name], go get the door."
-    mom.c ""
+    lilsis.c "RIP Nii-chan."
 
-# game/scenes/day01_01wake.rpy:1063
-translate spanish day_0101_the_news_1_288e33f9:
+    show bigsis anger at fit, flip:
+    #annoyed
+        subpixel True 
+        set_place(9)
+        easein2 0.30 set_place(8)
+    show fembro sad at fit, flip(1):
+    #cowering
+        subpixel True 
+        set_place(6, 1.5)
+        easein2 0.30 set_place(5, 1.55)
+    camera:
+        subpixel True 
+        zpos 0.0 
+        easein2 0.30 zpos -100.0 
+    with Pause(0.30)
+    show bigsis at fit, flip:
+        set_place(8)
+    show fembro at fit, flip(1):
+        set_place(5, 1.55)
+    camera:
+        zpos -100.0
 
-    # "You go get the door."
-    ""
+    $ thought_bubble(
+        bigsis.c, _("No one asked your opinion, shrimp."), 
+        _("Here we go again")
+        )
 
-# game/scenes/day01_01wake.rpy:1089
-translate spanish day_0101_the_news_1_98f33cc2:
+    show lilsis anger at fit:
+    #angry
+        subpixel True 
+        set_place(1)
+        easein2 0.30 set_place(3)
+    show fembro at fit, flip:
+        subpixel True 
+        set_place(5, 1.55)
+        easein2 0.30 set_place(5, 1.6)
+    camera:
+        subpixel True 
+        zpos -100.0 
+        easein2 0.30 zpos -200.0 
+    with Pause(0.30)
+    show lilsis at fit:
+        set_place(3)
+    show fembro at fit, flip:
+        set_place(5, 1.6)
+    camera:
+        zpos -200.0 
 
-    # sisbf.c "Howdy, brother."
-    sisbf.c ""
+    lilsis.c "Actually, I did. Is that a problem!?"
 
-# game/scenes/day01_01wake.rpy:1091
-translate spanish day_0101_the_news_1_28951887:
+    show bigsis at fit, flip:
+    #anger
+        subpixel True 
+        set_place(8) 
+        easein2 0.30 set_place(7)
+    show fembro at fit, flip(1):
+        subpixel True 
+        set_place(5, 1.6)
+        easein2 0.30 set_place(5, 1.65)
+    camera:
+        subpixel True 
+        zpos -200.0 
+        easein2 0.30 zpos -300.0 
+    with Pause(0.30)
+    show bigsis at fit, flip:
+        set_place(7)
+    show fembro at fit, flip(1):
+        set_place(5, 1.65)
+    camera:
+        zpos -300.0 
 
-    # main.c "Sup [sisbf.name]?"
-    main.c ""
+    bigsis.c "[lilsis.name], You are a fucking-!"
 
-# game/scenes/day01_01wake.rpy:1093
-translate spanish day_0101_the_news_1_4e2517cf:
+    "'INCEST LEGALIZED NATIONWIDE'"
 
-    # "[sisbf.name] has a way of raising everyone's mood when he's around."
-    ""
+    show main surprise at fit, flip
 
-# game/scenes/day01_01wake.rpy:1099
-translate spanish day_0101_the_news_1_40a0b563:
+    show fembro surprise at fit, flip
+    #Shocked
 
-    # bigsis.c "Hey, you handsome devil."
-    bigsis.c ""
+    camera:
+        pos (0, 0) zpos -400
 
-# game/scenes/day01_01wake.rpy:1101
-translate spanish day_0101_the_news_1_f3698bec:
+    "What..."
 
-    # sisbf.c "Hey, you beautiful angel."
-    sisbf.c ""
+    show lilsis surprise at fit, flip
 
-# game/scenes/day01_01wake.rpy:1116
-translate spanish day_0101_the_news_1_6b1a906a:
+    camera:
+        pos (0, 0) zpos -500
 
-    # lilsis.c "[sisbf.name]! OMG!"
-    lilsis.c ""
+    "The..."
 
-# game/scenes/day01_01wake.rpy:1118
-translate spanish day_0101_the_news_1_77376e3b:
+    show bigsis surprise at fit, flip(1)
 
-    # "[lilsis.name] bounds over and hugs him. Of course, he returns the embrace."
-    ""
+    camera:
+        pos (0, 0) zpos -600
 
-# game/scenes/day01_01wake.rpy:1124
-translate spanish day_0101_the_news_1_d9b9d2f3:
+    "Fuck?!?!?!"
 
-    # mom.c "Oh, [sisbf.name]. Always good to see you. You're looking well."
-    mom.c ""
+    scene news incest legal
 
-# game/scenes/day01_01wake.rpy:1126
-translate spanish day_0101_the_news_1_e3d14f23:
+    camera:
+        pos (0, 0) zpos 0
 
-    # "That's the first time in a long time your mom has complimented someone."
-    ""
+    "[aunt.name]'s watching TV behind you. Even she can't hide her shock."
 
-# game/scenes/day01_01wake.rpy:1128
-translate spanish day_0101_the_news_1_cc956f3a:
+    "Everyone gathers in the living room. The news anchor goes on about the court case."
 
-    # "That someone was also [sisbf.name]."
-    ""
+    "'Any non-vaginal sex act between consenting adults is legal, regardless of familial relation.'"
 
-# game/scenes/day01_01wake.rpy:1130
-translate spanish day_0101_the_news_1_180278af:
+    scene bg living:
+        background_art
 
-    # mom.c "What brings you here?"
-    mom.c ""
+    show main fear red at fit, set_place(3)
 
-# game/scenes/day01_01wake.rpy:1135
-translate spanish day_0101_the_news_1_d796c705:
+    show lilsis surprise red at fit, flip, set_place(7)
 
-    # sisbf.c "[bigsis.name] didn't tell you, Ma'am?"
-    sisbf.c ""
+    "Then, your eyes meet [lilsis.name]'s."
 
-# game/scenes/day01_01wake.rpy:1146
-translate spanish day_0101_the_news_1_f346380f:
+    "There's an awkward energy between you."
 
-    # bigsis.c "[sisbf.name]'s staying here for a while. His place has a hole in the roof."
-    bigsis.c ""
+    show lilsis fear at fit, flip(1)
 
-# game/scenes/day01_01wake.rpy:1153
-translate spanish day_0101_the_news_1_42e8e105:
+    "She looks down and rushes out of the room, blushing."
 
-    # mom.c "That's news to me."
-    mom.c ""
+    hide lilsis
+    with easeoutright
 
-# game/scenes/day01_01wake.rpy:1155
-translate spanish day_0101_the_news_1_097a95b6:
+    show main blush erect at flip, set_place(5)
+    with easeinleft
+    #Horny
 
-    # "[bigsis.name] hugs [sisbf.name] passionately."
-    ""
+    "For the first time, your mind wanders to thoughts you always pushed away."
 
-# game/scenes/day01_01wake.rpy:1157
-translate spanish day_0101_the_news_1_fe4240c8:
+    "You were aware that your sisters, and even your mom, were attractive..."
+        
+    "But it was always in an abstract sense."
+        
+    "But now-"
 
-    # bigsis.c "He would do the same for us."
-    bigsis.c ""
+    show main calm soft
 
-# game/scenes/day01_01wake.rpy:1161
-translate spanish day_0101_the_news_1_b8cc7ba0:
+    show fembro sad at fit, set_place(3)
+    with easeinleft
+    #Blush Shock
 
-    # lilsis.c "Please? We can't just leave him homeless!"
-    lilsis.c ""
+    fembro.c "WHAT?! How can... what does... Huh?!"
 
-# game/scenes/day01_01wake.rpy:1166
-translate spanish day_0101_the_news_1_cc635de3:
+    show bigsis annoy at fit, flip, set_place(7)
+    #annoyed
+    with easeinright
 
-    # "[mom.name] rubs her temples."
-    ""
+    bigsis.c "And the whole of Alabama rejoiced."
 
-# game/scenes/day01_01wake.rpy:1175
-translate spanish day_0101_the_news_1_d7c57b79:
+    mom.c "I don't have time for this."
 
-    # mom.c "Ugh, alright. But he stays in [fembro.name]'s room, not yours [bigsis.name]."
-    mom.c ""
+    "Your mother, seemingly unfazed, goes to your room to prepare it for your aunt."
 
-# game/scenes/day01_01wake.rpy:1177
-translate spanish day_0101_the_news_1_95f45f94:
+    bigsis.c "I already have a boyfriend. Not that any of you had a chance."
 
-    # fembro.c "Yay!"
-    fembro.c ""
+    show bigsis smug at fit, flip(1)
+    #smug
 
-# game/scenes/day01_01wake.rpy:1184
-translate spanish day_0101_the_news_1_e01bdcdb:
+    bigsis.c "But if you beg, I'll let you watch."
 
-    # main.c "Aw, come on! Three of us in one room?"
-    main.c ""
+    show fembro surprise red at fit
 
-# game/scenes/day01_01wake.rpy:1186
-translate spanish day_0101_the_news_1_dac43f39:
+    fembro.c "What?"
 
-    # aunt.c "Better get comfy. They've issued another lockdown. We'll be stuck together for a while."
-    aunt.c ""
+    show bigsis blush at fit, flip(1)
+    #blush
 
-# game/scenes/day01_01wake.rpy:1190
-translate spanish day_0101_the_news_1_406d666c:
+    bigsis.c "I know your bed is up against my wall, [fembro.name]. I bet you lean in and listen. Might as well get a show too."
 
-    # main.c "You inhale, holding back your frustration as best you can."
-    main.c ""
+    fembro.c "[bigsis.name]! I-I would never-"
 
-# game/scenes/day01_01wake.rpy:1192
-translate spanish day_0101_the_news_1_4c6246a4:
+    show bigsis anger at fit, flip(1)
+    #frustrated
 
-    # "You storm off upstairs."
-    ""
+    $ thought_bubble(
+        bigsis.c, _("Ugh. You fucking idiot. I swear, satire is dead."), 
+        _("That's not how satire works.")
+        )
 
-# game/scenes/day01_01wake.rpy:1201
-translate spanish day_0101_the_news_1_2716a007:
+    show fembro sad no at fit
+    
+    $ thought_bubble(
+        fembro.c, _("That's not how satire works."), 
+        _("Wait... will I have to listen to... that while I'm sleeping.")
+        )
 
-    # "You don't want to say something you'll regret."
-    ""
+    show bigsis annoy at fit, flip(1)
+    #Dissmissive
 
-# game/scenes/day01_01wake.rpy:1205
-translate spanish day_0101_the_news_1_9234b328:
+    $ thought_bubble(
+        bigsis.c, _("I'll say when I want your opinion, midget."), 
+        _("Wait... will me and [fembro.name] have to share a bed?")
+        )
 
-    # "You know better than to talk back, at least."
-    ""
+    "Just then, there's a knock on the door."
 
-# game/scenes/day01_01wake.rpy:1207
-translate spanish day_0101_the_news_1_4cd26e39:
+    show bigsis happy at flip, flip(1)
+    #happy
 
-    # mom.c "Ugh, drama queen."
-    mom.c ""
+    bigsis.c "Speaking of my beau."
 
-# game/scenes/day01_01wake.rpy:1231
-translate spanish day_0101_what_now_8bc85655:
+    if not _in_replay:
+        $ sisbf = name_character(char_default_names["sisbf"], "sisbf")
 
-    # "You can't take this."
-    ""
+    if dominant:
 
-# game/scenes/day01_01wake.rpy:1233
-translate spanish day_0101_what_now_41c93d59:
+        $ thought_bubble(
+            None, _("You go to the door to let him in."), 
+            _("Hey, it's [sisbf.name]. Who doesn't like [sisbf.name]?")
+            )
 
-    # "You remove yourself to calm down"
-    ""
+    else:
+    
+        bigsis.c "[main.name], go get the door."
 
-# game/scenes/day01_01wake.rpy:1235
-translate spanish day_0101_what_now_138bc73b:
+        main.c "I'm no-"
 
-    # "You should just take a shower. Those help you calm down."
-    ""
+        mom.c "[main.name], go get the door."
 
-translate spanish strings:
+        "You go get the door."
 
-    # game/scenes/day01_01wake.rpy:4
-    old "(Narration and Dialogue)"
-    new ""
+    hide fembro
+    with easeoutright
+    
+    show main calm at fit:
+        subpixel True 
+        set_place(5)
+        easein2 0.70 set_place(0)
+    with Pause(0.70)
+    show main calm at fit:
+        set_place(0)
 
-    # game/scenes/day01_01wake.rpy:4
-    old "([main.name]'s Thoughts)"
-    new ""
+    show sisbf at fit, set_place(2)
+    with easeinleft
+    #Smile
+    
+    show main calm at fit:
+        subpixel True 
+        set_place(0)
+        easein2 0.70 set_place(6)
+    with Pause(0.70)
+    show main happy at fit:
+    #Smile
+        set_place(6)
 
-    # game/scenes/day01_01wake.rpy:44
-    old "Your sister quickly rolls off the bed."
-    new ""
+    sisbf.c "Howdy, brother."
 
-    # game/scenes/day01_01wake.rpy:44
-    old "A marker?"
-    new ""
+    main.c "Sup [sisbf.name]?"
 
-    # game/scenes/day01_01wake.rpy:77
-    old "Argh, great! Really mature [lilsis.name]!"
-    new ""
+    "[sisbf.name] has a way of raising everyone's mood when he's around."
 
-    # game/scenes/day01_01wake.rpy:77
-    old "Again with the pranks?!"
-    new ""
+    show sisbf blush at fit
 
-    # game/scenes/day01_01wake.rpy:82
-    old "You move carefully to not expose your underwear."
-    new ""
+    show bigsis blush at fit, flip(1)
 
-    # game/scenes/day01_01wake.rpy:82
-    old "I hope she didn't see the wet spot."
-    new ""
+    bigsis.c "Hey, you handsome devil."
 
-    # game/scenes/day01_01wake.rpy:105
-    old "You give up on covering."
-    new ""
+    sisbf.c "Hey, you beautiful angel."
 
-    # game/scenes/day01_01wake.rpy:105
-    old "That's it!"
-    new ""
+    $ thought_bubble(
+        None, _("He blows her a kiss, and she flashes her tongue."), 
+        _("Odd, I'd think he was the angel and her the devil.")
+        )
 
-    # game/scenes/day01_01wake.rpy:136
-    old "She says, slapping her ass to mock you."
-    new ""
+    show bigsis happy at fit, flip(1)
 
-    # game/scenes/day01_01wake.rpy:136
-    old "That shouldn't be turning me on."
-    new ""
+    show lilsis happy at fit, flip, set_place(4)
+    #Super excited
+    with easeinright
 
-    # game/scenes/day01_01wake.rpy:169
-    old "You rush to the restroom."
-    new ""
+    show sisbf happy at fit
 
-    # game/scenes/day01_01wake.rpy:169
-    old "Let's see the damage..."
-    new ""
+    lilsis.c "[sisbf.name]! OMG!"
 
-    # game/scenes/day01_01wake.rpy:195
-    old "You can't rip your eyes away from those massi-"
-    new ""
+    "[lilsis.name] bounds over and hugs him. Of course, he returns the embrace."
 
-    # game/scenes/day01_01wake.rpy:195
-    old "..."
-    new ""
+    show mom happy at fit, set_place(9), flip
+    #calm and happy
+    with easeinright
 
-    # game/scenes/day01_01wake.rpy:211
-    old "The Fuck!?"
-    new ""
+    mom.c "Oh, [sisbf.name]. Always good to see you. You're looking well."
 
-    # game/scenes/day01_01wake.rpy:211
-    old "Oh Shit!"
-    new ""
+    "That's the first time in a long time your mom has complimented someone."
 
-    # game/scenes/day01_01wake.rpy:234
-    old "You just manage to dodge."
-    new ""
+    "That someone was also [sisbf.name]."
 
-    # game/scenes/day01_01wake.rpy:234
-    old "She's getting faster."
-    new ""
+    mom.c "What brings you here?"
 
-    # game/scenes/day01_01wake.rpy:244
-    old "[bigsis.name] finishes getting dressed right in front of you."
-    new ""
+    show sisbf surprise at fit behind bigsis
+    #Surprised
 
-    # game/scenes/day01_01wake.rpy:244
-    old "Why does she never care that I'm right here?"
-    new ""
+    sisbf.c "[bigsis.name] didn't tell you, Ma'am?"
 
-    # game/scenes/day01_01wake.rpy:285
-    old "And this!"
-    new ""
+    show bigsis at fit:
+    #Attitude
+        subpixel True 
+        set_place(7)
+        easein2 0.50 set_place(1) 
+    with Pause(0.60)
+    show bigsis calm at flip(1):
+        set_place(1)
 
-    # game/scenes/day01_01wake.rpy:285
-    old "Wha-"
-    new ""
+    bigsis.c "[sisbf.name]'s staying here for a while. His place has a hole in the roof."
 
-    # game/scenes/day01_01wake.rpy:364
-    old "{i}Sigh{/i}"
-    new ""
+    show mom surprise at fit
+    #raises eyebrow
 
-    # game/scenes/day01_01wake.rpy:364
-    old "Classic [bigsis.name]."
-    new ""
+    show sisbf fear at fit
 
-    # game/scenes/day01_01wake.rpy:416
-    old "{i}ASS{/i}"
-    new ""
+    mom.c "That's news to me."
 
-    # game/scenes/day01_01wake.rpy:427
-    old "I'm... mooning you..."
-    new ""
+    "[bigsis.name] hugs [sisbf.name] passionately."
 
-    # game/scenes/day01_01wake.rpy:427
-    old "... I'll take the pass."
-    new ""
+    bigsis.c "He would do the same for us."
 
-    # game/scenes/day01_01wake.rpy:447
-    old "[fembro.name] finally manages to put them on."
-    new ""
+    show lilsis annoy at fit, flip
 
-    # game/scenes/day01_01wake.rpy:447
-    old "Like squeezing a cantaloupe into a sock."
-    new ""
+    lilsis.c "Please? We can't just leave him homeless!"
 
-    # game/scenes/day01_01wake.rpy:462
-    old "I don't see anything except how handsome you are.."
-    new ""
+    show mom disgust at fit
+    #dismissive
 
-    # game/scenes/day01_01wake.rpy:462
-    old "Classic [lilsis.name]."
-    new ""
+    "[mom.name] rubs her temples."
 
-    # game/scenes/day01_01wake.rpy:482
-    old "Hey [main.name] and pin dick, mom wants you both."
-    new ""
+    show lilsis smile at fit, flip
 
-    # game/scenes/day01_01wake.rpy:482
-    old "Hey [main.name] and zit tits, mom wants you both."
-    new ""
+    show main annoy at fit
+    #annoyed
 
-    # game/scenes/day01_01wake.rpy:482
-    old "Well shit, [lilsis.name] will have to wait."
-    new ""
+    show sisbf happy at fit
 
-    # game/scenes/day01_01wake.rpy:542
-    old "Excuse me?"
-    new ""
+    mom.c "Ugh, alright. But he stays in [fembro.name]'s room, not yours [bigsis.name]."
 
-    # game/scenes/day01_01wake.rpy:542
-    old "Well... shit."
-    new ""
+    fembro.c "Yay!"
 
-    # game/scenes/day01_01wake.rpy:569
-    old "And move them to your room, you'll be staying with [fembro.name]"
-    new ""
+    show sisbf calm at fit
 
-    # game/scenes/day01_01wake.rpy:569
-    old "What?!"
-    new ""
+    show main anger at fit
+    #annoyed
 
-    # game/scenes/day01_01wake.rpy:669
-    old "[fembro_nouns[0]!c] scurries away like a rabbit from a fox."
-    new ""
+    main.c "Aw, come on! Three of us in one room?"
 
-    # game/scenes/day01_01wake.rpy:669
-    old "Classic [fembro.name]."
-    new ""
+    aunt.c "Better get comfy. They've issued another lockdown. We'll be stuck together for a while."
 
-    # game/scenes/day01_01wake.rpy:691
-    old "You stumble back."
-    new ""
+    show main anger at flip(1)
 
-    # game/scenes/day01_01wake.rpy:691
-    old "OW"
-    new ""
+    main.c "You inhale, holding back your frustration as best you can."
 
-    # game/scenes/day01_01wake.rpy:703
-    old "Heya."
-    new ""
+    "You storm off upstairs."
 
-    # game/scenes/day01_01wake.rpy:703
-    old "Thank the lord above."
-    new ""
+    hide main
+    with easeoutright
 
-    # game/scenes/day01_01wake.rpy:728
-    old "She's the only person that can scare me, to be honest."
-    new ""
+    #show mom eye roll
 
-    # game/scenes/day01_01wake.rpy:728
-    old "Classic Mom."
-    new ""
+    if dominant:
 
-    # game/scenes/day01_01wake.rpy:763
-    old "You come back from the car hefting boxes... Like your mom told you to..."
-    new ""
+        "You don't want to say something you'll regret."
 
-    # game/scenes/day01_01wake.rpy:763
-    old "Damn, I feel like a wuss."
-    new ""
+    else:
 
-    # game/scenes/day01_01wake.rpy:772
-    old "No!"
-    new ""
+        "You know better than to talk back, at least."
+        
+        mom.c "Ugh, drama queen."
 
-    # game/scenes/day01_01wake.rpy:772
-    old "I hate this."
-    new ""
+    $ persistent.replay_scenes.append('day_0101_the_news_1')
+    $ renpy.end_replay()
 
-    # game/scenes/day01_01wake.rpy:807
-    old "What's in these boxes, weights?"
-    new ""
+    jump day_0101_the_news_2
 
-    # game/scenes/day01_01wake.rpy:807
-    old "Actually, that would make sense."
-    new ""
+label day_0101_the_news_2:
 
-    # game/scenes/day01_01wake.rpy:829
-    old "Guys, let's quiet down a bit. [main.name]'s upset cause mom's making him bunk with me."
-    new ""
+    $ choice_done_family = False
 
-    # game/scenes/day01_01wake.rpy:829
-    old "Like that would work."
-    new ""
+    $ choice_done_fembro = True
 
-    # game/scenes/day01_01wake.rpy:861
-    old "No one asked your opinion, shrimp."
-    new ""
+    jump disable_question
 
-    # game/scenes/day01_01wake.rpy:861
-    old "Here we go again"
-    new ""
+label day_0101_what_now:
 
-    # game/scenes/day01_01wake.rpy:1018
-    old "Ugh. You fucking idiot. I swear, satire is dead."
-    new ""
+    $ intro = False
+    
+    $ choice_done_family = True
 
-    # game/scenes/day01_01wake.rpy:1018
-    old "That's not how satire works."
-    new ""
+    scene bg stairs:
+        background_art
 
-    # game/scenes/day01_01wake.rpy:1025
-    old "Wait... will I have to listen to... that while I'm sleeping."
-    new ""
+    "You can't take this."
+    
+    "You remove yourself to calm down"
 
-    # game/scenes/day01_01wake.rpy:1033
-    old "I'll say when I want your opinion, midget."
-    new ""
+    "You should just take a shower. Those help you calm down."
 
-    # game/scenes/day01_01wake.rpy:1033
-    old "Wait... will me and [fembro.name] have to share a bed?"
-    new ""
+    $ add_scene(
+        "day_0102_no_respect_at_all",
+        [0],
+        'shower',
+        True,
+        lilsis
+        )
 
-    # game/scenes/day01_01wake.rpy:1050
-    old "You go to the door to let him in."
-    new ""
+    $ add_scene(
+        "day_0102_how_to_deal_with_mom",
+        [1],
+        'living',
+        False,
+        mom
+        )
 
-    # game/scenes/day01_01wake.rpy:1050
-    old "Hey, it's [sisbf.name]. Who doesn't like [sisbf.name]?"
-    new ""
+    $ add_scene(
+        "day_0102_help_auntie",
+        [2],
+        'bed_aunt',
+        False,
+        aunt
+        )
 
-    # game/scenes/day01_01wake.rpy:1103
-    old "He blows her a kiss, and she flashes her tongue."
-    new ""
+    $ add_scene(
+        "day_0103_prepare_for_rest",
+        [3],
+        'stairs',
+        False,
+        None
+        )
 
-    # game/scenes/day01_01wake.rpy:1103
-    old "Odd, I'd think he was the angel and her the devil."
-    new ""
+    $ add_scene(
+        "day_0103_sleep_night_1",
+        [3],
+        'fembro_fembro',
+        True,
+        [fembro, bigsis]
+        )
 
+    jump loc_stairs

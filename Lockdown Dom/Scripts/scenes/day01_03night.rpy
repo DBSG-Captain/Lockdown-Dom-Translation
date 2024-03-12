@@ -1,846 +1,615 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+label day_0103_prepare_for_rest:
+    scene bg stairs:
+        background_art
 
-# game/scenes/day01_03night.rpy:14
-translate spanish day_0103_prepare_for_rest_2fb77afc:
+    show main armup at fit(False, 5)        
+    
+    $ thought_bubble(
+        None, _("You have to help your aunt more tomorrow, so you should get plenty of rest."),
+        _("Damn. Is it already this late?")
+        )
 
-    # "Also, you should find some way to block out sound for the night."
-    ""
-
-# game/scenes/day01_03night.rpy:16
-translate spanish day_0103_prepare_for_rest_57fbbd23:
-
-    # "Seeing how you'll be sleeping in the room beside [bigsis.name]'s."
-    ""
-
-# game/scenes/day01_03night.rpy:18
-translate spanish day_0103_prepare_for_rest_a2eeb6d5:
-
-    # "Mom usually keeps the earplugs in the kitchen for when her and [sisbf.name] get really... rowdy."
-    ""
-
-# game/scenes/day01_03night.rpy:28
-translate spanish day_0103_get_the_earplugs_df6334a2:
-
-    # "You find the earplugs. This will be useful for sleeping soundly tonight."
-    ""
-
-# game/scenes/day01_03night.rpy:42
-translate spanish day_0103_get_the_earplugs_19a38acc:
-
-    # "You gently put them in. They feel like they're making a vacuum seal."
-    ""
-
-# game/scenes/day01_03night.rpy:51
-translate spanish day_0103_get_the_earplugs_a20cefa7:
-
-    # "..."
-    ""
-
-# game/scenes/day01_03night.rpy:66
-translate spanish day_0103_sleep_night_1_52d67ad8:
-
-    # "You enter [fembro.name]'s room. [fembro_nouns[0]]'s already lying in bed on the outside."
-    ""
-
-# game/scenes/day01_03night.rpy:68
-translate spanish day_0103_sleep_night_1_4cc5399d:
-
-    # "Well, you aren't going to sleep on the floor..."
-    ""
-
-# game/scenes/day01_03night.rpy:85
-translate spanish day_0103_sleep_night_silent_1_776b0994:
-
-    # "You climb over [fembro_nouns[2]] sleeping frame to get into bed behind [fembro_nouns[1]]."
-    ""
-
-# game/scenes/day01_03night.rpy:87
-translate spanish day_0103_sleep_night_silent_1_a900683a:
-
-    # "The room is quiet because of the earplugs."
-    ""
-
-# game/scenes/day01_03night.rpy:89
-translate spanish day_0103_sleep_night_silent_1_d6442989:
-
-    # "It's almost uncomfortably quiet as you drift off to sleep."
-    ""
-
-# game/scenes/day01_03night.rpy:94
-translate spanish day_0103_sleep_night_silent_1_a20cefa7:
+    if (bigsis.chosen or _in_replay):
 
-    # "..."
-    ""
-
-# game/scenes/day01_03night.rpy:105
-translate spanish day_0103_sleep_night_cuck_1_776b0994:
-
-    # "You climb over [fembro_nouns[2]] sleeping frame to get into bed behind [fembro_nouns[1]]."
-    ""
-
-# game/scenes/day01_03night.rpy:110
-translate spanish day_0103_sleep_night_cuck_1_a20cefa7:
-
-    # "..."
-    ""
-
-# game/scenes/day01_03night.rpy:112
-translate spanish day_0103_sleep_night_cuck_1_f4dae998:
-
-    # "(You enabled NTR... But disabled [bigsis.name]...? Why are you here?)"
-    ""
-
-# game/scenes/day01_03night.rpy:120
-translate spanish day_0103_sleep_night_cuck_1_3ca840d4:
-
-    # "(You didn't use the earplugs?)"
-    ""
-
-# game/scenes/day01_03night.rpy:124
-translate spanish day_0103_sleep_night_cuck_1_a019f77d:
-
-    # "(This route will have you go from the cuck to the bull. But I'll let you change your mind this time. Just to be safe.)"
-    ""
+        "Also, you should find some way to block out sound for the night."
 
-# game/scenes/day01_03night.rpy:138
-translate spanish day_0103_sleep_night_cuck_1_6a341ced:
+        "Seeing how you'll be sleeping in the room beside [bigsis.name]'s."
 
-    # "(I'll let you skip it this time, but try and pay more attention please.)"
-    ""
-
-# game/scenes/day01_03night.rpy:140
-translate spanish day_0103_sleep_night_cuck_1_bc2364be:
-
-    # "(Let's shorten the night to one sentence.)"
-    ""
-
-# game/scenes/day01_03night.rpy:142
-translate spanish day_0103_sleep_night_cuck_1_6cb6ccce:
-
-    # "You fall asleep trying to block out the incredibly loud noises of [bigsis.name] and [sisbf.name] fucking."
-    ""
-
-# game/scenes/day01_03night.rpy:155
-translate spanish day_0103_sleep_night_cuck_2_7ce93f16:
+        "Mom usually keeps the earplugs in the kitchen for when her and [sisbf.name] get really... rowdy."
 
-    # "Even [fembro.name] wakes up at that."
-    ""
-
-# game/scenes/day01_03night.rpy:164
-translate spanish day_0103_sleep_night_cuck_2_301cabe3:
-
-    # bigsis.c "Mmmm!"
-    bigsis.c ""
-
-# game/scenes/day01_03night.rpy:166
-translate spanish day_0103_sleep_night_cuck_2_c8a8ec48:
+    jump loc_stairs
 
-    # main.c "Do they do this every night?"
-    main.c ""
+label day_0103_get_the_earplugs:
+    scene bg kitchen:
+        background_art
 
-# game/scenes/day01_03night.rpy:168
-translate spanish day_0103_sleep_night_cuck_2_0e2d4299:
+    show main calm grab at fit(False, 5)
 
-    # "Her moans almost drown out what [fembro.name] says."
-    ""
-
-# game/scenes/day01_03night.rpy:170
-translate spanish day_0103_sleep_night_cuck_2_a3ebaa47:
+    "You find the earplugs. This will be useful for sleeping soundly tonight."
 
-    # fembro.c "Every night [sisbf.name] comes around."
-    fembro.c ""
+    show main down
+    
+    $ inventory.add_item(all_items_list["earplugs"])
 
-# game/scenes/day01_03night.rpy:172
-translate spanish day_0103_sleep_night_cuck_2_0feb6d8e:
+    menu:
 
-    # fembro.c "They're usually louder and... lewder, but she knows mom will get upset."
-    fembro.c ""
+        "Put in the earplugs?"
 
-# game/scenes/day01_03night.rpy:179
-translate spanish day_0103_sleep_night_cuck_2_e078e131:
+        "Put Them In":
 
-    # fembro.c "We should get to bed."
-    fembro.c ""
+            $ inventory.get_item("Ear Plugs").turn_on()
 
-# game/scenes/day01_03night.rpy:183
-translate spanish day_0103_sleep_night_cuck_2_a75efdc2:
+            "You gently put them in. They feel like they're making a vacuum seal."
 
-    # "You crawl beside [fembro.name], lying on the inside next to the wall."
-    ""
+            $ thought_bubble(
+                None, _("All sound is muted. Almost magically."),
+                _("Good.")
+                )
 
-# game/scenes/day01_03night.rpy:185
-translate spanish day_0103_sleep_night_cuck_2_6e5bf7ed:
-
-    # "Front row seat, whether you like it or not."
-    ""
+        "...":
+            
+            "..."
 
-# game/scenes/day01_03night.rpy:189
-translate spanish day_0103_sleep_night_cuck_2_b7a7382b:
+            $ thought_bubble(
+                None, _("You kind of want to hear it..."),
+                _("Fuck, I'm a weirdo.")
+                )
+    
+    $ bigsis.stage = 11
 
-    # bigsis.c "Mmmaaah! Yes!"
-    bigsis.c ""
+    jump loc_kitchen
 
-# game/scenes/day01_03night.rpy:198
-translate spanish day_0103_sleep_night_cuck_2_326cb313:
+label day_0103_sleep_night_1:
 
-    # "But you aren't about to jerk off to your older sister while lying next to your twin [fembro_nouns[4]]."
-    ""
+    scene fembro sleep grind fembro
 
-# game/scenes/day01_03night.rpy:202
-translate spanish day_0103_sleep_night_cuck_2_a90f4033:
+    "You enter [fembro.name]'s room. [fembro_nouns[0]]'s already lying in bed on the outside."
 
-    # bigsis.c "Oh Go-hod Yes!"
-    bigsis.c ""
+    "Well, you aren't going to sleep on the floor..."
 
-# game/scenes/day01_03night.rpy:206
-translate spanish day_0103_sleep_night_cuck_2_49c22eda:
+    if _in_replay:
+        if kink_cuck:
+            jump day_0103_sleep_night_cuck_1
+        else:
+            jump day_0103_sleep_night_silent_1
 
-    # "Your mind is entrapped by the moans."
-    ""
+    if (inventory.get_item("Ear Plugs") and inventory.get_item("Ear Plugs").active):
+        jump day_0103_sleep_night_silent_1
+    else:
+        jump day_0103_sleep_night_cuck_1
 
-# game/scenes/day01_03night.rpy:208
-translate spanish day_0103_sleep_night_cuck_2_d1304e3f:
+label day_0103_sleep_night_silent_1:
 
-    # "They're like porn moans, but more authentic. Like comparing Splenda to pure cane sugar."
-    ""
+    scene fembro sleep grind separate
 
-# game/scenes/day01_03night.rpy:210
-translate spanish day_0103_sleep_night_cuck_2_d9c54674:
+    "You climb over [fembro_nouns[2]] sleeping frame to get into bed behind [fembro_nouns[1]]."
 
-    # "Both are sweet, but hers just felt, real."
-    ""
+    "The room is quiet because of the earplugs."
 
-# game/scenes/day01_03night.rpy:212
-translate spanish day_0103_sleep_night_cuck_2_61a24a01:
+    "It's almost uncomfortably quiet as you drift off to sleep."
+    
+    scene black
+    with shift_eyes()
 
-    # "You can't resist any longer and reach into your pants, rubbing yourself as quietly as you can."
-    ""
+    "..."
 
-# game/scenes/day01_03night.rpy:216
-translate spanish day_0103_sleep_night_cuck_2_1ee9d6c8:
+    jump day_0103_sleep_night_silent_wake_up
 
-    # bigsis.c "Deeper! get in there deeper!"
-    bigsis.c ""
+label day_0103_sleep_night_cuck_1:
 
-# game/scenes/day01_03night.rpy:227
-translate spanish day_0103_sleep_night_cuck_2_6b00fc70:
+    if _in_replay:
+        jump day_0103_sleep_night_cuck_2
 
-    # bigsis.c "Fucking Christ, I love you!"
-    bigsis.c ""
+    if  ((not bigsis.chosen) and (not _in_replay)):
+        
+        "You climb over [fembro_nouns[2]] sleeping frame to get into bed behind [fembro_nouns[1]]."
 
-# game/scenes/day01_03night.rpy:231
-translate spanish day_0103_sleep_night_cuck_2_b5edb88b:
+        scene black
+        with shift_eyes()
 
-    # "If only you were the one being told this. If only any woman would make these noises for you."
-    ""
+        "..."
 
-# game/scenes/day01_03night.rpy:240
-translate spanish day_0103_sleep_night_cuck_2_ccc6dfaf:
+        "(You enabled NTR... But disabled [bigsis.name]...? Why are you here?)"
 
-    # "It's at this moment you decide this has to change."
-    ""
+        jump day_0103_sleep_night_silent_wake_up
 
-# game/scenes/day01_03night.rpy:249
-translate spanish day_0103_sleep_night_cuck_2_60e644a1:
+    else:
 
-    # "Your older sister, who this morning dented your nuts like it was a routine, is moaning herself into a mess."
-    ""
+        if (bigsis.dom or (not kink_cuck)):
 
-# game/scenes/day01_03night.rpy:256
-translate spanish day_0103_sleep_night_cuck_2_adc452df:
+            "(You didn't use the earplugs?)"
 
-    # "Her words 'Have fun jerking off tonight' ring through your memory as you do just that."
-    ""
+            if bigsis.dom:
 
-# game/scenes/day01_03night.rpy:258
-translate spanish day_0103_sleep_night_cuck_2_5e25ad4e:
+                "(This route will have you go from the cuck to the bull. But I'll let you change your mind this time. Just to be safe.)"
 
-    # "You can't get enough of her voice, her sounds, her lust..."
-    ""
+                menu:
+                    "Did you want to go from cuck to bull? Or was there a misunderstanding?"
 
-# game/scenes/day01_03night.rpy:260
-translate spanish day_0103_sleep_night_cuck_2_e114b705:
+                    "No, No netorare for me at all":
+                        jump day_0103_sleep_night_silent_wake_up
 
-    # "And then... She stops. Pants and kisses replace her moans."
-    ""
+                    "Yes, give me the power shift story arch!":
+                        $ kink_cuck = True
+                        jump day_0103_sleep_night_cuck_2
 
-# game/scenes/day01_03night.rpy:262
-translate spanish day_0103_sleep_night_cuck_2_66a01b1e:
+            else:
 
-    # bigsis.c "I... love you, you... know... that."
-    bigsis.c ""
+                "(I'll let you skip it this time, but try and pay more attention please.)"
 
-# game/scenes/day01_03night.rpy:264
-translate spanish day_0103_sleep_night_cuck_2_f1b6be33:
+                "(Let's shorten the night to one sentence.)"
 
-    # "She can barely breathe."
-    ""
+                "You fall asleep trying to block out the incredibly loud noises of [bigsis.name] and [sisbf.name] fucking."
 
-# game/scenes/day01_03night.rpy:286
-translate spanish day_0103_sleep_night_silent_wake_up_0ae9bcd0:
+                jump day_0103_sleep_night_silent_wake_up
 
-    # ""
-    ""
+label day_0103_sleep_night_cuck_2:
+    
+    scene fembro sleep grind fembro
 
-# game/scenes/day01_03night.rpy:295
-translate spanish day_0103_sleep_night_silent_wake_up_43199965:
+    $ thought_bubble(
+        bigsis.c, _("Aaah!"),
+        _("... Well...")
+        )
 
-    # "You don't know what time it is, but you don't need the earplugs now."
-    ""
+    "Even [fembro.name] wakes up at that."
 
-# game/scenes/day01_03night.rpy:297
-translate spanish day_0103_sleep_night_silent_wake_up_fe105ba0:
+    scene bg bed fembro:
+        background_art
 
-    # "The silence was slightly unnerving, so you take them out."
-    ""
+    show main underwear disgust red at fit(False, 3)
 
-# game/scenes/day01_03night.rpy:315
-translate spanish day_0103_sleep_night_silent_2_1_63721940:
+    show fembro sad at fit(True, 7)
 
-    # bigsis.c "..."
-    bigsis.c ""
+    bigsis.c "Mmmm!"
 
-# game/scenes/day01_03night.rpy:320
-translate spanish day_0103_sleep_night_silent_2_1_29f63149:
+    main.c "Do they do this every night?"
 
-    # "The night goes on, but you can't get any sleep."
-    ""
+    "Her moans almost drown out what [fembro.name] says."
 
-# game/scenes/day01_03night.rpy:322
-translate spanish day_0103_sleep_night_silent_2_1_303ec256:
+    fembro.c "Every night [sisbf.name] comes around."
 
-    # "You don't even know why, but you're stuck awake."
-    ""
+    fembro.c "They're usually louder and... lewder, but she knows mom will get upset."
+    
+    $ thought_bubble(
+        None, _("You can't imagine lewder moans than these."),
+        _("If anyone can do it, it's [bigsis.name].")
+        )
 
-# game/scenes/day01_03night.rpy:324
-translate spanish day_0103_sleep_night_silent_2_1_4ae1c506:
+    fembro.c "We should get to bed."
 
-    # bigsis.c "Mmmmm."
-    bigsis.c ""
+    scene fembro sleep grind separate
 
-# game/scenes/day01_03night.rpy:333
-translate spanish day_0103_sleep_night_silent_2_1_28e83b7d:
+    "You crawl beside [fembro.name], lying on the inside next to the wall."
 
-    # "You know that voice. It's [bigsis.name]."
-    ""
+    "Front row seat, whether you like it or not."
 
-# game/scenes/day01_03night.rpy:335
-translate spanish day_0103_sleep_night_silent_2_1_6ca4843a:
+    scene bigsis imagine climax
 
-    # "[sisbf.name]'s in here, so she must be."
-    ""
+    bigsis.c "Mmmaaah! Yes!"
 
-# game/scenes/day01_03night.rpy:356
-translate spanish day_0103_sleep_night_silent_2_1_0bac6bc5:
+    scene bigsis imagine heat
 
-    # bigsis.c "Aah!"
-    bigsis.c ""
+    $ thought_bubble(
+        None, _("You're erect and drooling while breathing heavily."),
+        _("This is fucking torture.")
+        )
 
-# game/scenes/day01_03night.rpy:367
-translate spanish day_0103_sleep_night_silent_2_1_a98fd7ee:
+    "But you aren't about to jerk off to your older sister while lying next to your twin [fembro_nouns[4]]."
 
-    # bigsis.c "Maah."
-    bigsis.c ""
+    scene bigsis imagine climax
 
-# game/scenes/day01_03night.rpy:371
-translate spanish day_0103_sleep_night_silent_2_1_53655ab3:
+    bigsis.c "Oh Go-hod Yes!"
 
-    # "[bigsis.name]'s moans are different from [lilsis.name]'s, but still don't seem forced. Maybe embellished?"
-    ""
+    scene bigsis imagine heat
 
-# game/scenes/day01_03night.rpy:375
-translate spanish day_0103_sleep_night_silent_2_1_d5dcc0b9:
+    "Your mind is entrapped by the moans."
 
-    # bigsis.c "A-hah."
-    bigsis.c ""
+    "They're like porn moans, but more authentic. Like comparing Splenda to pure cane sugar."
 
-# game/scenes/day01_03night.rpy:379
-translate spanish day_0103_sleep_night_silent_2_1_1ff585b8:
+    "Both are sweet, but hers just felt, real."
 
-    # "You quickly lose any focus on the logistics of her moans as your imagination fills in the blanks left by your eyes."
-    ""
+    "You can't resist any longer and reach into your pants, rubbing yourself as quietly as you can."
 
-# game/scenes/day01_03night.rpy:381
-translate spanish day_0103_sleep_night_silent_2_1_a5642e83:
+    scene bigsis imagine climax
 
-    # "You try your best not to let out moans yourself as you see her breasts heaving and her legs trembling."
-    ""
+    bigsis.c "Deeper! get in there deeper!"
 
-# game/scenes/day01_03night.rpy:383
-translate spanish day_0103_sleep_night_silent_2_1_52d33d69:
+    scene bigsis imagine heat
 
-    # "She's close, you can tell by her voice."
-    ""
+    $ thought_bubble(
+        None, _("You can just barely hear the sounds of wetness through her moans."),
+        _("Which hole is it?")
+        )
 
-# game/scenes/day01_03night.rpy:385
-translate spanish day_0103_sleep_night_silent_2_1_86609b35:
+    scene bigsis imagine climax
 
-    # "And you only just got started..."
-    ""
+    bigsis.c "Fucking Christ, I love you!"
 
-# game/scenes/day01_03night.rpy:389
-translate spanish day_0103_sleep_night_silent_2_1_90551b08:
+    scene bigsis imagine heat
 
-    # bigsis.c "Sllls, Ah!"
-    bigsis.c ""
+    "If only you were the one being told this. If only any woman would make these noises for you."
 
-# game/scenes/day01_03night.rpy:391
-translate spanish day_0103_sleep_night_silent_2_1_2030cc84:
+    $ thought_bubble(
+        None, _("But instead, your {i}sister{/i} is making these noises for [sisbf.name]."),
+        _("Not... Fair...")
+        )
 
-    # "And there it is. Her climax."
-    ""
+    if bigsis.dom:
 
-# game/scenes/day01_03night.rpy:393
-translate spanish day_0103_sleep_night_silent_2_1_7f311f51:
+        "It's at this moment you decide this has to change."
 
-    # "You can almost hear her gushing as she does."
-    ""
+        $ thought_bubble(
+            None, _("You're going to be the one to make her moan like that."),
+            _("Somehow.")
+            )
 
-# game/scenes/day01_03night.rpy:395
-translate spanish day_0103_sleep_night_silent_2_1_be639954:
+    else:
 
-    # "She's left panting, audible even through the wall. You're left with a hard cock in your hand."
-    ""
+        "Your older sister, who this morning dented your nuts like it was a routine, is moaning herself into a mess."
+        
+        $ thought_bubble(
+            None, _("And you're listening to it while rubbing yourself raw."),
+            _("God... I'm pathetic")
+            )
 
-# game/scenes/day01_03night.rpy:397
-translate spanish day_0103_sleep_night_silent_2_1_7f0591cc:
+    "Her words 'Have fun jerking off tonight' ring through your memory as you do just that."
 
-    # "Her silence takes you out the mood long enough for tiredness to make you fall asleep despite your horniness."
-    ""
+    "You can't get enough of her voice, her sounds, her lust..."
 
-# game/scenes/day01_03night.rpy:399
-translate spanish day_0103_sleep_night_silent_2_1_44e2c766:
+    "And then... She stops. Pants and kisses replace her moans."
 
-    # "But as you sleep, you dream. You replay her climaxing in your mind again and again."
-    ""
+    bigsis.c "I... love you, you... know... that."
 
-# game/scenes/day01_03night.rpy:426
-translate spanish day_0103_sleep_night_silent_2_2_86710ed5:
+    "She can barely breathe."
+    
+    $ thought_bubble(
+        None, _("You missed your chance."),
+        _("Blueballs tonight, I guess.")
+        )
+    
+    $ persistent.replay_scenes.append('day_0103_sleep_night_1')
+    $ renpy.end_replay()
 
-    # "You scoot as close to [fembro.name] as you can then reach over [fembro_nouns[1]] to put the earplugs on [fembro_nouns[2]] desk."
-    ""
+    $ bigsis.stage = 12
+    
+    scene black
+    with shift_eyes()
 
-# game/scenes/day01_03night.rpy:428
-translate spanish day_0103_sleep_night_silent_2_2_163192cd:
+    jump day_0103_sleep_night_addison
 
-    # "As you reach over, you're basically hugging [fembro_nouns[1]] from behind."
+label day_0103_sleep_night_silent_wake_up:
+    
+    scene fembro sleep grind separate
+    with shift_eyes(False)
+    
     ""
+    scene fembro sleep grind separate main_open
 
-# game/scenes/day01_03night.rpy:430
-translate spanish day_0103_sleep_night_silent_2_2_edaf9677:
+        
+    $ thought_bubble(
+        None, _("You wake up as the door opens."),
+        _("[sisbf.name] is back.")
+        )
 
-    # "You realize just how small and dainty [fembro_nouns[0]] is. [fembro_nouns[0]]'s smaller than both [bigsis.name] and [lilsis.name], despite being older than the latter."
-    ""
+    "You don't know what time it is, but you don't need the earplugs now."
 
-# game/scenes/day01_03night.rpy:434
-translate spanish day_0103_sleep_night_silent_2_2_b20abe44:
+    "The silence was slightly unnerving, so you take them out."
 
-    # "Just as you pull away, [fembro_nouns[2]] hand grabs yours. [fembro_nouns[0]] must be clingy in [fembro_nouns[2]] sleep."
-    ""
+    if ((not bigsis.chosen) and (not _in_replay)):
 
-# game/scenes/day01_03night.rpy:436
-translate spanish day_0103_sleep_night_silent_2_2_4394055e:
+        jump day_0103_sleep_night_silent_2_2
 
-    # "This makes you hesitate enough to realize that you're basically spooning [fembro_nouns[1]]."
-    ""
+    else:
 
-# game/scenes/day01_03night.rpy:438
-translate spanish day_0103_sleep_night_silent_2_2_7ecb0f6c:
+        jump day_0103_sleep_night_silent_2_1
 
-    # "Scratch that, you are literally spooning [fembro_nouns[1]]..."
-    ""
+label day_0103_sleep_night_silent_2_1:
 
-# game/scenes/day01_03night.rpy:440
-translate spanish day_0103_sleep_night_silent_2_2_9d5010d8:
+    if ((not bigsis.chosen) and (not _in_replay)):
 
-    # "Your face is in [fembro_nouns[2]] hair, your chest is against [fembro_nouns[2]] back,"
-    ""
+        jump day_0103_sleep_night_silent_2_2
 
-# game/scenes/day01_03night.rpy:442
-translate spanish day_0103_sleep_night_silent_2_2_8d834985:
+    else:
 
-    # "And your cock..."
-    ""
+        bigsis.c "..."
 
-# game/scenes/day01_03night.rpy:446
-translate spanish day_0103_sleep_night_silent_2_2_1efa59d9:
+    scene black
+    with shift_eyes()
 
-    # "You get a whiff of [fembro_nouns[2]] hair."
-    ""
+    "The night goes on, but you can't get any sleep."
 
-# game/scenes/day01_03night.rpy:448
-translate spanish day_0103_sleep_night_silent_2_2_cbc4fe5c:
+    "You don't even know why, but you're stuck awake."
 
-    # "A thick oily smell. [fembro_nouns[0]] must not wash it well in the shower."
-    ""
+    bigsis.c "Mmmmm."
 
-# game/scenes/day01_03night.rpy:450
-translate spanish day_0103_sleep_night_silent_2_2_a20cefa7:
+    scene bigsis imagine heat
 
-    # "..."
-    ""
+    $ thought_bubble(
+        None, _("Is she... masturbating?"),
+        _("She's so loud.")
+        )
 
-# game/scenes/day01_03night.rpy:452
-translate spanish day_0103_sleep_night_silent_2_2_9976f7f8:
+    "You know that voice. It's [bigsis.name]."
 
-    # "You smell it again, letting the aroma sink into your mind."
-    ""
+    "[sisbf.name]'s in here, so she must be."
 
-# game/scenes/day01_03night.rpy:454
-translate spanish day_0103_sleep_night_silent_2_2_8b8d9eab:
+    $ thought_bubble(
+        None, _("You look over passed [fembro.name]. [sisbf.name]'s sleeping soundly on the floor. So you know she's not doing it for him."),
+        _("Is she really that horny?")
+        )
 
-    # "You hug [fembro_nouns[1]] fully now."
-    ""
+    $ thought_bubble(
+        None, _("You're worried about getting too horny."),
+        _("I can't just jerk off. It's not your bed.")
+    )
+    
 
-# game/scenes/day01_03night.rpy:474
-translate spanish day_0103_sleep_night_addison_c5cf215d:
+    $ thought_bubble(
+        None, _("..."),
+        _("Wait... Where am I going to jerk off from now on?")
+        )
+    
 
-    # "You fade awake."
-    ""
+    scene bigsis imagine climax
 
-# game/scenes/day01_03night.rpy:478
-translate spanish day_0103_sleep_night_addison_27ac8a3f:
+    bigsis.c "Aah!"
 
-    # "An oily haze fills your nose."
-    ""
+    scene bigsis imagine heat
 
-# game/scenes/day01_03night.rpy:480
-translate spanish day_0103_sleep_night_addison_bc1415d5:
+    $ thought_bubble(
+        None, _("You can't stop yourself. You reach into your pants."),
+        _("I'm sorry [fembro.name].")
+        )
 
-    # "Unwashed hair."
-    ""
+    scene bigsis imagine climax
 
-# game/scenes/day01_03night.rpy:482
-translate spanish day_0103_sleep_night_addison_26183205:
+    bigsis.c "Maah."
 
-    # "You inhale again, deeply this time."
-    ""
+    scene bigsis imagine heat
 
-# game/scenes/day01_03night.rpy:484
-translate spanish day_0103_sleep_night_addison_ce91ea02:
+    "[bigsis.name]'s moans are different from [lilsis.name]'s, but still don't seem forced. Maybe embellished?"
 
-    # "Something spongy presses against your crotch."
-    ""
+    scene bigsis imagine climax
 
-# game/scenes/day01_03night.rpy:489
-translate spanish day_0103_sleep_night_addison_614efc2e:
+    bigsis.c "A-hah."
 
-    # "You're hugging [fembro.name] from behind..."
-    ""
+    scene bigsis imagine heat
 
-# game/scenes/day01_03night.rpy:491
-translate spanish day_0103_sleep_night_addison_a20cefa7:
+    "You quickly lose any focus on the logistics of her moans as your imagination fills in the blanks left by your eyes."
 
-    # "..."
-    ""
+    "You try your best not to let out moans yourself as you see her breasts heaving and her legs trembling."
 
-# game/scenes/day01_03night.rpy:510
-translate spanish day_0103_sleep_night_addison_1_580e5d64:
+    "She's close, you can tell by her voice."
 
-    # "You hug [fembro_nouns[1]] firmly, realizing too late it may wake [fembro_nouns[1]] up."
-    ""
+    "And you only just got started..."
 
-# game/scenes/day01_03night.rpy:512
-translate spanish day_0103_sleep_night_addison_1_7edffc9d:
+    scene bigsis imagine climax
 
-    # "Subtly humping into [fembro_nouns[1]], you feel like you may break [fembro_nouns[1]] if you hug any harder."
-    ""
+    bigsis.c "Sllls, Ah!"
 
-# game/scenes/day01_03night.rpy:514
-translate spanish day_0103_sleep_night_addison_1_b2ad53e5:
+    "And there it is. Her climax."
 
-    # "[fembro_nouns[2]!c] butt is like a bouncy pillow, perfect give and pushback."
-    ""
+    "You can almost hear her gushing as she does."
 
-# game/scenes/day01_03night.rpy:516
-translate spanish day_0103_sleep_night_addison_1_3ccc3e1c:
+    "She's left panting, audible even through the wall. You're left with a hard cock in your hand."
 
-    # "Your dick is rubbing the underside, you could only imagine what other orientations would be like."
-    ""
+    "Her silence takes you out the mood long enough for tiredness to make you fall asleep despite your horniness."
 
-# game/scenes/day01_03night.rpy:518
-translate spanish day_0103_sleep_night_addison_1_88f9d855:
+    "But as you sleep, you dream. You replay her climaxing in your mind again and again."
 
-    # "[fembro_nouns[2]!c] ass..."
-    ""
+    $ thought_bubble(
+        None, _("..."),
+        _("One day, I'm going to make her cum like that.")
+        )
+    
+    $ persistent.replay_scenes.append('day_0103_sleep_night_1')
+    $ renpy.end_replay()
 
-# game/scenes/day01_03night.rpy:522
-translate spanish day_0103_sleep_night_addison_1_21ea93f7:
+    $ bigsis.stage = 12
+    
+    scene black
+    with shift_eyes()
 
-    # "[fembro_nouns[2]!c] scent..."
-    ""
+    jump day_0103_sleep_night_addison
 
-# game/scenes/day01_03night.rpy:524
-translate spanish day_0103_sleep_night_addison_1_93c6a540:
+label day_0103_sleep_night_silent_2_2:
 
-    # "[fembro_nouns[2]!c] breath..."
-    ""
+    if ((not fembro.chosen) and (not _in_replay)):
 
-# game/scenes/day01_03night.rpy:526
-translate spanish day_0103_sleep_night_addison_1_815181d6:
+        jump day_0103_cont
 
-    # "[fembro_nouns[2]!c] tiny body between your arms..."
-    ""
+    else:
+    
+        scene fembro sleep grind fembro reach
 
-# game/scenes/day01_03night.rpy:528
-translate spanish day_0103_sleep_night_addison_1_11327b5f:
+        "You scoot as close to [fembro.name] as you can then reach over [fembro_nouns[1]] to put the earplugs on [fembro_nouns[2]] desk."
 
-    # "It's all too much!"
-    ""
+    "As you reach over, you're basically hugging [fembro_nouns[1]] from behind."
 
-# game/scenes/day01_03night.rpy:547
-translate spanish day_0103_sleep_night_addison_1_9b80ad8f:
+    "You realize just how small and dainty [fembro_nouns[0]] is. [fembro_nouns[0]]'s smaller than both [bigsis.name] and [lilsis.name], despite being older than the latter."
 
-    # "As you succumb to tiredness, you hear panting..."
-    ""
+    scene fembro sleep grind together
 
-# game/scenes/day01_03night.rpy:564
-translate spanish day_0103_sleep_night_addison_2_a33cd6cd:
+    "Just as you pull away, [fembro_nouns[2]] hand grabs yours. [fembro_nouns[0]] must be clingy in [fembro_nouns[2]] sleep."
+    
+    "This makes you hesitate enough to realize that you're basically spooning [fembro_nouns[1]]."
 
-    # "You worry that if you rest your arm on [fembro_nouns[1]], [fembro_nouns[0]]'ll break."
-    ""
+    "Scratch that, you are literally spooning [fembro_nouns[1]]..."
 
-# game/scenes/day01_03night.rpy:566
-translate spanish day_0103_sleep_night_addison_2_23a544bc:
+    "Your face is in [fembro_nouns[2]] hair, your chest is against [fembro_nouns[2]] back,"
 
-    # "The only part of [fembro_nouns[1]] that seems sturdy... is [fembro_nouns[2]] fat ass."
-    ""
+    "And your cock..."
 
-# game/scenes/day01_03night.rpy:575
-translate spanish day_0103_sleep_night_addison_2_18a1e0c3:
+    if kink_scent:
 
-    # "Now your dick is pressed firmly against [fembro_nouns[2]] soft cheeks. You can't help but get an erection."
-    ""
+        "You get a whiff of [fembro_nouns[2]] hair."
 
-# game/scenes/day01_03night.rpy:577
-translate spanish day_0103_sleep_night_addison_2_e3328f55:
+        "A thick oily smell. [fembro_nouns[0]] must not wash it well in the shower."
 
-    # "You try not to grind into [fembro_nouns[1]], barely quelling the urge."
-    ""
+        "..."
 
-# game/scenes/day01_03night.rpy:579
-translate spanish day_0103_sleep_night_addison_2_d4cab007:
+        "You smell it again, letting the aroma sink into your mind."
 
-    # "Your growing erection pushes deeper and deeper between [fembro_nouns[2]] butt cheeks. You feel every agonizing moment of it."
-    ""
+    "You hug [fembro_nouns[1]] fully now."
 
-# game/scenes/day01_03night.rpy:591
-translate spanish day_0103_sleep_night_addison_2_2290bb1a:
+    if fembro.dom:
 
-    # "We all know why really."
-    ""
+        jump day_0103_sleep_night_addison_1
 
-# game/scenes/day01_03night.rpy:593
-translate spanish day_0103_sleep_night_addison_2_fa677562:
+    else:
 
-    # "Blue balls it is for you, and while your dick is wedged in the most heavenly booty too."
-    ""
+        jump day_0103_sleep_night_addison_2
 
-# game/scenes/day01_03night.rpy:595
-translate spanish day_0103_sleep_night_addison_2_73f8f46f:
+label day_0103_sleep_night_addison:
 
-    # "[fembro_nouns[2]!c] butt is at least a good pillow for your dick as you fade into sleep."
-    ""
+    if ((not fembro.chosen) and (not _in_replay)):
 
-translate spanish strings:
+        jump day_0103_cont
 
-    # game/scenes/day01_03night.rpy:7
-    old "You have to help your aunt more tomorrow, so you should get plenty of rest."
-    new ""
+    else:
 
-    # game/scenes/day01_03night.rpy:7
-    old "Damn. Is it already this late?"
-    new ""
+        scene bg black
 
-    # game/scenes/day01_03night.rpy:34
-    old "Put in the earplugs?"
-    new ""
+        "You fade awake."
 
-    # game/scenes/day01_03night.rpy:34
-    old "Put Them In"
-    new ""
+    if kink_scent:
 
-    # game/scenes/day01_03night.rpy:44
-    old "All sound is muted. Almost magically."
-    new ""
+        "An oily haze fills your nose."
 
-    # game/scenes/day01_03night.rpy:44
-    old "Good."
-    new ""
+        "Unwashed hair."
 
-    # game/scenes/day01_03night.rpy:53
-    old "You kind of want to hear it..."
-    new ""
+        "You inhale again, deeply this time."
 
-    # game/scenes/day01_03night.rpy:53
-    old "Fuck, I'm a weirdo."
-    new ""
+    "Something spongy presses against your crotch."
+    
+    scene fembro sleep grind together hard
+    with shift_eyes(False)
 
-    # game/scenes/day01_03night.rpy:126
-    old "Did you want to go from cuck to bull? Or was there a misunderstanding?"
-    new ""
+    "You're hugging [fembro.name] from behind..."
 
-    # game/scenes/day01_03night.rpy:126
-    old "No, No netorare for me at all"
-    new ""
+    "..."
 
-    # game/scenes/day01_03night.rpy:126
-    old "Yes, give me the power shift story arch!"
-    new ""
+    if fembro.dom:
 
-    # game/scenes/day01_03night.rpy:150
-    old "Aaah!"
-    new ""
+        jump day_0103_sleep_night_addison_2
 
-    # game/scenes/day01_03night.rpy:150
-    old "... Well..."
-    new ""
+    else:
 
-    # game/scenes/day01_03night.rpy:174
-    old "You can't imagine lewder moans than these."
-    new ""
+        jump day_0103_sleep_night_addison_1
 
-    # game/scenes/day01_03night.rpy:174
-    old "If anyone can do it, it's [bigsis.name]."
-    new ""
+label day_0103_sleep_night_addison_1:
 
-    # game/scenes/day01_03night.rpy:193
-    old "You're erect and drooling while breathing heavily."
-    new ""
+    $ thought_bubble(
+        None, _("All the pent-up lust from before goes free."),
+        _("I can't take it anymore!")
+        )
 
-    # game/scenes/day01_03night.rpy:193
-    old "This is fucking torture."
-    new ""
+    scene fembro sleep grind together hard fembro_open
 
-    # game/scenes/day01_03night.rpy:220
-    old "You can just barely hear the sounds of wetness through her moans."
-    new ""
+    "You hug [fembro_nouns[1]] firmly, realizing too late it may wake [fembro_nouns[1]] up."
 
-    # game/scenes/day01_03night.rpy:220
-    old "Which hole is it?"
-    new ""
+    "Subtly humping into [fembro_nouns[1]], you feel like you may break [fembro_nouns[1]] if you hug any harder."
 
-    # game/scenes/day01_03night.rpy:233
-    old "But instead, your {i}sister{/i} is making these noises for [sisbf.name]."
-    new ""
+    "[fembro_nouns[2]!c] butt is like a bouncy pillow, perfect give and pushback."
 
-    # game/scenes/day01_03night.rpy:233
-    old "Not... Fair..."
-    new ""
+    "Your dick is rubbing the underside, you could only imagine what other orientations would be like."
 
-    # game/scenes/day01_03night.rpy:242
-    old "You're going to be the one to make her moan like that."
-    new ""
+    "[fembro_nouns[2]!c] ass..."
 
-    # game/scenes/day01_03night.rpy:242
-    old "Somehow."
-    new ""
+    if kink_scent:
 
-    # game/scenes/day01_03night.rpy:251
-    old "And you're listening to it while rubbing yourself raw."
-    new ""
+        "[fembro_nouns[2]!c] scent..."
 
-    # game/scenes/day01_03night.rpy:251
-    old "God... I'm pathetic"
-    new ""
+    "[fembro_nouns[2]!c] breath..."
 
-    # game/scenes/day01_03night.rpy:266
-    old "You missed your chance."
-    new ""
+    "[fembro_nouns[2]!c] tiny body between your arms..."
 
-    # game/scenes/day01_03night.rpy:266
-    old "Blueballs tonight, I guess."
-    new ""
+    "It's all too much!"
 
-    # game/scenes/day01_03night.rpy:290
-    old "You wake up as the door opens."
-    new ""
+    $ thought_bubble(
+        None, _("..."),
+        _("!!!")
+        )
+    
+    scene fembro sleep grind together hard
 
-    # game/scenes/day01_03night.rpy:290
-    old "[sisbf.name] is back."
-    new ""
+    $ thought_bubble(
+        None, _("You lie there, wet and embarrassed."),
+        _("...")
+        )
 
-    # game/scenes/day01_03night.rpy:328
-    old "Is she... masturbating?"
-    new ""
+    $ thought_bubble(
+        None, _("At least [fembro.name]'s still asleep..."),
+        _("This would be hard to explain.")
+        )
 
-    # game/scenes/day01_03night.rpy:328
-    old "She's so loud."
-    new ""
+    "As you succumb to tiredness, you hear panting..."
 
-    # game/scenes/day01_03night.rpy:337
-    old "You look over passed [fembro.name]. [sisbf.name]'s sleeping soundly on the floor. So you know she's not doing it for him."
-    new ""
+    $ thought_bubble(
+        None, _("But the voice is far too soft to be yours..."),
+        _("Wait...")
+        )
 
-    # game/scenes/day01_03night.rpy:337
-    old "Is she really that horny?"
-    new ""
+    $ persistent.replay_scenes.append('day_0103_sleep_night_addison')
+    $ persistent.replay_scenes.append('day_0103_sleep_night_silent_2_2')
+    $ renpy.end_replay()
 
-    # game/scenes/day01_03night.rpy:342
-    old "You're worried about getting too horny."
-    new ""
+    $ fembro.stage = 11
 
-    # game/scenes/day01_03night.rpy:342
-    old "I can't just jerk off. It's not your bed."
-    new ""
+    jump day_0103_cont
 
-    # game/scenes/day01_03night.rpy:348
-    old "Wait... Where am I going to jerk off from now on?"
-    new ""
+label day_0103_sleep_night_addison_2:
 
-    # game/scenes/day01_03night.rpy:360
-    old "You can't stop yourself. You reach into your pants."
-    new ""
+    "You worry that if you rest your arm on [fembro_nouns[1]], [fembro_nouns[0]]'ll break."
 
-    # game/scenes/day01_03night.rpy:360
-    old "I'm sorry [fembro.name]."
-    new ""
+    "The only part of [fembro_nouns[1]] that seems sturdy... is [fembro_nouns[2]] fat ass."
 
-    # game/scenes/day01_03night.rpy:401
-    old "One day, I'm going to make her cum like that."
-    new ""
+    $ thought_bubble(
+        None, _("[fembro_nouns[0]!c] pushes back into you."),
+        _("!")
+        )
+    
+    scene fembro sleep grind together hard
 
-    # game/scenes/day01_03night.rpy:503
-    old "All the pent-up lust from before goes free."
-    new ""
+    "Now your dick is pressed firmly against [fembro_nouns[2]] soft cheeks. You can't help but get an erection."
 
-    # game/scenes/day01_03night.rpy:503
-    old "I can't take it anymore!"
-    new ""
+    "You try not to grind into [fembro_nouns[1]], barely quelling the urge."
 
-    # game/scenes/day01_03night.rpy:537
-    old "You lie there, wet and embarrassed."
-    new ""
+    "Your growing erection pushes deeper and deeper between [fembro_nouns[2]] butt cheeks. You feel every agonizing moment of it."
 
-    # game/scenes/day01_03night.rpy:542
-    old "At least [fembro.name]'s still asleep..."
-    new ""
+    $ thought_bubble(
+        None, _("Agonizing because you refuse to hump your sleeping [fembro_nouns[4]]'s ass."),
+        _("I really, really want to... but...")
+        )
+    
+    $ thought_bubble(
+        None, _("But you also refuse to pull away."),
+        _("I don't want [fembro_nouns[1]] to wake up to this.")
+        )
+    
+    "We all know why really."
 
-    # game/scenes/day01_03night.rpy:542
-    old "This would be hard to explain."
-    new ""
+    "Blue balls it is for you, and while your dick is wedged in the most heavenly booty too."
 
-    # game/scenes/day01_03night.rpy:549
-    old "But the voice is far too soft to be yours..."
-    new ""
+    "[fembro_nouns[2]!c] butt is at least a good pillow for your dick as you fade into sleep."
+    
+    $ persistent.replay_scenes.append('day_0103_sleep_night_addison')
+    $ persistent.replay_scenes.append('day_0103_sleep_night_silent_2_2')
+    $ renpy.end_replay()
 
-    # game/scenes/day01_03night.rpy:568
-    old "[fembro_nouns[0]!c] pushes back into you."
-    new ""
+    $ fembro.stage = 11
 
-    # game/scenes/day01_03night.rpy:581
-    old "Agonizing because you refuse to hump your sleeping [fembro_nouns[4]]'s ass."
-    new ""
+    jump day_0103_cont
 
-    # game/scenes/day01_03night.rpy:581
-    old "I really, really want to... but..."
-    new ""
+label day_0103_cont:
 
-    # game/scenes/day01_03night.rpy:586
-    old "But you also refuse to pull away."
-    new ""
+    scene black
+    with shift_eyes()
 
-    # game/scenes/day01_03night.rpy:586
-    old "I don't want [fembro_nouns[1]] to wake up to this."
-    new ""
+    pause 0.5
 
+    scene bg bed fembro
+    with shift_eyes(False)
+    
+    $ sleep_night("day_0201_showing_pains")

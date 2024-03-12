@@ -1,168 +1,219 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+init python:
+    def set_day_stages(stage):
+        reset_timeline()
+        clear_scenes()
+        increase_date(int((stage/10) - 1))
+        lilsis.stage = stage
+        bigsis.stage = stage
+        mom.stage = stage
+        aunt.stage = stage
+        fembro.stage = stage
 
-translate spanish strings:
 
-    # game/scenes/rocreation-p1-makemc.rpy:21
-    old "Do you want to be a sub or dom in general narration? You can choose to be a switch for specific characters later."
-    new ""
+label make_mc:
+    python:
+        player_name = renpy.input("What's your name? (Default: " + char_default_names["main"] + ")")
+        player_name = player_name.strip()
+        if not player_name:
+            player_name = char_default_names["main"]
+        main = actor_creator(player_name, "main")
 
-    # game/scenes/rocreation-p1-makemc.rpy:21
-    old "I want to dominate"
-    new ""
+menu:
 
-    # game/scenes/rocreation-p1-makemc.rpy:21
-    old "I want to be dominated"
-    new ""
+    "Do you want to be a sub or dom in general narration? You can choose to be a switch for specific characters later."
 
-    # game/scenes/rocreation-p1-makemc.rpy:35
-    old "NTR on: ([kink_cuck]) Effects Jessie Path, Can have Netori without Netorare"
-    new ""
+    "I want to dominate":
+        $ dominant = True
+        jump kink_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:35
-    old "Ballbusting on: ([kink_ballbusting]) Catered for Subs"
-    new ""
+    "I want to be dominated":
+        $ dominant = False
+        jump kink_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:35
-    old "Scent on: ([kink_scent])"
-    new ""
+label kink_question:
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Rename Character"
-    new ""
+menu:
+    "NTR on: ([kink_cuck]) Effects Jessie Path,
+    Can have Netori without Netorare":
+        $ kink_cuck = not kink_cuck
+        jump kink_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Change Active and Dominant Characters"
-    new ""
+    "Ballbusting on: ([kink_ballbusting]) Catered for Subs":
+        $ kink_ballbusting = not kink_ballbusting
+        jump kink_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Change [fembro.name]'s Sex/Gender"
-    new ""
+    "Scent on: ([kink_scent])":
+        $ kink_scent = not kink_scent
+        jump kink_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Set Day"
-    new ""
+    "Done":
+        jump start_2
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Get Item"
-    new ""
+label option_change:
 
-    # game/scenes/rocreation-p1-makemc.rpy:54
-    old "Exit"
-    new ""
+menu:
+    
+    "What would you like to do?"
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "Who do you want to have lewd scenes for?"
-    new ""
+    "Rename Character":
+        jump rename_character
+    
+    "Change Active and Dominant Characters":
+        jump disable_question
+    
+    "Change [fembro.name]'s Sex/Gender":
+        jump change_fembro
+    
+    "Set Day":
+        jump set_day_stages
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "[lilsis.name]: [lilsis.chosen]"
-    new ""
+    "Get Item":
+        jump get_item
+    
+    "Exit":
+        jump loc_bed_fembro
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "[bigsis.name]: [bigsis.chosen]"
-    new ""
+label disable_question:
+menu:
+    "Who do you want to have lewd scenes for?"
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "[mom.name]: [mom.chosen]"
-    new ""
+    "[lilsis.name]: [lilsis.chosen]":
+        $ lilsis.chosen = not lilsis.chosen
+        jump disable_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "[fembro.name]: [fembro.chosen]"
-    new ""
+    "[bigsis.name]: [bigsis.chosen]":
+        $ bigsis.chosen = not bigsis.chosen
+        jump disable_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "[aunt.name]: [aunt.chosen]"
-    new ""
+    "[mom.name]: [mom.chosen]":
+        $ mom.chosen = not mom.chosen
+        jump disable_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:77
-    old "Ready"
-    new ""
+    "[fembro.name]: [fembro.chosen]":
+        $ fembro.chosen = not fembro.chosen
+        jump disable_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Who will you Dominate, and to whom will you Submit?"
-    new ""
+    "[aunt.name]: [aunt.chosen]":
+        $ aunt.chosen = not aunt.chosen
+        jump disable_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "General Dominant: [dominant]"
-    new ""
+    "Ready":
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Dominate [lilsis.name]: [lilsis.dom]"
-    new ""
+label dom_question:
+menu:
+    "Who will you Dominate, and to whom will you Submit?"
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Dominate [bigsis.name]: [bigsis.dom]"
-    new ""
+    "General Dominant: [dominant]" if choice_done_family:
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Dominate [mom.name]: [mom.dom]"
-    new ""
+    "Dominate [lilsis.name]: [lilsis.dom]":
+        $ lilsis.dom = not lilsis.dom
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Dominate [aunt.name]: [aunt.dom]"
-    new ""
+    "Dominate [bigsis.name]: [bigsis.dom]":
+        $ bigsis.dom = not bigsis.dom
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:104
-    old "Dominate [fembro.name]: [fembro.dom]"
-    new ""
+    "Dominate [mom.name]: [mom.dom]":
+        $ mom.dom = not mom.dom
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:137
-    old "What is [fembro.name]?"
-    new ""
+    "Dominate [aunt.name]: [aunt.dom]":
+        $ aunt.dom = not aunt.dom
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:137
-    old "He's My Brother"
-    new ""
+    "Dominate [fembro.name]: [fembro.dom]":
+        $ fembro.dom = not fembro.dom
+        jump dom_question
 
-    # game/scenes/rocreation-p1-makemc.rpy:137
-    old "She's My Sister"
-    new ""
+    "Ready":
+        if choice_done_family:
+            jump option_change
+        else:
+            jump day_0101_what_now
 
-    # game/scenes/rocreation-p1-makemc.rpy:137
-    old "She's My Sister with a Dick"
-    new ""
+label change_fembro:
+    menu:
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "Who do you want to rename?"
-    new ""
+        "What is [fembro.name]?"
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[main.name], You"
-    new ""
+        "He's My Brother":
+            $ fembro_penis = True
+            $ fembro_nouns = fembro_nouns_masc
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[lilsis.name], The Younger Sister"
-    new ""
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[bigsis.name], The Older Sister"
-    new ""
+        "She's My Sister":
+            $ fembro_penis = False
+            $ fembro_nouns = fembro_nouns_fem
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[fembro.name], The Twin"
-    new ""
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[mom.name], The Mother"
-    new ""
+        "She's My Sister with a Dick":
+            $ fembro_penis = True
+            $ fembro_nouns = fembro_nouns_fem
+    
+    if choice_done_fembro:
+        jump option_change
+    else:
+        jump day_0101_help_from_addy_2
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[aunt.name], The Aunt"
-    new ""
+label rename_character:
 
-    # game/scenes/rocreation-p1-makemc.rpy:162
-    old "[sisbf.name], [bigsis.name]'s Boyfriend"
-    new ""
+menu:
+    
+    "Who do you want to rename?"
 
-    # game/scenes/rocreation-p1-makemc.rpy:199
-    old "What day do you want to skip to"
-    new ""
+    "[main.name], You":
+        $ main = name_character(main.name, "main")
+        jump rename_character
 
-    # game/scenes/rocreation-p1-makemc.rpy:199
-    old "Day 1"
-    new ""
+    "[lilsis.name], The Younger Sister":
+        $ lilsis = name_character(lilsis.name, "lilsis")
+        jump rename_character
 
-    # game/scenes/rocreation-p1-makemc.rpy:199
-    old "Day 2"
-    new ""
+    "[bigsis.name], The Older Sister":
+        $ bigsis = name_character(bigsis.name, "bigsis")
+        jump rename_character
+    
+    "[fembro.name], The Twin":
+        $ fembro = name_character(fembro.name, "fembro")
+        jump rename_character
+    
+    "[mom.name], The Mother":
+        $ mom = name_character(mom.name, "mom")
+        jump rename_character
+    
+    "[aunt.name], The Aunt":
+        $ aunt = name_character(aunt.name, "aunt")
+        jump rename_character
+    
+    "[sisbf.name], [bigsis.name]'s Boyfriend":
+        $ sisbf = name_character(sisbf.name, "sisgf")
+        jump rename_character
+    
+    "Go Back":
+        jump option_change
 
+label set_day_stages:
+    
+menu:
+    
+    "What day do you want to skip to"
+
+    "Day 1":
+        $ set_day_stages(10)
+        jump day_0101_what_now
+
+    "Day 2":
+        $ set_day_stages(20)
+        jump day_0201_showing_pains
+    
+label get_item:
+    python:
+        item = renpy.input("Item do you want?")
+        if item in all_items_list.keys():
+            inventory.add_item(all_items_list[item])
+            renpy.jump("loc_bed_fembro")
+        else:
+            renpy.say(None, "No such Item")
+            renpy.jump("option_change")

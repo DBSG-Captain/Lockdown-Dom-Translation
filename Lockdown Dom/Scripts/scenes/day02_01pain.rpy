@@ -1,944 +1,724 @@
-﻿# TODO: Translation updated at 2024-03-11 16:20
+label day_0201_showing_pains:
 
-# game/scenes/day02_01pain.rpy:6
-translate spanish day_0201_showing_pains_b83bcc6e:
+    scene bg bed fembro:
+        blur 3
 
-    # "You wake up, surprisingly refreshed given what happened the night before."
-    ""
+    "You wake up, surprisingly refreshed given what happened the night before."
 
-# game/scenes/day02_01pain.rpy:8
-translate spanish day_0201_showing_pains_8cc3e7a1:
+    "[fembro.name] has already left the room... "
 
-    # "[fembro.name] has already left the room... "
-    ""
+    if fembro.chosen:
+        "The more you think about it, the worse you feel about what you did last night."
 
-# game/scenes/day02_01pain.rpy:63
-translate spanish day_0201_get_hit_7148161e:
+    $ add_scene(
+        "day_0201_get_hit",
+        [0],
+        'kitchen_aunt',
+        True,
+        aunt
+        )
 
-    # main.c "Hey."
-    main.c ""
+    $ add_scene(
+        "day_0201_reach_for_it",
+        [0],
+        'kitchen_fembro',
+        False,
+        fembro
+        )
 
-# game/scenes/day02_01pain.rpy:68
-translate spanish day_0201_get_hit_e4052e41:
+    $ add_scene(
+        "day_0201_strike_a_pose",
+        [1],
+        'aunt_aunt',
+        False,
+        aunt
+        )
+    
 
-    # "You place a hand on her shoulder."
-    ""
+    jump loc_bed_fembro
 
-# game/scenes/day02_01pain.rpy:72
-translate spanish day_0201_get_hit_effdc668:
+label day_0201_get_hit:
 
-    # "{i}POW{/i}"
-    ""
+    if ((not aunt.chosen) and (not _in_replay)):
 
-# game/scenes/day02_01pain.rpy:76
-translate spanish day_0201_get_hit_ab47058e:
+        jump kitchen_aunt_idle
 
-    # "You're thrown back almost a yard. Barely able to keep yourself from collapsing."
-    ""
+    else:
 
-# game/scenes/day02_01pain.rpy:93
-translate spanish day_0201_get_hit_25f0fc7d:
+        scene bg kitchen:
+            background_art
+        
+        show aunt disgust at fit, set_place(9)
+        #tired
 
-    # main.c "FUCK!"
-    main.c ""
+        show main calm at fit, set_place(4)
 
-# game/scenes/day02_01pain.rpy:95
-translate spanish day_0201_get_hit_8d1f9a3b:
+        $ thought_bubble(
+            None, _("You didn't know Aunt [aunt.name] woke up this early,"),
+            _("Isn't it her day off?")
+            )
 
-    # aunt.c "What! [main.name]?!"
-    aunt.c ""
+    $ thought_bubble(
+        None, _("Then again, she may not be used to it."),
+        _("She looks like she's dying.")
+        )
 
-# game/scenes/day02_01pain.rpy:100
-translate spanish day_0201_get_hit_d4596cb8:
+    main.c "Hey."
 
-    # main.c "What was that for?"
-    main.c ""
+    show aunt fear at fit
+    #frightened
 
-# game/scenes/day02_01pain.rpy:105
-translate spanish day_0201_get_hit_196d8dbd:
+    "You place a hand on her shoulder."
 
-    # aunt.c "I'm so sorry, I'm not used to hearing a man's voice in the morning."
-    aunt.c ""
+    scene aunt surprise punch
 
-# game/scenes/day02_01pain.rpy:113
-translate spanish day_0201_get_hit_b404e8de:
+    "{i}POW{/i}"
 
-    # aunt.c "More importantly, how are you still standing? Everyone I hit ends up on the floor."
-    aunt.c ""
+    if aunt.dom:
+        
+        "You're thrown back almost a yard. Barely able to keep yourself from collapsing."
 
-# game/scenes/day02_01pain.rpy:115
-translate spanish day_0201_get_hit_32a9dd99:
+        scene bg kitchen:
+            background_art
 
-    # main.c "Well, I'm sturdy as hell."
-    main.c ""
+        show aunt fear at fit, set_place(9), flip
+        #tired
 
-# game/scenes/day02_01pain.rpy:131
-translate spanish day_0201_get_hit_779bb4b8:
+        show main disgust a-out at fit, set_place(4):
+        # in Paint
+            subpixel True 
+            set_place(4) 
+            easein2 0.2 set_place(1)
+        with Pause(0.3)
+        show main fear at fit:
+            set_place(1)
 
-    # main.c "It still hurts a lot though."
-    main.c ""
+        main.c "FUCK!"
 
-# game/scenes/day02_01pain.rpy:136
-translate spanish day_0201_get_hit_96dda6b0:
+        aunt.c "What! [main.name]?!"
 
-    # aunt.c "Aw shit. Should I take you to the hospital?"
-    aunt.c ""
+        show main anger a-down
+        #Upset
 
-# game/scenes/day02_01pain.rpy:138
-translate spanish day_0201_get_hit_ce2beecb:
+        main.c "What was that for?"
 
-    # main.c "No, it's not that bad. A kiss should be enough."
-    main.c ""
+        show aunt sad
+        #Apologetic
 
-# game/scenes/day02_01pain.rpy:151
-translate spanish day_0201_get_hit_ccb57935:
+        aunt.c "I'm so sorry, I'm not used to hearing a man's voice in the morning."
 
-    # aunt.c "You sly tod."
-    aunt.c ""
+        show main sad
+        #bothered
 
-# game/scenes/day02_01pain.rpy:156
-translate spanish day_0201_get_hit_b4f61a5b:
+        show aunt surprise
+        #In shock
 
-    # aunt.c "Sure. why not?"
-    aunt.c ""
+        aunt.c "More importantly, how are you still standing? Everyone I hit ends up on the floor."
 
-# game/scenes/day02_01pain.rpy:158
-translate spanish day_0201_get_hit_1c1ab9b6:
+        main.c "Well, I'm sturdy as hell."
 
-    # "You want to take the chance to kiss her, but she's too quick. By the time you realize she said yes, her lips are already on you."
-    ""
+        show aunt happy
+        #amazed and impressed
 
-# game/scenes/day02_01pain.rpy:166
-translate spanish day_0201_get_hit_eb6b5e2e:
+        show main calm
+        #relaxed
 
-    # "{i}WHACK{/i}"
-    ""
+        $ thought_bubble(
+            aunt.c, _("Damn. It must be the 'Cason' family genes."),
+            _("I have an idea.")
+            )
 
-# game/scenes/day02_01pain.rpy:168
-translate spanish day_0201_get_hit_9b095698:
+        show main sad red
+        #faking pain
 
-    # "Your breath is stolen as you are lifted off your feet."
-    ""
+        main.c "It still hurts a lot though."
 
-# game/scenes/day02_01pain.rpy:170
-translate spanish day_0201_get_hit_4de034b6:
+        show aunt sad
+        #concerned
 
-    # "Then, you feel the sharp pain of the impact."
-    ""
+        aunt.c "Aw shit. Should I take you to the hospital?"
 
-# game/scenes/day02_01pain.rpy:172
-translate spanish day_0201_get_hit_25f0fc7d_1:
+        main.c "No, it's not that bad. A kiss should be enough."
 
-    # main.c "FUCK!"
-    main.c ""
+        show aunt surprise
+        #blushing
 
-# game/scenes/day02_01pain.rpy:174
-translate spanish day_0201_get_hit_240fef77:
+        $ thought_bubble(
+            aunt.c, _("..."),
+            _("That's the first time I've seen her blush.")
+            )
 
-    # "Of course, the universe is merciful, and you don't have time to focus on that pain."
-    ""
+        show aunt happy
+        #laughing
 
-# game/scenes/day02_01pain.rpy:178
-translate spanish day_0201_get_hit_39bb5e56:
+        aunt.c "You sly tod."
 
-    # "{i}THUMP{/i}"
-    ""
+        show aunt non
+        #smiling
+        
+        aunt.c "Sure. why not?"
 
-# game/scenes/day02_01pain.rpy:180
-translate spanish day_0201_get_hit_395b5eb4:
+        "You want to take the chance to kiss her, but she's too quick. By the time you realize she said yes, her lips are already on you."
 
-    # "With your head ringing and your legs wobbling, gravity does its thing."
-    ""
+    else:
 
-# game/scenes/day02_01pain.rpy:184
-translate spanish day_0201_get_hit_d3fc62a8:
+        if kink_ballbusting:
 
-    # aunt.c "Holy Shit! [main.name]?!"
-    aunt.c ""
+            scene aunt surprise kick
 
-# game/scenes/day02_01pain.rpy:186
-translate spanish day_0201_get_hit_dd3b47e9:
+            "{i}WHACK{/i}"
 
-    # "You barely understand her as all sound fades. You can't keep your eyes open."
-    ""
+            "Your breath is stolen as you are lifted off your feet."
 
-# game/scenes/day02_01pain.rpy:188
-translate spanish day_0201_get_hit_c01bd21b:
+            "Then, you feel the sharp pain of the impact."
 
-    # "The pain starts to set in... You let the darkness take you."
-    ""
+            main.c "FUCK!"
 
-# game/scenes/day02_01pain.rpy:195
-translate spanish day_0201_get_hit_72d6efbf:
+            "Of course, the universe is merciful, and you don't have time to focus on that pain."
+            
+            scene aunt surprise bonk
 
-    # "[main.name[0]]-[main.name]?"
-    ""
+            "{i}THUMP{/i}"
+        
+        "With your head ringing and your legs wobbling, gravity does its thing."
+        
+        scene aunt surprise aftermath
 
-# game/scenes/day02_01pain.rpy:208
-translate spanish day_0201_get_hit_85568557:
+        aunt.c "Holy Shit! [main.name]?!"
 
-    # "God, your head hurts."
-    ""
+        "You barely understand her as all sound fades. You can't keep your eyes open."
 
-# game/scenes/day02_01pain.rpy:212
-translate spanish day_0201_get_hit_5d551bdc:
+        "The pain starts to set in... You let the darkness take you."
 
-    # "Your balls feel like they were hit by a hammer."
-    ""
+        scene bg black
+        with shift_eyes()
 
-# game/scenes/day02_01pain.rpy:219
-translate spanish day_0201_get_hit_045823dc:
+        pause 2
 
-    # "You're dizzy and slightly nauseous."
-    ""
+        "[main.name[0]]-[main.name]?"
 
-# game/scenes/day02_01pain.rpy:221
-translate spanish day_0201_get_hit_0818fd0a:
+        scene bg kitchen:
+            background_art
+        
+        show aunt fear at fit, set_place(7), flip
+        #Panic
 
-    # aunt.c "I'm soooo sorry."
-    aunt.c ""
+        show main disgust at fit, set_place(4)
+        #pain
 
-# game/scenes/day02_01pain.rpy:223
-translate spanish day_0201_get_hit_21eca737:
+        with shift_eyes(False)
 
-    # aunt.c "Can you hear me?"
-    aunt.c ""
+        "God, your head hurts."
 
-# game/scenes/day02_01pain.rpy:225
-translate spanish day_0201_get_hit_f3e684d9:
+        if kink_ballbusting:
 
-    # main.c "Yeah?"
-    main.c ""
+            "Your balls feel like they were hit by a hammer."
 
-# game/scenes/day02_01pain.rpy:227
-translate spanish day_0201_get_hit_42c6017f:
+            $ thought_bubble(
+                None, _("And not a rubber mallet."),
+                _("Please... Still work...")
+                )
 
-    # aunt.c "I'm not used to hearing a man's voice in the morning, you scared the hell out of me."
-    aunt.c ""
+        "You're dizzy and slightly nauseous."
 
-# game/scenes/day02_01pain.rpy:229
-translate spanish day_0201_get_hit_7556c00c:
+        aunt.c "I'm soooo sorry."
 
-    # aunt.c "But I'm so sorry, I-"
-    aunt.c ""
+        aunt.c "Can you hear me?"
 
-# game/scenes/day02_01pain.rpy:235
-translate spanish day_0201_get_hit_a0b5d086:
+        main.c "Yeah?"
 
-    # main.c "I'm alright, Auntie. Take a minute to breathe."
-    main.c ""
+        aunt.c "I'm not used to hearing a man's voice in the morning, you scared the hell out of me."
 
-# game/scenes/day02_01pain.rpy:237
-translate spanish day_0201_get_hit_96df0749:
+        aunt.c "But I'm so sorry, I-"
+        
+        show aunt sad at fit
 
-    # "She inhales, then exhales, blowing your hair back."
-    ""
+        show main sad at fit
 
-# game/scenes/day02_01pain.rpy:239
-translate spanish day_0201_get_hit_a471b505:
+        main.c "I'm alright, Auntie. Take a minute to breathe."
 
-    # main.c "I'm not injured, and that's all that matters."
-    main.c ""
+        "She inhales, then exhales, blowing your hair back."
+        
+        main.c "I'm not injured, and that's all that matters."
 
-# game/scenes/day02_01pain.rpy:243
-translate spanish day_0201_get_hit_9de39f17:
+        if kink_ballbusting:
 
-    # "Your crotch disagrees, but oh well."
-    ""
+            "Your crotch disagrees, but oh well."
 
-# game/scenes/day02_01pain.rpy:247
-translate spanish day_0201_get_hit_e613ae29:
+        show aunt non
 
-    # aunt.c "Yeah, you're right."
-    aunt.c ""
+        aunt.c "Yeah, you're right."
 
-# game/scenes/day02_01pain.rpy:249
-translate spanish day_0201_get_hit_0262aebb:
+        aunt.c "Come here, you."
 
-    # aunt.c "Come here, you."
-    aunt.c ""
+        "She brings you close and kisses your head."
 
-# game/scenes/day02_01pain.rpy:251
-translate spanish day_0201_get_hit_b6572460:
+    scene aunt surprise kiss
 
-    # "She brings you close and kisses your head."
-    ""
+    "She wraps her arms around you, hugging you tenderly."
 
-# game/scenes/day02_01pain.rpy:255
-translate spanish day_0201_get_hit_01e77ed0:
+    "Her boobs press against your face as she pulls you in tightly."
 
-    # "She wraps her arms around you, hugging you tenderly."
-    ""
+    "You're surprised someone so muscular can also be so soft."
 
-# game/scenes/day02_01pain.rpy:257
-translate spanish day_0201_get_hit_2e2e1853:
+    "Her flexed muscles overpower that softness though, and her firm grip pushes you further into her bust."
+    
+    "You feel like, if she wanted to, she could squeeze you to death."
 
-    # "Her boobs press against your face as she pulls you in tightly."
-    ""
+    "The softness of her lips, however, is unadulterated."
 
-# game/scenes/day02_01pain.rpy:259
-translate spanish day_0201_get_hit_7968a6a2:
+    "Eventually, you have a little trouble breathing."
 
-    # "You're surprised someone so muscular can also be so soft."
-    ""
+    "Despite that, you feel incredibly safe in her arms, between her breasts."
+    
+    scene bg kitchen:
+        background_art
+    
+    show aunt non at fit, set_place(7), flip
+    show main happy red at fit, set_place(4)
 
-# game/scenes/day02_01pain.rpy:261
-translate spanish day_0201_get_hit_427467fb:
+    "She pulls away, and it feels too soon."
 
-    # "Her flexed muscles overpower that softness though, and her firm grip pushes you further into her bust."
-    ""
+    $ thought_bubble(
+        None, _("Why are you getting so worked up over a kiss on the head from your aunt?"),
+        _("There were also boobs.")
+        )
+    
+    show aunt non at fit, flip
 
-# game/scenes/day02_01pain.rpy:263
-translate spanish day_0201_get_hit_ad5287f9:
+    aunt.c "If you need anything just say."
 
-    # "You feel like, if she wanted to, she could squeeze you to death."
-    ""
+    hide aunt
+    with easeoutleft
 
-# game/scenes/day02_01pain.rpy:265
-translate spanish day_0201_get_hit_70073b52:
+    if (not aunt.dom and kink_ballbusting):
 
-    # "The softness of her lips, however, is unadulterated."
-    ""
+        show main fear at fit
 
-# game/scenes/day02_01pain.rpy:267
-translate spanish day_0201_get_hit_2d12b13a:
+        "When you move, you're almost brought to your knees by the pain in your balls."
 
-    # "Eventually, you have a little trouble breathing."
-    ""
+        $ thought_bubble(
+            None, _("Your butt hurts a lot, so it must have taken most of the force."),
+            _("Thank God, not a direct hit.")
+            )
 
-# game/scenes/day02_01pain.rpy:269
-translate spanish day_0201_get_hit_e678c1a1:
+        $ thought_bubble(
+            None, _("You try your best not to make a scene as you waddle out of the kitchen."),
+            _("Please... Still work.")
+            )
 
-    # "Despite that, you feel incredibly safe in her arms, between her breasts."
-    ""
+    $ persistent.replay_scenes.append('day_0201_get_hit')
+    $ renpy.end_replay()
+        
+    $ set_time(1)
+ 
+    $ aunt.stage = 21
 
-# game/scenes/day02_01pain.rpy:277
-translate spanish day_0201_get_hit_cfbecf5b:
+    jump loc_kitchen
 
-    # "She pulls away, and it feels too soon."
-    ""
+label day_0201_reach_for_it:
 
-# game/scenes/day02_01pain.rpy:286
-translate spanish day_0201_get_hit_5b07bd7b:
+    if ((not fembro.chosen) and (not _in_replay)):
 
-    # aunt.c "If you need anything just say."
-    aunt.c ""
+        jump kitchen_fembro_idle
 
-# game/scenes/day02_01pain.rpy:295
-translate spanish day_0201_get_hit_6924f1fc:
+    else:
+        
+        scene bg kitchen:
+            background_art
+        
+        show fembro sad at fit, set_place(8)
+        #tired
 
-    # "When you move, you're almost brought to your knees by the pain in your balls."
-    ""
+        show main sad at fit, set_place(4)
+        #nervous
 
-# game/scenes/day02_01pain.rpy:333
-translate spanish day_0201_reach_for_it_c9bc7dbe:
+        fembro.c "Ngh"
 
-    # fembro.c "Ngh"
-    fembro.c ""
+    "[fembro.name]'s trying to reach spices at the top shelf."
 
-# game/scenes/day02_01pain.rpy:335
-translate spanish day_0201_reach_for_it_50455320:
+    show fembro anger at fit
+    #Frustrated
 
-    # "[fembro.name]'s trying to reach spices at the top shelf."
-    ""
+    fembro.c "[bigsis.name] put those up there on purpose!"
 
-# game/scenes/day02_01pain.rpy:340
-translate spanish day_0201_reach_for_it_37d5843a:
+    "[fembro_nouns[0]!c]'s probably right. [bigsis.name] loves fucking with [fembro_nouns[1]]."
 
-    # fembro.c "[bigsis.name] put those up there on purpose!"
-    fembro.c ""
+    $ thought_bubble(
+        main.c, _("Hey [fembro.name], I wanna-"),
+        _("Focus.")
+        )
+    
+    scene fembro reach low forward
 
-# game/scenes/day02_01pain.rpy:342
-translate spanish day_0201_reach_for_it_d762ce13:
+    $ thought_bubble(
+        main.c, _("What are you doing?"),
+        _("Woah")
+        )
 
-    # "[fembro_nouns[0]!c]'s probably right. [bigsis.name] loves fucking with [fembro_nouns[1]]."
-    ""
+    scene fembro reach low back
 
-# game/scenes/day02_01pain.rpy:358
-translate spanish day_0201_reach_for_it_11756858:
+    fembro.c "We're not all tall like you, [main.name]."
 
-    # fembro.c "We're not all tall like you, [main.name]."
-    fembro.c ""
+    "[fembro_nouns[0]!c] smiles back at you."
 
-# game/scenes/day02_01pain.rpy:360
-translate spanish day_0201_reach_for_it_123440b8:
+    main.c "But you can't climb to save your life. Let me get it."
 
-    # "[fembro_nouns[0]!c] smiles back at you."
-    ""
+    $ thought_bubble(
+        fembro.c, _("No! No. I can do it myself."),
+        _("[fembro_nouns[0]!c] has something to prove. But to who?")
+        )
 
-# game/scenes/day02_01pain.rpy:362
-translate spanish day_0201_reach_for_it_37e00e6f:
+    $ thought_bubble(
+        None, _("[fembro_nouns[0]!c]'s surprisingly weak at climbing."),
+        _("With all that booty too...")
+        )
 
-    # main.c "But you can't climb to save your life. Let me get it."
-    main.c ""
+    scene fembro cabinat
 
-# game/scenes/day02_01pain.rpy:376
-translate spanish day_0201_reach_for_it_51715df0:
+    main.c "At least get a ladder or something."
 
-    # main.c "At least get a ladder or something."
-    main.c ""
+    scene fembro cabinat peak
 
-# game/scenes/day02_01pain.rpy:380
-translate spanish day_0201_reach_for_it_985cc3d0:
+    fembro.c "No thanks, I need my oregano."
 
-    # fembro.c "No thanks, I need my oregano."
-    fembro.c ""
+    "[fembro_nouns[0]!c]'s barely holding [fembro_nouns[1]]self up."
 
-# game/scenes/day02_01pain.rpy:382
-translate spanish day_0201_reach_for_it_daedb4c0:
+    "Until [fembro_nouns[0]] isn't."
+    
+    scene fembro cabinat
+    
+    fembro.c "AAH!"
 
-    # "[fembro_nouns[0]!c]'s barely holding [fembro_nouns[1]]self up."
-    ""
+    main.c "[fembro.name]!"
 
-# game/scenes/day02_01pain.rpy:384
-translate spanish day_0201_reach_for_it_b2067848:
+    scene black
 
-    # "Until [fembro_nouns[0]] isn't."
-    ""
+    "..."
 
-# game/scenes/day02_01pain.rpy:388
-translate spanish day_0201_reach_for_it_94d8366f:
+    "A familiar sponginess hugs your crotch."
 
-    # fembro.c "AAH!"
-    fembro.c ""
+    fembro.c "[main.name]"
 
-# game/scenes/day02_01pain.rpy:390
-translate spanish day_0201_reach_for_it_65ba0145:
+    if fembro_penis:
+        scene fembro fall balls
+    else:
+        scene fembro fall
+    with shift_eyes(False)
 
-    # main.c "[fembro.name]!"
-    main.c ""
+    $ thought_bubble(
+        None, _("As you come to, it takes everything in you not to grind into [fembro_nouns[1]]."),
+        _("At least I caught [fembro_nouns[1]].")
+        )
 
-# game/scenes/day02_01pain.rpy:394
-translate spanish day_0201_reach_for_it_a20cefa7:
+    if fembro_penis:
+        scene fembro fall balls back
+    else:
+        scene fembro fall back
 
-    # "..."
-    ""
+    fembro.c "Are you alright?"
 
-# game/scenes/day02_01pain.rpy:396
-translate spanish day_0201_reach_for_it_47716694:
+    $ thought_bubble(
+        None, _("Your sigh warbles."),
+        _("Pull it together! You're in the kitchen.")
+        )
 
-    # "A familiar sponginess hugs your crotch."
-    ""
+    "You came to apologize, and now look at you. Your cock is in the same place as last night."
 
-# game/scenes/day02_01pain.rpy:398
-translate spanish day_0201_reach_for_it_98e3ba77:
+    "The same, soft, warm, boun-"
 
-    # fembro.c "[main.name]"
-    fembro.c ""
+    $ thought_bubble(
+        None, _("You take a deep breath, and help [fembro.name] to [fembro_nouns[2]] feet."),
+        _("No! focus.")
+        )
 
-# game/scenes/day02_01pain.rpy:416
-translate spanish day_0201_reach_for_it_d57dd7f7:
+    
+    scene bg kitchen:
+        background_art
+    
+    show fembro sad at fit, flip, set_place(6)
+    #tired
 
-    # fembro.c "Are you alright?"
-    fembro.c ""
+    show main sad at fit, set_place(3)
+    #nervous
 
-# game/scenes/day02_01pain.rpy:423
-translate spanish day_0201_reach_for_it_1dd695f8:
+    $ thought_bubble(
+        fembro.c, _("I'm So Sorry!"),
+        _("Alright, time to apolo-")
+        )
 
-    # "You came to apologize, and now look at you. Your cock is in the same place as last night."
-    ""
+    main.c "Wha- What for?"
 
-# game/scenes/day02_01pain.rpy:425
-translate spanish day_0201_reach_for_it_7366ae3d:
+    fembro.c "You hit your head, but you're so worried about me that you don't even care!"
 
-    # "The same, soft, warm, boun-"
-    ""
+    $ thought_bubble(
+        None, _("Your hand brushes the back of your head. There is indeed a bruise."),
+        _("Huh... Horny trumps pain it seems.")
+        )
 
-# game/scenes/day02_01pain.rpy:447
-translate spanish day_0201_reach_for_it_67165c05:
+    main.c "Don't worry about it. I'm sturdy."
 
-    # main.c "Wha- What for?"
-    main.c ""
+    fembro.c "It's not about that. You got hurt because of me."
 
-# game/scenes/day02_01pain.rpy:449
-translate spanish day_0201_reach_for_it_3f8feb39:
+    #show fembro sad
 
-    # fembro.c "You hit your head, but you're so worried about me that you don't even care!"
-    fembro.c ""
+    $ thought_bubble(
+        fembro.c, _("I keep messing things up..."),
+        _("... That explains things.")
+        )
 
-# game/scenes/day02_01pain.rpy:456
-translate spanish day_0201_reach_for_it_aa654c08:
+    if fembro.dom:
 
-    # main.c "Don't worry about it. I'm sturdy."
-    main.c ""
+        show main anger at fit
 
-# game/scenes/day02_01pain.rpy:458
-translate spanish day_0201_reach_for_it_4abd29ab:
+        show fembro sad at fit:
+            subpixel True 
+            set_place(6)
+            easein2 0.10 set_place(5)
+        with Pause(0.10)
+        show fembro surprise at fit, set_place(5)
 
-    # fembro.c "It's not about that. You got hurt because of me."
-    fembro.c ""
+        "Frustrated, you pull [fembro_nouns[1]] over to you."
+    
+        main.c "[fembro.name], you're my [fembro_nouns[4]]."
 
-# game/scenes/day02_01pain.rpy:478
-translate spanish day_0201_reach_for_it_22067fe5:
+        main.c "Stop feeling guilty, I want you to be safe."
 
-    # "Frustrated, you pull [fembro_nouns[1]] over to you."
-    ""
+        "You loosen your grip. [fembro_nouns[0]!c] feels so easy to break."
 
-# game/scenes/day02_01pain.rpy:480
-translate spanish day_0201_reach_for_it_9eed3516:
+        show fembro non at fit, flip(1)
 
-    # main.c "[fembro.name], you're my [fembro_nouns[4]]."
-    main.c ""
+    else:
 
-# game/scenes/day02_01pain.rpy:482
-translate spanish day_0201_reach_for_it_c620b1ae:
+        main.c "[fembro.name], I'd rather get injured than let you get hurt."
 
-    # main.c "Stop feeling guilty, I want you to be safe."
-    main.c ""
+        show fembro non at fit, flip(1)
 
-# game/scenes/day02_01pain.rpy:484
-translate spanish day_0201_reach_for_it_7ff74fa0:
+        fembro.c "..."
 
-    # "You loosen your grip. [fembro_nouns[0]!c] feels so easy to break."
-    ""
+        "At first worry that [fembro_nouns[0]]'ll panic at that. But... [fembro_nouns[0]] just stare at you."
 
-# game/scenes/day02_01pain.rpy:490
-translate spanish day_0201_reach_for_it_1ced3973:
+        "Is [fembro_nouns[0]] intrigued? Amazed? Content? You can't tell."
 
-    # main.c "[fembro.name], I'd rather get injured than let you get hurt."
-    main.c ""
+        "Then, [fembro_nouns[0]] snaps out of it."
+    
+    fembro.c "O-okay."
 
-# game/scenes/day02_01pain.rpy:494
-translate spanish day_0201_reach_for_it_90c16add:
+    show main calm at fit
 
-    # fembro.c "..."
-    fembro.c ""
+    hide fembro
+    with easeoutleft
 
-# game/scenes/day02_01pain.rpy:496
-translate spanish day_0201_reach_for_it_908bc662:
+    "[fembro_nouns[0]!c] nods and smiles a little. Then [fembro_nouns[0]] rushes off, blushing."
 
-    # "At first worry that [fembro_nouns[0]]'ll panic at that. But... [fembro_nouns[0]] just stare at you."
-    ""
+    $ thought_bubble(
+        None, _("You don't quite know what to make of this situation."),
+        _("This is a win... Right?")
+        )
+    
+    "But you're glad [fembro.name] isn't upset or hurt."
 
-# game/scenes/day02_01pain.rpy:498
-translate spanish day_0201_reach_for_it_3d528d39:
+    $ persistent.replay_scenes.append('day_0201_reach_for_it')
+    $ renpy.end_replay()
 
-    # "Is [fembro_nouns[0]] intrigued? Amazed? Content? You can't tell."
-    ""
+    $ fembro.stage = 21
 
-# game/scenes/day02_01pain.rpy:500
-translate spanish day_0201_reach_for_it_871c1221:
+    jump loc_kitchen
 
-    # "Then, [fembro_nouns[0]] snaps out of it."
-    ""
+label day_0201_strike_a_pose:
 
-# game/scenes/day02_01pain.rpy:502
-translate spanish day_0201_reach_for_it_f41fdb52:
+    if ((not aunt.chosen) and (not _in_replay)):
 
-    # fembro.c "O-okay."
-    fembro.c ""
+        jump aunt_aunt_idle
 
-# game/scenes/day02_01pain.rpy:509
-translate spanish day_0201_reach_for_it_d2290e22:
+    else:
 
-    # "[fembro_nouns[0]!c] nods and smiles a little. Then [fembro_nouns[0]] rushes off, blushing."
-    ""
+        
+        scene bg bed aunt:
+            background_art
+        
+        show aunt anger at fit, flip, set_place(1.5)
+        #Focused
 
-# game/scenes/day02_01pain.rpy:516
-translate spanish day_0201_reach_for_it_cca3af98:
+        show main calm red at fit, flip, set_place(6)
+        #impressed
 
-    # "But you're glad [fembro.name] isn't upset or hurt."
-    ""
+        aunt.c "Hah!"
 
-# game/scenes/day02_01pain.rpy:543
-translate spanish day_0201_strike_a_pose_59cdc9ca:
+    $ thought_bubble(
+        aunt.c, _("Yah"),
+        _("Damn, she's thrashing that punching bag.")
+        )
 
-    # aunt.c "Hah!"
-    aunt.c ""
+    "She stops the last punch before she hits the bag. The sweat from her arm splashes into it instead."
 
-# game/scenes/day02_01pain.rpy:550
-translate spanish day_0201_strike_a_pose_ed745ce4:
+    main.c "Wow"
+        
+    show aunt surprise at fit
+    #happy but surprised
+        
+    show main happy at fit, flip(1)
+    #smiling
 
-    # "She stops the last punch before she hits the bag. The sweat from her arm splashes into it instead."
-    ""
+    aunt.c "Oh, howdy."
 
-# game/scenes/day02_01pain.rpy:552
-translate spanish day_0201_strike_a_pose_c15066a2:
+    main.c "Hey."
+        
+    show main calm no at fit, flip(1)
 
-    # main.c "Wow"
-    main.c ""
+    if aunt.stage == 21:
 
-# game/scenes/day02_01pain.rpy:560
-translate spanish day_0201_strike_a_pose_feb11151:
+        show aunt sad at fit
+        #apologetic
 
-    # aunt.c "Oh, howdy."
-    aunt.c ""
+        aunt.c "I really am sorry for earlier."
 
-# game/scenes/day02_01pain.rpy:562
-translate spanish day_0201_strike_a_pose_7148161e:
+        if dominant:
 
-    # main.c "Hey."
-    main.c ""
+            #show
+            
+            main.c "Hey, as long as you don't go as hard as you are on that punching bag, I should be fine."
 
-# game/scenes/day02_01pain.rpy:571
-translate spanish day_0201_strike_a_pose_6d271cb4:
+            show aunt happy at fit
+            #laugh
 
-    # aunt.c "I really am sorry for earlier."
-    aunt.c ""
+            aunt.c "Haha"
+        
+        else:
 
-# game/scenes/day02_01pain.rpy:577
-translate spanish day_0201_strike_a_pose_31512858:
+            main.c "It's fine, really."
 
-    # main.c "Hey, as long as you don't go as hard as you are on that punching bag, I should be fine."
-    main.c ""
+            show aunt non at fit
+            #blushing
 
-# game/scenes/day02_01pain.rpy:582
-translate spanish day_0201_strike_a_pose_f6d6a05d:
+            main.c "The kiss really did help..."
 
-    # aunt.c "Haha"
-    aunt.c ""
+            "She blushes again."
 
-# game/scenes/day02_01pain.rpy:586
-translate spanish day_0201_strike_a_pose_fb087408:
+    main.c "So are you training for anything?"
 
-    # main.c "It's fine, really."
-    main.c ""
+    show aunt surprise at fit
+    #confused
+    
+    aunt.c "Huh?"
 
-# game/scenes/day02_01pain.rpy:591
-translate spanish day_0201_strike_a_pose_da6837d7:
+    main.c "Like a tournament or something?"
 
-    # main.c "The kiss really did help..."
-    main.c ""
+    show aunt happy at fit
+    #smiling
 
-# game/scenes/day02_01pain.rpy:593
-translate spanish day_0201_strike_a_pose_4461369c:
+    aunt.c "Nah, I just like exercising. Can't stand still for too long. You know?"
 
-    # "She blushes again."
-    ""
+    $ thought_bubble(
+        None, _("You understand the standing part. Usually because you like sitting after a while."),
+        _("Lying down is nice too.")
+        )
 
-# game/scenes/day02_01pain.rpy:595
-translate spanish day_0201_strike_a_pose_1803e0b3:
+    show fembro sad at fit, flip, set_place(9)
+    #nervous
+    with easeinright
 
-    # main.c "So are you training for anything?"
-    main.c ""
+    pause 0.5
 
-# game/scenes/day02_01pain.rpy:600
-translate spanish day_0201_strike_a_pose_7e5babc2:
+    show fembro surprise at fit, flip(1)
+    #spooked
 
-    # aunt.c "Huh?"
-    aunt.c ""
+    aunt.c "Howdy, [fembro.name]"
 
-# game/scenes/day02_01pain.rpy:602
-translate spanish day_0201_strike_a_pose_6634cc15:
+    show fembro non at fit, flip(1)
+    #calm
 
-    # main.c "Like a tournament or something?"
-    main.c ""
+    show aunt non at fit
+    #calm
 
-# game/scenes/day02_01pain.rpy:607
-translate spanish day_0201_strike_a_pose_23ce6eca:
+    fembro.c "Ho-Howdy."
 
-    # aunt.c "Nah, I just like exercising. Can't stand still for too long. You know?"
-    aunt.c ""
+    "The lion meets the mouse."
 
-# game/scenes/day02_01pain.rpy:623
-translate spanish day_0201_strike_a_pose_df6691ab:
+    show fembro happy at fit, flip(1)
+    #nervous smile, blush
 
-    # aunt.c "Howdy, [fembro.name]"
-    aunt.c ""
+    fembro.c "Auntie? Can you... Do the thing?"
 
-# game/scenes/day02_01pain.rpy:631
-translate spanish day_0201_strike_a_pose_45d57c76:
+    main.c "What thing?"
 
-    # fembro.c "Ho-Howdy."
-    fembro.c ""
+    show aunt happy at fit
+    #proud
 
-# game/scenes/day02_01pain.rpy:633
-translate spanish day_0201_strike_a_pose_c6cd9380:
+    aunt.c "Oh yeah, [main.name] hasn't seen my guns. Has he?"
 
-    # "The lion meets the mouse."
-    ""
+    main.c "Oh, I never took you for a gun nut."
 
-# game/scenes/day02_01pain.rpy:638
-translate spanish day_0201_strike_a_pose_1728f52b:
+    aunt.c "Well then, let me show you."
 
-    # fembro.c "Auntie? Can you... Do the thing?"
-    fembro.c ""
+    scene aunt show_off
 
-# game/scenes/day02_01pain.rpy:640
-translate spanish day_0201_strike_a_pose_3ed627cd:
+    "[fembro.name] squees as [aunt.name]'s arms rise."
+    
+    $ thought_bubble(
+        None, _("And although you're silent, you're very starstruck as well."),
+        _("I've never seen muscles like that in person.")
+        )
 
-    # main.c "What thing?"
-    main.c ""
+    "It's not just the size, but the definition that's impressive."
 
-# game/scenes/day02_01pain.rpy:645
-translate spanish day_0201_strike_a_pose_79622933:
+    if aunt.stage == 21:
+    
+        $ thought_bubble(
+            None, _("To think those were the same arms that held you so tenderly."),
+            _("The same arms that punched me...")
+            )
 
-    # aunt.c "Oh yeah, [main.name] hasn't seen my guns. Has he?"
-    aunt.c ""
+    aunt.c "Enjoying the show, I see."
 
-# game/scenes/day02_01pain.rpy:647
-translate spanish day_0201_strike_a_pose_5d38851e:
+    "She makes her arm muscles bounce, and flexes her chest, making her breasts shift ever so slightly."
 
-    # main.c "Oh, I never took you for a gun nut."
-    main.c ""
+    "It's mesmerizing how she makes them move."
+    
+    $ thought_bubble(
+        None, _("[fembro.name] whimpers with excitement."),
+        _("Did [fembro_nouns[0]] cream [fembro_nouns[2]] shorts?")
+        )
+    
+    "You don't blame them."
+    
+    "Her sweat glistening off her body entices you as well."
 
-# game/scenes/day02_01pain.rpy:649
-translate spanish day_0201_strike_a_pose_2e8fc5d0:
+    scene bg bed aunt:
+        blur 3
+    
+    show aunt non at fit, set_place(1.5)
 
-    # aunt.c "Well then, let me show you."
-    aunt.c ""
+    show main calm at fit, flip, set_place(6)
 
-# game/scenes/day02_01pain.rpy:653
-translate spanish day_0201_strike_a_pose_dba91c1a:
+    show fembro sad at fit, flip, set_place(9)
 
-    # "[fembro.name] squees as [aunt.name]'s arms rise."
-    ""
+    aunt.c "Alright you two. Eyes back in your skulls."
 
-# game/scenes/day02_01pain.rpy:660
-translate spanish day_0201_strike_a_pose_2e648a7f:
+    "You blush, but [fembro.name] for once, is utterly shameless."
+    
+    $ thought_bubble(
+        fembro.c, _("Aw... Can you do it again later?"),
+        _("Wow... [fembro_nouns[0]]'s addicted.")
+        )
 
-    # "It's not just the size, but the definition that's impressive."
-    ""
+    aunt.c "Maybe tomorrow. But I'll let you watch me work out."
+    
+    show aunt anger at fit, flip
 
-# game/scenes/day02_01pain.rpy:669
-translate spanish day_0201_strike_a_pose_809d6a89:
+    show fembro happy at fit, flip(1)
 
-    # aunt.c "Enjoying the show, I see."
-    aunt.c ""
+    show main calm at fit
 
-# game/scenes/day02_01pain.rpy:671
-translate spanish day_0201_strike_a_pose_44be80cc:
+    pause 0.1
 
-    # "She makes her arm muscles bounce, and flexes her chest, making her breasts shift ever so slightly."
-    ""
+    hide main
+    with easeoutright
 
-# game/scenes/day02_01pain.rpy:673
-translate spanish day_0201_strike_a_pose_d84d7332:
+    "You realize you have important stuff to get to, but [fembro.name] accepts the invitation happily."
 
-    # "It's mesmerizing how she makes them move."
-    ""
+    $ persistent.replay_scenes.append('day_0201_strike_a_pose')
+    $ renpy.end_replay()
 
-# game/scenes/day02_01pain.rpy:680
-translate spanish day_0201_strike_a_pose_492237d2:
-
-    # "You don't blame them."
-    ""
-
-# game/scenes/day02_01pain.rpy:682
-translate spanish day_0201_strike_a_pose_4bd61518:
-
-    # "Her sweat glistening off her body entices you as well."
-    ""
-
-# game/scenes/day02_01pain.rpy:693
-translate spanish day_0201_strike_a_pose_51189740:
-
-    # aunt.c "Alright you two. Eyes back in your skulls."
-    aunt.c ""
-
-# game/scenes/day02_01pain.rpy:695
-translate spanish day_0201_strike_a_pose_958885e2:
-
-    # "You blush, but [fembro.name] for once, is utterly shameless."
-    ""
-
-# game/scenes/day02_01pain.rpy:702
-translate spanish day_0201_strike_a_pose_e050e30b:
-
-    # aunt.c "Maybe tomorrow. But I'll let you watch me work out."
-    aunt.c ""
-
-# game/scenes/day02_01pain.rpy:715
-translate spanish day_0201_strike_a_pose_8e33c9ef:
-
-    # "You realize you have important stuff to get to, but [fembro.name] accepts the invitation happily."
-    ""
-
-translate spanish strings:
-
-    # game/scenes/day02_01pain.rpy:53
-    old "You didn't know Aunt [aunt.name] woke up this early,"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:53
-    old "Isn't it her day off?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:58
-    old "Then again, she may not be used to it."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:58
-    old "She looks like she's dying."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:123
-    old "Damn. It must be the 'Cason' family genes."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:123
-    old "I have an idea."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:143
-    old "That's the first time I've seen her blush."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:214
-    old "And not a rubber mallet."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:214
-    old "Please... Still work..."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:279
-    old "Why are you getting so worked up over a kiss on the head from your aunt?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:279
-    old "There were also boobs."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:297
-    old "Your butt hurts a lot, so it must have taken most of the force."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:297
-    old "Thank God, not a direct hit."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:302
-    old "You try your best not to make a scene as you waddle out of the kitchen."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:302
-    old "Please... Still work."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:344
-    old "Hey [fembro.name], I wanna-"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:344
-    old "Focus."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:351
-    old "What are you doing?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:351
-    old "Woah"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:364
-    old "No! No. I can do it myself."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:364
-    old "[fembro_nouns[0]!c] has something to prove. But to who?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:369
-    old "[fembro_nouns[0]!c]'s surprisingly weak at climbing."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:369
-    old "With all that booty too..."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:406
-    old "As you come to, it takes everything in you not to grind into [fembro_nouns[1]]."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:406
-    old "At least I caught [fembro_nouns[1]]."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:418
-    old "Your sigh warbles."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:418
-    old "Pull it together! You're in the kitchen."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:427
-    old "You take a deep breath, and help [fembro.name] to [fembro_nouns[2]] feet."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:427
-    old "No! focus."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:442
-    old "I'm So Sorry!"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:442
-    old "Alright, time to apolo-"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:451
-    old "Your hand brushes the back of your head. There is indeed a bruise."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:451
-    old "Huh... Horny trumps pain it seems."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:462
-    old "I keep messing things up..."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:462
-    old "... That explains things."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:511
-    old "You don't quite know what to make of this situation."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:511
-    old "This is a win... Right?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:545
-    old "Yah"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:545
-    old "Damn, she's thrashing that punching bag."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:609
-    old "You understand the standing part. Usually because you like sitting after a while."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:609
-    old "Lying down is nice too."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:655
-    old "And although you're silent, you're very starstruck as well."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:655
-    old "I've never seen muscles like that in person."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:664
-    old "To think those were the same arms that held you so tenderly."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:664
-    old "The same arms that punched me..."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:675
-    old "[fembro.name] whimpers with excitement."
-    new ""
-
-    # game/scenes/day02_01pain.rpy:675
-    old "Did [fembro_nouns[0]] cream [fembro_nouns[2]] shorts?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:697
-    old "Aw... Can you do it again later?"
-    new ""
-
-    # game/scenes/day02_01pain.rpy:697
-    old "Wow... [fembro_nouns[0]]'s addicted."
-    new ""
+    jump loc_bed_aunt
 
